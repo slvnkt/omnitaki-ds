@@ -1,0 +1,99 @@
+button/focus/ring-width|F|{shape/border-width/md}|Button: focus · focus ring width → shape/border-width/md.
+button/radius|F|{shape/radius/md}|Button: corner radius → shape/radius/md.
+button/border-width|F|{shape/border-width/sm}|Button: border width → shape/border-width/sm.
+button/size/sm/height|F|{control/height/sm}|Button: S · height → control/height/sm.
+button/size/sm/padding-x|F|{spacing/padding/md}|Button: S · horizontal padding → spacing/padding/md.
+button/size/sm/padding-y|F|{spacing/padding/sm}|Button: S · vertical padding → spacing/padding/sm.
+button/size/sm/gap|F|{spacing/gap/sm}|Button: S · gap → spacing/gap/sm.
+button/size/sm/icon-size|F|{control/icon-size/sm}|Button: S · icon size → control/icon-size/sm.
+field/size/sm/height|F|{control/height/sm}|Field: S · height → control/height/sm.
+field/size/sm/padding-x|F|{spacing/padding/md}|Field: S · horizontal padding → spacing/padding/md.
+field/size/sm/padding-y|F|{spacing/padding/sm}|Field: S · vertical padding → spacing/padding/sm.
+button/size/md/height|F|{control/height/md}|Button: M · height → control/height/md.
+button/size/md/padding-x|F|{spacing/padding/lg}|Button: M · horizontal padding → spacing/padding/lg.
+button/size/md/padding-y|F|{spacing/padding/sm}|Button: M · vertical padding → spacing/padding/sm.
+button/size/md/gap|F|{spacing/gap/sm}|Button: M · gap → spacing/gap/sm.
+button/size/md/icon-size|F|{control/icon-size/md}|Button: M · icon size → control/icon-size/md.
+field/size/md/height|F|{control/height/md}|Field: M · height → control/height/md.
+field/size/md/padding-x|F|{spacing/padding/lg}|Field: M · horizontal padding → spacing/padding/lg.
+field/size/md/padding-y|F|{spacing/padding/sm}|Field: M · vertical padding → spacing/padding/sm.
+button/size/lg/height|F|{control/height/lg}|Button: L · height → control/height/lg.
+button/size/lg/padding-x|F|{spacing/padding/xl}|Button: L · horizontal padding → spacing/padding/xl.
+button/size/lg/padding-y|F|{spacing/padding/md}|Button: L · vertical padding → spacing/padding/md.
+button/size/lg/gap|F|{spacing/gap/sm}|Button: L · gap → spacing/gap/sm.
+button/size/lg/icon-size|F|{control/icon-size/lg}|Button: L · icon size → control/icon-size/lg.
+field/size/lg/height|F|{control/height/lg}|Field: L · height → control/height/lg.
+field/size/lg/padding-x|F|{spacing/padding/lg}|Field: L · horizontal padding → spacing/padding/lg.
+field/size/lg/padding-y|F|{spacing/padding/md}|Field: L · vertical padding → spacing/padding/md.
+field/radius|F|{shape/radius/md}|Field: corner radius → shape/radius/md.
+field/border-width|F|{shape/border-width/sm}|Field: border width → shape/border-width/sm.
+field/label-gap|F|{spacing/gap/xs}|Field: vertical gap between label, field box and helper.
+selection/size/md/box|F|{control/icon-size/md}|Checkbox/radio box md.
+selection/radius|F|{shape/radius/sm}|Checkbox box radius.
+selection/border-width|F|{shape/border-width/sm}|Box border width (1px, light weight).
+selection/gap|F|{spacing/gap/sm}|Gap between box and label.
+selection/focus/ring-width|F|{shape/border-width/md}|Focus ring width.
+badge/radius|F|{shape/radius/full}|Badge: corner radius → shape/radius/full.
+badge/border-width|F|{shape/border-width/sm}|Badge: border width → shape/border-width/sm.
+badge/gap|F|{spacing/gap/xs}|Badge: gap → spacing/gap/xs.
+tabs/focus/ring-width|F|{shape/border-width/md}|Tabs: focus · focus ring width → shape/border-width/md.
+tabs/indicator-width|F|{shape/border-width/md}|Tabs: indicator width → shape/border-width/md.
+tabs/divider-width|F|{shape/border-width/sm}|Tabs: divider width → shape/border-width/sm.
+tabs/radius|F|{shape/radius/sm}|Tabs: corner radius → shape/radius/sm.
+tabs/padding-x|F|{spacing/padding/lg}|Tabs: horizontal padding → spacing/padding/lg.
+tabs/padding-y|F|{spacing/padding/sm}|Tabs: vertical padding → spacing/padding/sm.
+tabs/gap|F|{spacing/gap/xs}|Tabs: gap → spacing/gap/xs.
+field/size/sm/icon-size|F|{control/icon-size/sm}|Input sm icon size
+field/size/sm/gap|F|{spacing/gap/sm}|Gap between icon and value in input sm
+field/size/md/icon-size|F|{control/icon-size/md}|Input md icon size
+field/size/md/gap|F|{spacing/gap/sm}|Gap between icon and value in input md
+field/size/lg/icon-size|F|{control/icon-size/lg}|Input lg icon size
+field/size/lg/gap|F|{spacing/gap/sm}|Gap between icon and value in input lg
+tabs/icon-size|F|{control/icon-size/sm}|Tab icon size
+tabs/item-gap|F|{spacing/gap/sm}|Gap between icon and label inside a tab
+badge/icon-size|F|{control/icon-size/xs}|Badge icon size (12px)
+badge/size/lg/height|F|{control/height/xs}|Badge lg height.
+badge/size/lg/padding-x|F|{spacing/padding/sm}|Badge lg horizontal padding.
+badge/size/md/height|F|{control/height/2xs}|Badge md height.
+badge/size/md/padding-x|F|{spacing/padding/sm}|Badge md horizontal padding.
+badge/size/sm/height|F|{control/height/3xs}|Badge sm height.
+badge/size/sm/padding-x|F|{spacing/padding/xs}|Badge sm horizontal padding.
+tabs/filled/height|F|{control/height/sm}|Filled tab height 32; list = 32 + 2×4 = 40 (control md).
+tabs/filled/padding-x|F|{spacing/padding/md}|Filled tab horizontal padding.
+tabs/filled/radius|F|{shape/radius/sm}|Filled tab radius (list radius minus list padding).
+tabs/filled/list-padding|F|{spacing/padding/xs}|Filled tabs list inner padding.
+tabs/filled/list-gap|F|{spacing/gap/xs}|Gap between filled tabs.
+tabs/filled/list-radius|F|{shape/radius/md}|Filled tabs list radius.
+tabs/height|F|{control/height/md}|Underline tab height 40 = control md; indicator drawn inside.
+selection/size/sm/box|F|{control/icon-size/sm}|Checkbox/radio box sm.
+selection/size/sm/icon-size|F|{control/icon-size/xs}|Check/minus mark size sm.
+selection/size/md/icon-size|F|{control/icon-size/sm}|Check/minus mark size md.
+selection/size/lg/box|F|{control/icon-size/lg}|Checkbox/radio box lg.
+selection/size/lg/icon-size|F|{control/icon-size/md}|Check/minus mark size lg.
+selection/radio/radius|F|{shape/radius/full}|Radio box radius (circle).
+switch/size/sm/height|F|{control/height/3xs}|Switch track height sm; width = 2×(thumb+inset).
+switch/size/sm/thumb|F|{control/icon-size/xs}|Switch thumb sm.
+switch/size/md/height|F|{control/height/2xs}|Switch track height md; width = 2×(thumb+inset).
+switch/size/md/thumb|F|{control/icon-size/sm}|Switch thumb md.
+switch/size/lg/height|F|{control/height/xs}|Switch track height lg; width = 2×(thumb+inset).
+switch/size/lg/thumb|F|{control/icon-size/md}|Switch thumb lg.
+switch/padding|F|{spacing/padding/2xs}|Thumb inset inside track.
+switch/gap|F|{spacing/gap/sm}|Gap between track and label.
+switch/radius|F|{shape/radius/full}|Track and thumb radius.
+switch/focus/ring-width|F|{shape/border-width/md}|Focus ring width.
+list-item/size/sm/height|F|{control/height/sm}|List item height, size sm. Rows of Menu / Select options; in line with controls of the same size.
+list-item/size/sm/padding-x|F|{spacing/padding/sm}|List item horizontal padding, size sm. Menu padding + this = Field padding-x, so option text aligns with the Select value.
+list-item/size/sm/icon-size|F|{control/icon-size/sm}|List item icon and check size, size sm.
+list-item/size/md/height|F|{control/height/md}|List item height, size md. Rows of Menu / Select options; in line with controls of the same size.
+list-item/size/md/padding-x|F|{spacing/padding/md}|List item horizontal padding, size md. Menu padding + this = Field padding-x, so option text aligns with the Select value.
+list-item/size/md/icon-size|F|{control/icon-size/md}|List item icon and check size, size md.
+list-item/size/lg/height|F|{control/height/lg}|List item height, size lg. Rows of Menu / Select options; in line with controls of the same size.
+list-item/size/lg/padding-x|F|{spacing/padding/md}|List item horizontal padding, size lg. Menu padding + this = Field padding-x, so option text aligns with the Select value.
+list-item/size/lg/icon-size|F|{control/icon-size/lg}|List item icon and check size, size lg.
+list-item/gap|F|{spacing/gap/sm}|Gap between icons, label and check in a list item.
+list-item/radius|F|{shape/radius/sm}|List item corner radius = menu radius − menu padding (nested radius).
+list-item/focus/ring-width|F|{shape/border-width/md}|List item keyboard focus ring width.
+menu/border-width|F|{shape/border-width/sm}|Menu surface border width.
+menu/radius|F|{shape/radius/md}|Menu surface corner radius.
+menu/padding|F|{spacing/padding/xs}|Inner padding of the menu around list items.
+menu/offset|F|{spacing/gap/xs}|Distance between the trigger (Field, Button) and the open menu.

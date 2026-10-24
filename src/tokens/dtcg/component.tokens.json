@@ -1,0 +1,1277 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "button": {
+    "$type": "dimension",
+    "focus": {
+      "ring-width": {
+        "$value": "{shape.border-width.md}",
+        "$description": "Button: focus · focus ring width → shape/border-width/md.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-button-focus-ring-width)"
+            }
+          }
+        }
+      }
+    },
+    "radius": {
+      "$value": "{shape.radius.md}",
+      "$description": "Button: corner radius → shape/radius/md.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-button-radius)"
+          }
+        }
+      }
+    },
+    "border-width": {
+      "$value": "{shape.border-width.sm}",
+      "$description": "Button: border width → shape/border-width/sm.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-button-border-width)"
+          }
+        }
+      }
+    },
+    "size": {
+      "sm": {
+        "height": {
+          "$value": "{control.height.sm}",
+          "$description": "Button: S · height → control/height/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-sm-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.md}",
+          "$description": "Button: S · horizontal padding → spacing/padding/md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-sm-padding-x)"
+              }
+            }
+          }
+        },
+        "padding-y": {
+          "$value": "{spacing.padding.sm}",
+          "$description": "Button: S · vertical padding → spacing/padding/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-sm-padding-y)"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$value": "{spacing.gap.sm}",
+          "$description": "Button: S · gap → spacing/gap/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-sm-gap)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.sm}",
+          "$description": "Button: S · icon size → control/icon-size/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-sm-icon-size)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "height": {
+          "$value": "{control.height.md}",
+          "$description": "Button: M · height → control/height/md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-md-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.lg}",
+          "$description": "Button: M · horizontal padding → spacing/padding/lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-md-padding-x)"
+              }
+            }
+          }
+        },
+        "padding-y": {
+          "$value": "{spacing.padding.sm}",
+          "$description": "Button: M · vertical padding → spacing/padding/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-md-padding-y)"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$value": "{spacing.gap.sm}",
+          "$description": "Button: M · gap → spacing/gap/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-md-gap)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.md}",
+          "$description": "Button: M · icon size → control/icon-size/md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-md-icon-size)"
+              }
+            }
+          }
+        }
+      },
+      "lg": {
+        "height": {
+          "$value": "{control.height.lg}",
+          "$description": "Button: L · height → control/height/lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-lg-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.xl}",
+          "$description": "Button: L · horizontal padding → spacing/padding/xl.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-lg-padding-x)"
+              }
+            }
+          }
+        },
+        "padding-y": {
+          "$value": "{spacing.padding.md}",
+          "$description": "Button: L · vertical padding → spacing/padding/md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-lg-padding-y)"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$value": "{spacing.gap.sm}",
+          "$description": "Button: L · gap → spacing/gap/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-lg-gap)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.lg}",
+          "$description": "Button: L · icon size → control/icon-size/lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-button-size-lg-icon-size)"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "field": {
+    "$type": "dimension",
+    "size": {
+      "sm": {
+        "height": {
+          "$value": "{control.height.sm}",
+          "$description": "Field: S · height → control/height/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-sm-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.md}",
+          "$description": "Field: S · horizontal padding → spacing/padding/md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-sm-padding-x)"
+              }
+            }
+          }
+        },
+        "padding-y": {
+          "$value": "{spacing.padding.sm}",
+          "$description": "Field: S · vertical padding → spacing/padding/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-sm-padding-y)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.sm}",
+          "$description": "Input sm icon size",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-sm-icon-size)"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$value": "{spacing.gap.sm}",
+          "$description": "Gap between icon and value in input sm",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-sm-gap)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "height": {
+          "$value": "{control.height.md}",
+          "$description": "Field: M · height → control/height/md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-md-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.lg}",
+          "$description": "Field: M · horizontal padding → spacing/padding/lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-md-padding-x)"
+              }
+            }
+          }
+        },
+        "padding-y": {
+          "$value": "{spacing.padding.sm}",
+          "$description": "Field: M · vertical padding → spacing/padding/sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-md-padding-y)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.md}",
+          "$description": "Input md icon size",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-md-icon-size)"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$value": "{spacing.gap.sm}",
+          "$description": "Gap between icon and value in input md",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-md-gap)"
+              }
+            }
+          }
+        }
+      },
+      "lg": {
+        "height": {
+          "$value": "{control.height.lg}",
+          "$description": "Field: L · height → control/height/lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-lg-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.lg}",
+          "$description": "Field: L · horizontal padding → spacing/padding/lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-lg-padding-x)"
+              }
+            }
+          }
+        },
+        "padding-y": {
+          "$value": "{spacing.padding.md}",
+          "$description": "Field: L · vertical padding → spacing/padding/md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-lg-padding-y)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.lg}",
+          "$description": "Input lg icon size",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-lg-icon-size)"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$value": "{spacing.gap.sm}",
+          "$description": "Gap between icon and value in input lg",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-field-size-lg-gap)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "radius": {
+      "$value": "{shape.radius.md}",
+      "$description": "Field: corner radius → shape/radius/md.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-field-radius)"
+          }
+        }
+      }
+    },
+    "border-width": {
+      "$value": "{shape.border-width.sm}",
+      "$description": "Field: border width → shape/border-width/sm.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-field-border-width)"
+          }
+        }
+      }
+    },
+    "label-gap": {
+      "$value": "{spacing.gap.xs}",
+      "$description": "Field: vertical gap between label, field box and helper.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-field-label-gap)"
+          }
+        }
+      }
+    }
+  },
+  "selection": {
+    "$type": "dimension",
+    "size": {
+      "md": {
+        "box": {
+          "$value": "{control.icon-size.md}",
+          "$description": "Checkbox/radio box md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-selection-size-md-box)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.sm}",
+          "$description": "Check/minus mark size md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-selection-size-md-icon-size)"
+              }
+            }
+          }
+        }
+      },
+      "sm": {
+        "box": {
+          "$value": "{control.icon-size.sm}",
+          "$description": "Checkbox/radio box sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-selection-size-sm-box)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.xs}",
+          "$description": "Check/minus mark size sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-selection-size-sm-icon-size)"
+              }
+            }
+          }
+        }
+      },
+      "lg": {
+        "box": {
+          "$value": "{control.icon-size.lg}",
+          "$description": "Checkbox/radio box lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-selection-size-lg-box)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.md}",
+          "$description": "Check/minus mark size lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-selection-size-lg-icon-size)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "radius": {
+      "$value": "{shape.radius.sm}",
+      "$description": "Checkbox box radius.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-selection-radius)"
+          }
+        }
+      }
+    },
+    "border-width": {
+      "$value": "{shape.border-width.sm}",
+      "$description": "Box border width (1px, light weight).",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-selection-border-width)"
+          }
+        }
+      }
+    },
+    "gap": {
+      "$value": "{spacing.gap.sm}",
+      "$description": "Gap between box and label.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-selection-gap)"
+          }
+        }
+      }
+    },
+    "focus": {
+      "ring-width": {
+        "$value": "{shape.border-width.md}",
+        "$description": "Focus ring width.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-selection-focus-ring-width)"
+            }
+          }
+        }
+      }
+    },
+    "radio": {
+      "radius": {
+        "$value": "{shape.radius.full}",
+        "$description": "Radio box radius (circle).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-selection-radio-radius)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "badge": {
+    "$type": "dimension",
+    "radius": {
+      "$value": "{shape.radius.full}",
+      "$description": "Badge: corner radius → shape/radius/full.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-badge-radius)"
+          }
+        }
+      }
+    },
+    "border-width": {
+      "$value": "{shape.border-width.sm}",
+      "$description": "Badge: border width → shape/border-width/sm.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-badge-border-width)"
+          }
+        }
+      }
+    },
+    "gap": {
+      "$value": "{spacing.gap.xs}",
+      "$description": "Badge: gap → spacing/gap/xs.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-badge-gap)"
+          }
+        }
+      }
+    },
+    "icon-size": {
+      "$value": "{control.icon-size.xs}",
+      "$description": "Badge icon size (12px)",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-badge-icon-size)"
+          }
+        }
+      }
+    },
+    "size": {
+      "lg": {
+        "height": {
+          "$value": "{control.height.xs}",
+          "$description": "Badge lg height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-badge-size-lg-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.sm}",
+          "$description": "Badge lg horizontal padding.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-badge-size-lg-padding-x)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "height": {
+          "$value": "{control.height.2xs}",
+          "$description": "Badge md height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-badge-size-md-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.sm}",
+          "$description": "Badge md horizontal padding.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-badge-size-md-padding-x)"
+              }
+            }
+          }
+        }
+      },
+      "sm": {
+        "height": {
+          "$value": "{control.height.3xs}",
+          "$description": "Badge sm height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-badge-size-sm-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.xs}",
+          "$description": "Badge sm horizontal padding.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-badge-size-sm-padding-x)"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tabs": {
+    "$type": "dimension",
+    "focus": {
+      "ring-width": {
+        "$value": "{shape.border-width.md}",
+        "$description": "Tabs: focus · focus ring width → shape/border-width/md.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-tabs-focus-ring-width)"
+            }
+          }
+        }
+      }
+    },
+    "indicator-width": {
+      "$value": "{shape.border-width.md}",
+      "$description": "Tabs: indicator width → shape/border-width/md.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-indicator-width)"
+          }
+        }
+      }
+    },
+    "divider-width": {
+      "$value": "{shape.border-width.sm}",
+      "$description": "Tabs: divider width → shape/border-width/sm.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-divider-width)"
+          }
+        }
+      }
+    },
+    "radius": {
+      "$value": "{shape.radius.sm}",
+      "$description": "Tabs: corner radius → shape/radius/sm.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-radius)"
+          }
+        }
+      }
+    },
+    "padding-x": {
+      "$value": "{spacing.padding.lg}",
+      "$description": "Tabs: horizontal padding → spacing/padding/lg.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-padding-x)"
+          }
+        }
+      }
+    },
+    "padding-y": {
+      "$value": "{spacing.padding.sm}",
+      "$description": "Tabs: vertical padding → spacing/padding/sm.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-padding-y)"
+          }
+        }
+      }
+    },
+    "gap": {
+      "$value": "{spacing.gap.xs}",
+      "$description": "Tabs: gap → spacing/gap/xs.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-gap)"
+          }
+        }
+      }
+    },
+    "icon-size": {
+      "$value": "{control.icon-size.sm}",
+      "$description": "Tab icon size",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-icon-size)"
+          }
+        }
+      }
+    },
+    "item-gap": {
+      "$value": "{spacing.gap.sm}",
+      "$description": "Gap between icon and label inside a tab",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-item-gap)"
+          }
+        }
+      }
+    },
+    "filled": {
+      "height": {
+        "$value": "{control.height.sm}",
+        "$description": "Filled tab height 32; list = 32 + 2×4 = 40 (control md).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-tabs-filled-height)"
+            }
+          }
+        }
+      },
+      "padding-x": {
+        "$value": "{spacing.padding.md}",
+        "$description": "Filled tab horizontal padding.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-tabs-filled-padding-x)"
+            }
+          }
+        }
+      },
+      "radius": {
+        "$value": "{shape.radius.sm}",
+        "$description": "Filled tab radius (list radius minus list padding).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-tabs-filled-radius)"
+            }
+          }
+        }
+      },
+      "list-padding": {
+        "$value": "{spacing.padding.xs}",
+        "$description": "Filled tabs list inner padding.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-tabs-filled-list-padding)"
+            }
+          }
+        }
+      },
+      "list-gap": {
+        "$value": "{spacing.gap.xs}",
+        "$description": "Gap between filled tabs.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-tabs-filled-list-gap)"
+            }
+          }
+        }
+      },
+      "list-radius": {
+        "$value": "{shape.radius.md}",
+        "$description": "Filled tabs list radius.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-tabs-filled-list-radius)"
+            }
+          }
+        }
+      }
+    },
+    "height": {
+      "$value": "{control.height.md}",
+      "$description": "Underline tab height 40 = control md; indicator drawn inside.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-tabs-height)"
+          }
+        }
+      }
+    }
+  },
+  "switch": {
+    "$type": "dimension",
+    "size": {
+      "sm": {
+        "height": {
+          "$value": "{control.height.3xs}",
+          "$description": "Switch track height sm; width = 2×(thumb+inset).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-switch-size-sm-height)"
+              }
+            }
+          }
+        },
+        "thumb": {
+          "$value": "{control.icon-size.xs}",
+          "$description": "Switch thumb sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-switch-size-sm-thumb)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "height": {
+          "$value": "{control.height.2xs}",
+          "$description": "Switch track height md; width = 2×(thumb+inset).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-switch-size-md-height)"
+              }
+            }
+          }
+        },
+        "thumb": {
+          "$value": "{control.icon-size.sm}",
+          "$description": "Switch thumb md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-switch-size-md-thumb)"
+              }
+            }
+          }
+        }
+      },
+      "lg": {
+        "height": {
+          "$value": "{control.height.xs}",
+          "$description": "Switch track height lg; width = 2×(thumb+inset).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-switch-size-lg-height)"
+              }
+            }
+          }
+        },
+        "thumb": {
+          "$value": "{control.icon-size.md}",
+          "$description": "Switch thumb lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-switch-size-lg-thumb)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "padding": {
+      "$value": "{spacing.padding.2xs}",
+      "$description": "Thumb inset inside track.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-switch-padding)"
+          }
+        }
+      }
+    },
+    "gap": {
+      "$value": "{spacing.gap.sm}",
+      "$description": "Gap between track and label.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-switch-gap)"
+          }
+        }
+      }
+    },
+    "radius": {
+      "$value": "{shape.radius.full}",
+      "$description": "Track and thumb radius.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-switch-radius)"
+          }
+        }
+      }
+    },
+    "focus": {
+      "ring-width": {
+        "$value": "{shape.border-width.md}",
+        "$description": "Focus ring width.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-switch-focus-ring-width)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "list-item": {
+    "$type": "dimension",
+    "size": {
+      "sm": {
+        "height": {
+          "$value": "{control.height.sm}",
+          "$description": "List item height, size sm. Rows of Menu / Select options; in line with controls of the same size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-sm-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.sm}",
+          "$description": "List item horizontal padding, size sm. Menu padding + this = Field padding-x, so option text aligns with the Select value.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-sm-padding-x)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.sm}",
+          "$description": "List item icon and check size, size sm.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-sm-icon-size)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "height": {
+          "$value": "{control.height.md}",
+          "$description": "List item height, size md. Rows of Menu / Select options; in line with controls of the same size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-md-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.md}",
+          "$description": "List item horizontal padding, size md. Menu padding + this = Field padding-x, so option text aligns with the Select value.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-md-padding-x)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.md}",
+          "$description": "List item icon and check size, size md.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-md-icon-size)"
+              }
+            }
+          }
+        }
+      },
+      "lg": {
+        "height": {
+          "$value": "{control.height.lg}",
+          "$description": "List item height, size lg. Rows of Menu / Select options; in line with controls of the same size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-lg-height)"
+              }
+            }
+          }
+        },
+        "padding-x": {
+          "$value": "{spacing.padding.md}",
+          "$description": "List item horizontal padding, size lg. Menu padding + this = Field padding-x, so option text aligns with the Select value.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-lg-padding-x)"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$value": "{control.icon-size.lg}",
+          "$description": "List item icon and check size, size lg.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Component",
+              "codeSyntax": {
+                "WEB": "var(--ot-list-item-size-lg-icon-size)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "gap": {
+      "$value": "{spacing.gap.sm}",
+      "$description": "Gap between icons, label and check in a list item.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-list-item-gap)"
+          }
+        }
+      }
+    },
+    "radius": {
+      "$value": "{shape.radius.sm}",
+      "$description": "List item corner radius = menu radius − menu padding (nested radius).",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-list-item-radius)"
+          }
+        }
+      }
+    },
+    "focus": {
+      "ring-width": {
+        "$value": "{shape.border-width.md}",
+        "$description": "List item keyboard focus ring width.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Component",
+            "codeSyntax": {
+              "WEB": "var(--ot-list-item-focus-ring-width)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "menu": {
+    "$type": "dimension",
+    "border-width": {
+      "$value": "{shape.border-width.sm}",
+      "$description": "Menu surface border width.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-menu-border-width)"
+          }
+        }
+      }
+    },
+    "radius": {
+      "$value": "{shape.radius.md}",
+      "$description": "Menu surface corner radius.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-menu-radius)"
+          }
+        }
+      }
+    },
+    "padding": {
+      "$value": "{spacing.padding.xs}",
+      "$description": "Inner padding of the menu around list items.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-menu-padding)"
+          }
+        }
+      }
+    },
+    "offset": {
+      "$value": "{spacing.gap.xs}",
+      "$description": "Distance between the trigger (Field, Button) and the open menu.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Component",
+          "codeSyntax": {
+            "WEB": "var(--ot-menu-offset)"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "text": {
+    "$type": "typography",
+    "heading": {
+      "display": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.heading.3xl.font-size}",
+          "fontWeight": "{typography.heading.3xl.font-weight}",
+          "lineHeight": "{typography.heading.3xl.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Marketing / hero headline, desktop only. ≈ Material 3 Display, Tailwind text-6xl. Tokens: typography/heading/3xl/*. Code: var(--ot-typography-heading-3xl)-*",
+        "$extensions": {
+          "com.figma": {
+            "style": "Heading/Display",
+            "codeSyntax": {
+              "WEB": ".ot-text-heading-display"
+            }
+          }
+        }
+      },
+      "h1": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.heading.2xl.font-size}",
+          "fontWeight": "{typography.heading.2xl.font-weight}",
+          "lineHeight": "{typography.heading.2xl.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Page title. ≈ Fluent 2 Large Title, shadcn h1. Tokens: typography/heading/2xl/*. Code: var(--ot-typography-heading-2xl-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Heading/H1",
+            "codeSyntax": {
+              "WEB": ".ot-text-heading-h1"
+            }
+          }
+        }
+      },
+      "h2": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.heading.xl.font-size}",
+          "fontWeight": "{typography.heading.xl.font-weight}",
+          "lineHeight": "{typography.heading.xl.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Section title. = Fluent 2 Title 1. Tokens: typography/heading/xl/*. Code: var(--ot-typography-heading-xl-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Heading/H2",
+            "codeSyntax": {
+              "WEB": ".ot-text-heading-h2"
+            }
+          }
+        }
+      },
+      "h3": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.heading.lg.font-size}",
+          "fontWeight": "{typography.heading.lg.font-weight}",
+          "lineHeight": "{typography.heading.lg.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Sub-section / card title. = Fluent 2 Title 3, shadcn h3. Tokens: typography/heading/lg/*. Code: var(--ot-typography-heading-lg-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Heading/H3",
+            "codeSyntax": {
+              "WEB": ".ot-text-heading-h3"
+            }
+          }
+        }
+      },
+      "subtitle-1": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.heading.md.font-size}",
+          "fontWeight": "{typography.heading.md.font-weight}",
+          "lineHeight": "{typography.heading.md.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Group header, dialog title. = Fluent 2 Subtitle 1. Tokens: typography/heading/md/*. Code: var(--ot-typography-heading-md-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Heading/Subtitle 1",
+            "codeSyntax": {
+              "WEB": ".ot-text-heading-subtitle-1"
+            }
+          }
+        }
+      },
+      "subtitle-2": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.heading.sm.font-size}",
+          "fontWeight": "{typography.heading.sm.font-weight}",
+          "lineHeight": "{typography.heading.sm.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Small header, list group. ≈ Fluent 2 Subtitle 2. Tokens: typography/heading/sm/*. Code: var(--ot-typography-heading-sm-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Heading/Subtitle 2",
+            "codeSyntax": {
+              "WEB": ".ot-text-heading-subtitle-2"
+            }
+          }
+        }
+      }
+    },
+    "body": {
+      "body-1": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.body.md.font-size}",
+          "fontWeight": "{typography.body.md.font-weight}",
+          "lineHeight": "{typography.body.md.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Default UI text, 14px. = Fluent 2 Body 1, shadcn text-sm. Tokens: typography/body/md/*. Code: var(--ot-typography-body-md-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Body/Body 1",
+            "codeSyntax": {
+              "WEB": ".ot-text-body-body-1"
+            }
+          }
+        }
+      },
+      "body-2": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.body.lg.font-size}",
+          "fontWeight": "{typography.body.lg.font-weight}",
+          "lineHeight": "{typography.body.lg.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Long-form / reading text, 16px. = shadcn p. Tokens: typography/body/lg/*. Code: var(--ot-typography-body-lg-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Body/Body 2",
+            "codeSyntax": {
+              "WEB": ".ot-text-body-body-2"
+            }
+          }
+        }
+      }
+    },
+    "caption": {
+      "caption": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.body.sm.font-size}",
+          "fontWeight": "{typography.body.sm.font-weight}",
+          "lineHeight": "{typography.body.sm.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Helper, meta, timestamps, 12px. = Fluent 2 Caption 1. Tokens: typography/body/sm/*. Code: var(--ot-typography-body-sm-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Caption/Caption",
+            "codeSyntax": {
+              "WEB": ".ot-text-caption-caption"
+            }
+          }
+        }
+      },
+      "caption-strong": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.label.sm.font-size}",
+          "fontWeight": "{typography.label.sm.font-weight}",
+          "lineHeight": "{typography.label.sm.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Chips, badges, small labels, 12px medium. = Fluent 2 Caption 1 Strong. Tokens: typography/label/sm/*. Code: var(--ot-typography-label-sm-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Caption/Caption Strong",
+            "codeSyntax": {
+              "WEB": ".ot-text-caption-caption-strong"
+            }
+          }
+        }
+      }
+    },
+    "label": {
+      "label-l": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.label.lg.font-size}",
+          "fontWeight": "{typography.label.lg.font-weight}",
+          "lineHeight": "{typography.label.lg.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Control text (Button L), 16px medium. Tokens: typography/label/lg/*. Code: var(--ot-typography-label-lg-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Label/Label L",
+            "codeSyntax": {
+              "WEB": ".ot-text-label-label-l"
+            }
+          }
+        }
+      },
+      "label-m": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.label.md.font-size}",
+          "fontWeight": "{typography.label.md.font-weight}",
+          "lineHeight": "{typography.label.md.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Control text (Button M, Tab, Input L label), 14px medium. Tokens: typography/label/md/*. Code: var(--ot-typography-label-md-*)",
+        "$extensions": {
+          "com.figma": {
+            "style": "Label/Label M",
+            "codeSyntax": {
+              "WEB": ".ot-text-label-label-m"
+            }
+          }
+        }
+      },
+      "label-s": {
+        "$value": {
+          "fontFamily": "{typography.font-family.font}",
+          "fontSize": "{typography.label.sm.font-size}",
+          "fontWeight": "{typography.label.sm.font-weight}",
+          "lineHeight": "{typography.label.sm.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Control text (Button S), 12px medium. Tokens: typography/label/sm/*. Code: var(--ot-typography-label-sm)-*",
+        "$extensions": {
+          "com.figma": {
+            "style": "Label/Label S",
+            "codeSyntax": {
+              "WEB": ".ot-text-label-label-s"
+            }
+          }
+        }
+      }
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "sm": {
+      "$value": [
+        {
+          "color": "{color.shadow.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{elevation.sm.key-y}",
+          "blur": "{elevation.sm.key-blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": "{color.shadow.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{elevation.sm.ambient-y}",
+          "blur": "{elevation.sm.ambient-blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "Raised small surfaces: selected segment, switch thumb, card on page. Tokens: elevation/sm/*, color/shadow/key",
+      "$extensions": {
+        "com.figma": {
+          "style": "Elevation/sm",
+          "codeSyntax": {
+            "WEB": "var(--ot-shadow-sm)"
+          }
+        }
+      }
+    },
+    "md": {
+      "$value": [
+        {
+          "color": "{color.shadow.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{elevation.md.key-y}",
+          "blur": "{elevation.md.key-blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": "{color.shadow.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{elevation.md.ambient-y}",
+          "blur": "{elevation.md.ambient-blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "Floating UI: dropdown, menu, popover, tooltip, toast. Tokens: elevation/md/*, color/shadow/key",
+      "$extensions": {
+        "com.figma": {
+          "style": "Elevation/md",
+          "codeSyntax": {
+            "WEB": "var(--ot-shadow-md)"
+          }
+        }
+      }
+    },
+    "lg": {
+      "$value": [
+        {
+          "color": "{color.shadow.key}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{elevation.lg.key-y}",
+          "blur": "{elevation.lg.key-blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": "{color.shadow.ambient}",
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": "{elevation.lg.ambient-y}",
+          "blur": "{elevation.lg.ambient-blur}",
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "Modal layer: dialog, drawer, sheet. Tokens: elevation/lg/*, color/shadow/key",
+      "$extensions": {
+        "com.figma": {
+          "style": "Elevation/lg",
+          "codeSyntax": {
+            "WEB": "var(--ot-shadow-lg)"
+          }
+        }
+      }
+    }
+  }
+}

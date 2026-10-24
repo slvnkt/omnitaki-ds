@@ -1,0 +1,1939 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "color": {
+    "$type": "color",
+    "bg": {
+      "primary": {
+        "$value": "{palette.neutral.950}",
+        "$description": "Semantic color: background · primary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-primary)"
+            }
+          }
+        }
+      },
+      "secondary": {
+        "$value": "{palette.neutral.900}",
+        "$description": "Semantic color: background · secondary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-secondary)"
+            }
+          }
+        }
+      },
+      "tertiary": {
+        "$value": "{palette.neutral.800}",
+        "$description": "Semantic color: background · tertiary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-tertiary)"
+            }
+          }
+        }
+      },
+      "inverse": {
+        "$value": "{palette.neutral.50}",
+        "$description": "Semantic color: background · inverse.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-inverse)"
+            }
+          }
+        }
+      },
+      "overlay": {
+        "$value": "{palette.overlay-black.40}",
+        "$description": "Semantic color: background · overlay.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-overlay)"
+            }
+          }
+        }
+      },
+      "transparent": {
+        "$value": "{palette.transparent}",
+        "$description": "Semantic color: background · transparent.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-transparent)"
+            }
+          }
+        }
+      },
+      "subtle-hover": {
+        "$value": "{palette.overlay-white.8}",
+        "$description": "Hover overlay for transparent (subtle) controls: secondary/ghost button, tab, list item, neutral switch track.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-subtle-hover)"
+            }
+          }
+        }
+      },
+      "subtle-pressed": {
+        "$value": "{palette.overlay-white.12}",
+        "$description": "Pressed overlay for transparent (subtle) controls: secondary/ghost button, tab.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-subtle-pressed)"
+            }
+          }
+        }
+      },
+      "disabled": {
+        "$value": "{palette.neutral.800}",
+        "$description": "Background of disabled controls: button, field, checkbox, switch track.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-disabled)"
+            }
+          }
+        }
+      },
+      "hover": {
+        "$value": "{palette.neutral.900}",
+        "$description": "Opaque surface for hovered fields/rows (lighter than bg/secondary, never confused with disabled/readonly)",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-hover)"
+            }
+          }
+        }
+      },
+      "elevated": {
+        "$value": "{palette.neutral.800}",
+        "$description": "Raised surface above the page or a grey track: selected segmented tab, later card/menu/popover. Light white, Dark one step lighter than bg.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-elevated)"
+            }
+          }
+        }
+      },
+      "thumb": {
+        "$value": "{palette.neutral.200}",
+        "$description": "Thumb on a neutral track (switch off, later slider): white in Light, light neutral in Dark for contrast on dark tracks.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-thumb)"
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{palette.neutral.50}",
+        "$description": "Semantic color: text · primary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-primary)"
+            }
+          }
+        }
+      },
+      "secondary": {
+        "$value": "{palette.neutral.300}",
+        "$description": "Semantic color: text · secondary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-secondary)"
+            }
+          }
+        }
+      },
+      "tertiary": {
+        "$value": "{palette.neutral.400}",
+        "$description": "Semantic color: text · tertiary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-tertiary)"
+            }
+          }
+        }
+      },
+      "disabled": {
+        "$value": "{palette.neutral.600}",
+        "$description": "Text, icons and glyphs (check, radio dot) of disabled controls.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-disabled)"
+            }
+          }
+        }
+      },
+      "inverse": {
+        "$value": "{palette.neutral.950}",
+        "$description": "Semantic color: text · inverse.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-inverse)"
+            }
+          }
+        }
+      },
+      "link": {
+        "$value": "{palette.lime.300}",
+        "$description": "Semantic color: text · link.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-link)"
+            }
+          }
+        }
+      },
+      "link-hover": {
+        "$value": "{palette.lime.200}",
+        "$description": "Semantic color: text · link hover.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-link-hover)"
+            }
+          }
+        }
+      }
+    },
+    "border": {
+      "primary": {
+        "$value": "{palette.neutral.700}",
+        "$description": "Semantic color: border · primary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-border-primary)"
+            }
+          }
+        }
+      },
+      "secondary": {
+        "$value": "{palette.neutral.500}",
+        "$description": "Semantic color: border · secondary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-border-secondary)"
+            }
+          }
+        }
+      },
+      "focus": {
+        "$value": "{palette.neutral.50}",
+        "$description": "Keyboard focus ring: neutral high-contrast stroke (black in Light, white in Dark), same for all controls and types incl. Primary/Danger — like Fluent colorStrokeFocus2. Fields use border/strong instead.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-border-focus)"
+            }
+          }
+        }
+      },
+      "disabled": {
+        "$value": "{palette.neutral.700}",
+        "$description": "Border of disabled controls and disabled tab indicator.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-border-disabled)"
+            }
+          }
+        }
+      },
+      "secondary-hover": {
+        "$value": "{palette.neutral.400}",
+        "$description": "Hovered border of interactive fields (one step stronger than border/secondary)",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-border-secondary-hover)"
+            }
+          }
+        }
+      },
+      "strong": {
+        "$value": "{palette.neutral.300}",
+        "$description": "High-emphasis border: focused / active fields",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-border-strong)"
+            }
+          }
+        }
+      }
+    },
+    "brand": {
+      "primary": {
+        "$value": "{palette.lime.300}",
+        "$description": "Semantic color: brand · primary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-primary)"
+            }
+          }
+        }
+      },
+      "primary-hover": {
+        "$value": "{palette.lime.200}",
+        "$description": "Semantic color: brand · primary hover.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-primary-hover)"
+            }
+          }
+        }
+      },
+      "primary-pressed": {
+        "$value": "{palette.lime.400}",
+        "$description": "Semantic color: brand · primary pressed.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-primary-pressed)"
+            }
+          }
+        }
+      },
+      "on-primary": {
+        "$value": "{palette.neutral.950}",
+        "$description": "Semantic color: brand · on primary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-on-primary)"
+            }
+          }
+        }
+      },
+      "secondary": {
+        "$value": "{palette.lime.950}",
+        "$description": "Semantic color: brand · secondary.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-secondary)"
+            }
+          }
+        }
+      },
+      "secondary-hover": {
+        "$value": "{palette.lime.900}",
+        "$description": "Semantic color: brand · secondary hover.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-secondary-hover)"
+            }
+          }
+        }
+      },
+      "secondary-text": {
+        "$value": "{palette.lime.300}",
+        "$description": "Semantic color: brand · secondary text.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-secondary-text)"
+            }
+          }
+        }
+      },
+      "secondary-border": {
+        "$value": "{palette.lime.800}",
+        "$description": "Semantic color: brand · secondary border.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-secondary-border)"
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "success": {
+        "primary": {
+          "$value": "{palette.success.400}",
+          "$description": "Semantic color: status · success · primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-success-primary)"
+              }
+            }
+          }
+        },
+        "primary-hover": {
+          "$value": "{palette.success.300}",
+          "$description": "Semantic color: status · success · primary hover.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-success-primary-hover)"
+              }
+            }
+          }
+        },
+        "primary-pressed": {
+          "$value": "{palette.success.500}",
+          "$description": "Semantic color: status · success · primary pressed.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-success-primary-pressed)"
+              }
+            }
+          }
+        },
+        "on-primary": {
+          "$value": "{palette.neutral.950}",
+          "$description": "Semantic color: status · success · on primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-success-on-primary)"
+              }
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{palette.success.950}",
+          "$description": "Semantic color: status · success · secondary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-success-secondary)"
+              }
+            }
+          }
+        },
+        "secondary-border": {
+          "$value": "{palette.success.800}",
+          "$description": "Semantic color: status · success · secondary border.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-success-secondary-border)"
+              }
+            }
+          }
+        },
+        "secondary-text": {
+          "$value": "{palette.success.300}",
+          "$description": "Semantic color: status · success · secondary text.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-success-secondary-text)"
+              }
+            }
+          }
+        }
+      },
+      "warning": {
+        "primary": {
+          "$value": "{palette.warning.400}",
+          "$description": "Semantic color: status · warning · primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-warning-primary)"
+              }
+            }
+          }
+        },
+        "primary-hover": {
+          "$value": "{palette.warning.300}",
+          "$description": "Semantic color: status · warning · primary hover.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-warning-primary-hover)"
+              }
+            }
+          }
+        },
+        "primary-pressed": {
+          "$value": "{palette.warning.500}",
+          "$description": "Semantic color: status · warning · primary pressed.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-warning-primary-pressed)"
+              }
+            }
+          }
+        },
+        "on-primary": {
+          "$value": "{palette.neutral.950}",
+          "$description": "Semantic color: status · warning · on primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-warning-on-primary)"
+              }
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{palette.warning.950}",
+          "$description": "Semantic color: status · warning · secondary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-warning-secondary)"
+              }
+            }
+          }
+        },
+        "secondary-border": {
+          "$value": "{palette.warning.800}",
+          "$description": "Semantic color: status · warning · secondary border.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-warning-secondary-border)"
+              }
+            }
+          }
+        },
+        "secondary-text": {
+          "$value": "{palette.warning.300}",
+          "$description": "Semantic color: status · warning · secondary text.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-warning-secondary-text)"
+              }
+            }
+          }
+        }
+      },
+      "danger": {
+        "primary": {
+          "$value": "{palette.danger.400}",
+          "$description": "Semantic color: status · danger · primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-danger-primary)"
+              }
+            }
+          }
+        },
+        "primary-hover": {
+          "$value": "{palette.danger.300}",
+          "$description": "Semantic color: status · danger · primary hover.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-danger-primary-hover)"
+              }
+            }
+          }
+        },
+        "primary-pressed": {
+          "$value": "{palette.danger.500}",
+          "$description": "Semantic color: status · danger · primary pressed.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-danger-primary-pressed)"
+              }
+            }
+          }
+        },
+        "on-primary": {
+          "$value": "{palette.neutral.950}",
+          "$description": "Semantic color: status · danger · on primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-danger-on-primary)"
+              }
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{palette.danger.950}",
+          "$description": "Semantic color: status · danger · secondary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-danger-secondary)"
+              }
+            }
+          }
+        },
+        "secondary-border": {
+          "$value": "{palette.danger.800}",
+          "$description": "Semantic color: status · danger · secondary border.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-danger-secondary-border)"
+              }
+            }
+          }
+        },
+        "secondary-text": {
+          "$value": "{palette.danger.300}",
+          "$description": "Semantic color: status · danger · secondary text.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-danger-secondary-text)"
+              }
+            }
+          }
+        }
+      },
+      "info": {
+        "primary": {
+          "$value": "{palette.info.400}",
+          "$description": "Semantic color: status · info · primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-info-primary)"
+              }
+            }
+          }
+        },
+        "primary-hover": {
+          "$value": "{palette.info.300}",
+          "$description": "Semantic color: status · info · primary hover.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-info-primary-hover)"
+              }
+            }
+          }
+        },
+        "primary-pressed": {
+          "$value": "{palette.info.500}",
+          "$description": "Semantic color: status · info · primary pressed.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-info-primary-pressed)"
+              }
+            }
+          }
+        },
+        "on-primary": {
+          "$value": "{palette.neutral.950}",
+          "$description": "Semantic color: status · info · on primary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-info-on-primary)"
+              }
+            }
+          }
+        },
+        "secondary": {
+          "$value": "{palette.info.950}",
+          "$description": "Semantic color: status · info · secondary.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-info-secondary)"
+              }
+            }
+          }
+        },
+        "secondary-border": {
+          "$value": "{palette.info.800}",
+          "$description": "Semantic color: status · info · secondary border.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-info-secondary-border)"
+              }
+            }
+          }
+        },
+        "secondary-text": {
+          "$value": "{palette.info.300}",
+          "$description": "Semantic color: status · info · secondary text.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-color-status-info-secondary-text)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "shadow": {
+      "key": {
+        "$value": "{palette.overlay-black.40}",
+        "$description": "Shadow key layer (close, sharp). Darker in Dark mode to stay visible.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-shadow-key)"
+            }
+          }
+        }
+      },
+      "ambient": {
+        "$value": "{palette.overlay-black.24}",
+        "$description": "Shadow ambient layer (wide, soft).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-shadow-ambient)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "padding": {
+      "xs": {
+        "$value": "{space.1}",
+        "$description": "Semantic spacing: padding · xs.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-padding-xs)"
+            }
+          }
+        }
+      },
+      "sm": {
+        "$value": "{space.2}",
+        "$description": "Semantic spacing: padding · S.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-padding-sm)"
+            }
+          }
+        }
+      },
+      "md": {
+        "$value": "{space.3}",
+        "$description": "Semantic spacing: padding · M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-padding-md)"
+            }
+          }
+        }
+      },
+      "lg": {
+        "$value": "{space.4}",
+        "$description": "Semantic spacing: padding · L.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-padding-lg)"
+            }
+          }
+        }
+      },
+      "xl": {
+        "$value": "{space.6}",
+        "$description": "Semantic spacing: padding · xl.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-padding-xl)"
+            }
+          }
+        }
+      },
+      "2xl": {
+        "$value": "{space.8}",
+        "$description": "Semantic spacing: padding · 2xl.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-padding-2xl)"
+            }
+          }
+        }
+      },
+      "2xs": {
+        "$value": "{space.0-5}",
+        "$description": "Hairline inset 2: switch thumb inset, tight compact elements.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-padding-2xs)"
+            }
+          }
+        }
+      }
+    },
+    "gap": {
+      "xs": {
+        "$value": "{space.1}",
+        "$description": "Semantic spacing: gap · xs.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-gap-xs)"
+            }
+          }
+        }
+      },
+      "sm": {
+        "$value": "{space.2}",
+        "$description": "Semantic spacing: gap · S.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-gap-sm)"
+            }
+          }
+        }
+      },
+      "md": {
+        "$value": "{space.3}",
+        "$description": "Semantic spacing: gap · M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-gap-md)"
+            }
+          }
+        }
+      },
+      "lg": {
+        "$value": "{space.4}",
+        "$description": "Semantic spacing: gap · L.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-gap-lg)"
+            }
+          }
+        }
+      },
+      "xl": {
+        "$value": "{space.6}",
+        "$description": "Semantic spacing: gap · xl.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-gap-xl)"
+            }
+          }
+        }
+      }
+    },
+    "section": {
+      "sm": {
+        "$value": "{space.8}",
+        "$description": "Semantic spacing: section · S.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-section-sm)"
+            }
+          }
+        }
+      },
+      "md": {
+        "$value": "{space.12}",
+        "$description": "Semantic spacing: section · M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-section-md)"
+            }
+          }
+        }
+      },
+      "lg": {
+        "$value": "{space.16}",
+        "$description": "Semantic spacing: section · L.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-spacing-section-lg)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "shape": {
+    "$type": "dimension",
+    "radius": {
+      "none": {
+        "$value": "{radius.0}",
+        "$description": "Semantic shape: corner radius · none.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-radius-none)"
+            }
+          }
+        }
+      },
+      "sm": {
+        "$value": "{radius.1}",
+        "$description": "Semantic shape: corner radius · S.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-radius-sm)"
+            }
+          }
+        }
+      },
+      "md": {
+        "$value": "{radius.2}",
+        "$description": "Semantic shape: corner radius · M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-radius-md)"
+            }
+          }
+        }
+      },
+      "lg": {
+        "$value": "{radius.3}",
+        "$description": "Semantic shape: corner radius · L.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-radius-lg)"
+            }
+          }
+        }
+      },
+      "xl": {
+        "$value": "{radius.4}",
+        "$description": "Semantic shape: corner radius · xl.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-radius-xl)"
+            }
+          }
+        }
+      },
+      "full": {
+        "$value": "{radius.full}",
+        "$description": "Semantic shape: corner radius · full.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-radius-full)"
+            }
+          }
+        }
+      }
+    },
+    "border-width": {
+      "sm": {
+        "$value": "{border-width.thin}",
+        "$description": "Semantic shape: border width · S.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-border-width-sm)"
+            }
+          }
+        }
+      },
+      "md": {
+        "$value": "{border-width.medium}",
+        "$description": "Semantic shape: border width · M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-shape-border-width-md)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "control": {
+    "$type": "dimension",
+    "height": {
+      "sm": {
+        "$value": "{size.8}",
+        "$description": "Semantic control: height · S.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-sm)"
+            }
+          }
+        }
+      },
+      "md": {
+        "$value": "{size.10}",
+        "$description": "Semantic control: height · M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-md)"
+            }
+          }
+        }
+      },
+      "lg": {
+        "$value": "{size.12}",
+        "$description": "Semantic control: height · L.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-lg)"
+            }
+          }
+        }
+      },
+      "xs": {
+        "$value": "{size.6}",
+        "$description": "Compact element height 24: badge L, chips, small tags.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-xs)"
+            }
+          }
+        }
+      },
+      "2xs": {
+        "$value": "{size.5}",
+        "$description": "Compact element height 20: badge M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-2xs)"
+            }
+          }
+        }
+      },
+      "3xs": {
+        "$value": "{size.4}",
+        "$description": "Compact element height 16: badge S, counters.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-3xs)"
+            }
+          }
+        }
+      }
+    },
+    "icon-size": {
+      "sm": {
+        "$value": "{size.4}",
+        "$description": "Semantic control: icon size · S.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-icon-size-sm)"
+            }
+          }
+        }
+      },
+      "md": {
+        "$value": "{size.5}",
+        "$description": "Semantic control: icon size · M.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-icon-size-md)"
+            }
+          }
+        }
+      },
+      "lg": {
+        "$value": "{size.6}",
+        "$description": "Semantic control: icon size · L.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-icon-size-lg)"
+            }
+          }
+        }
+      },
+      "xs": {
+        "$value": "{size.3}",
+        "$description": "Extra-small icon (12px) for badges and chips",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-icon-size-xs)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "font-family": {
+      "$type": "fontFamily",
+      "font": {
+        "$value": "{font.family.Inter}",
+        "$description": "Semantic typography: font family · font.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-typography-font-family-font)"
+            }
+          }
+        }
+      }
+    },
+    "heading": {
+      "xl": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.32}",
+          "$description": "Semantic typography: heading · xl · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-xl-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.40}",
+          "$description": "Semantic typography: heading · xl · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-xl-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.bold}",
+          "$description": "Semantic typography: heading · xl · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-xl-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "lg": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.24}",
+          "$description": "Semantic typography: heading · L · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-lg-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.32}",
+          "$description": "Semantic typography: heading · L · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-lg-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.bold}",
+          "$description": "Semantic typography: heading · L · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-lg-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.20}",
+          "$description": "Semantic typography: heading · M · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-md-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.28}",
+          "$description": "Semantic typography: heading · M · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-md-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.semibold}",
+          "$description": "Semantic typography: heading · M · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-md-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "sm": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.16}",
+          "$description": "Semantic typography: heading · S · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-sm-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.24}",
+          "$description": "Semantic typography: heading · S · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-sm-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.semibold}",
+          "$description": "Semantic typography: heading · S · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-sm-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "2xl": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.40}",
+          "$description": "H1 / page title font size",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-2xl-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.48}",
+          "$description": "H1 / page title line height",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-2xl-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.bold}",
+          "$description": "H1 / page title font weight",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-2xl-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "3xl": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.64}",
+          "$description": "Display / marketing hero font size (desktop)",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-3xl-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.72}",
+          "$description": "Display / marketing hero line height (desktop)",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-3xl-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.bold}",
+          "$description": "Display / marketing hero font weight",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-heading-3xl-font-weight)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "body": {
+      "lg": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.16}",
+          "$description": "Semantic typography: body · L · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-lg-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.24}",
+          "$description": "Semantic typography: body · L · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-lg-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.regular}",
+          "$description": "Semantic typography: body · L · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-lg-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.14}",
+          "$description": "Semantic typography: body · M · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-md-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.20}",
+          "$description": "Semantic typography: body · M · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-md-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.regular}",
+          "$description": "Semantic typography: body · M · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-md-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "sm": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.12}",
+          "$description": "Semantic typography: body · S · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-sm-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.16}",
+          "$description": "Semantic typography: body · S · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-sm-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.regular}",
+          "$description": "Semantic typography: body · S · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-body-sm-font-weight)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "label": {
+      "lg": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.16}",
+          "$description": "Semantic typography: label · L · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-lg-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.24}",
+          "$description": "Semantic typography: label · L · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-lg-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.medium}",
+          "$description": "Semantic typography: label · L · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-lg-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "md": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.14}",
+          "$description": "Semantic typography: label · M · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-md-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.24}",
+          "$description": "Semantic typography: label · M · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-md-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.medium}",
+          "$description": "Semantic typography: label · M · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-md-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "sm": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.12}",
+          "$description": "Semantic typography: label · S · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-sm-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.16}",
+          "$description": "Semantic typography: label · S · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-sm-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.medium}",
+          "$description": "Semantic typography: label · S · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-label-sm-font-weight)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "code": {
+      "md": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.14}",
+          "$description": "Semantic typography: code · M · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-code-md-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.20}",
+          "$description": "Semantic typography: code · M · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-code-md-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.regular}",
+          "$description": "Semantic typography: code · M · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-code-md-font-weight)"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "opacity": {
+    "$type": "number",
+    "disabled": {
+      "$value": "{opacity.38}",
+      "$description": "Semantic opacity: disabled.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Semantic",
+          "codeSyntax": {
+            "WEB": "var(--ot-opacity-disabled)"
+          }
+        }
+      }
+    },
+    "pressed": {
+      "$value": "{opacity.12}",
+      "$description": "Semantic opacity: pressed.",
+      "$extensions": {
+        "com.figma": {
+          "collection": "Semantic",
+          "codeSyntax": {
+            "WEB": "var(--ot-opacity-pressed)"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "$type": "dimension",
+    "sm": {
+      "key-y": {
+        "$value": "{space.0-25}",
+        "$description": "Elevation SM · key y — raised small surfaces: selected segment, switch thumb, card on page.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-sm-key-y)"
+            }
+          }
+        }
+      },
+      "key-blur": {
+        "$value": "{space.0-5}",
+        "$description": "Elevation SM · key blur — raised small surfaces: selected segment, switch thumb, card on page.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-sm-key-blur)"
+            }
+          }
+        }
+      },
+      "ambient-y": {
+        "$value": "{space.0-25}",
+        "$description": "Elevation SM · ambient y — raised small surfaces: selected segment, switch thumb, card on page.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-sm-ambient-y)"
+            }
+          }
+        }
+      },
+      "ambient-blur": {
+        "$value": "{space.1}",
+        "$description": "Elevation SM · ambient blur — raised small surfaces: selected segment, switch thumb, card on page.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-sm-ambient-blur)"
+            }
+          }
+        }
+      }
+    },
+    "md": {
+      "key-y": {
+        "$value": "{space.1}",
+        "$description": "Elevation MD · key y — floating UI: dropdown, menu, popover, tooltip, toast.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-md-key-y)"
+            }
+          }
+        }
+      },
+      "key-blur": {
+        "$value": "{space.2}",
+        "$description": "Elevation MD · key blur — floating UI: dropdown, menu, popover, tooltip, toast.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-md-key-blur)"
+            }
+          }
+        }
+      },
+      "ambient-y": {
+        "$value": "{space.2}",
+        "$description": "Elevation MD · ambient y — floating UI: dropdown, menu, popover, tooltip, toast.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-md-ambient-y)"
+            }
+          }
+        }
+      },
+      "ambient-blur": {
+        "$value": "{space.6}",
+        "$description": "Elevation MD · ambient blur — floating UI: dropdown, menu, popover, tooltip, toast.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-md-ambient-blur)"
+            }
+          }
+        }
+      }
+    },
+    "lg": {
+      "key-y": {
+        "$value": "{space.2}",
+        "$description": "Elevation LG · key y — modal layer: dialog, drawer, sheet.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-lg-key-y)"
+            }
+          }
+        }
+      },
+      "key-blur": {
+        "$value": "{space.4}",
+        "$description": "Elevation LG · key blur — modal layer: dialog, drawer, sheet.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-lg-key-blur)"
+            }
+          }
+        }
+      },
+      "ambient-y": {
+        "$value": "{space.6}",
+        "$description": "Elevation LG · ambient y — modal layer: dialog, drawer, sheet.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-lg-ambient-y)"
+            }
+          }
+        }
+      },
+      "ambient-blur": {
+        "$value": "{space.12}",
+        "$description": "Elevation LG · ambient blur — modal layer: dialog, drawer, sheet.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-elevation-lg-ambient-blur)"
+            }
+          }
+        }
+      }
+    }
+  }
+}

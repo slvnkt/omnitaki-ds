@@ -1,0 +1,150 @@
+color/bg/primary|C|{palette/white},{palette/neutral/950}|Semantic color: background · primary.
+color/bg/secondary|C|{palette/neutral/50},{palette/neutral/900}|Semantic color: background · secondary.
+color/bg/tertiary|C|{palette/neutral/100},{palette/neutral/800}|Semantic color: background · tertiary.
+color/bg/inverse|C|{palette/neutral/900},{palette/neutral/50}|Semantic color: background · inverse.
+color/bg/overlay|C|{palette/overlay-black/40},{palette/overlay-black/40}|Semantic color: background · overlay.
+color/bg/transparent|C|{palette/transparent},{palette/transparent}|Semantic color: background · transparent.
+color/text/primary|C|{palette/neutral/900},{palette/neutral/50}|Semantic color: text · primary.
+color/text/secondary|C|{palette/neutral/600},{palette/neutral/300}|Semantic color: text · secondary.
+color/text/tertiary|C|{palette/neutral/600},{palette/neutral/400}|Semantic color: text · tertiary.
+color/text/disabled|C|{palette/neutral/400},{palette/neutral/600}|Text, icons and glyphs (check, radio dot) of disabled controls.
+color/text/inverse|C|{palette/white},{palette/neutral/950}|Semantic color: text · inverse.
+color/text/link|C|{palette/green/700},{palette/lime/300}|Semantic color: text · link.
+color/text/link-hover|C|{palette/green/800},{palette/lime/200}|Semantic color: text · link hover.
+color/border/primary|C|{palette/neutral/200},{palette/neutral/700}|Semantic color: border · primary.
+color/border/secondary|C|{palette/neutral/500},{palette/neutral/500}|Semantic color: border · secondary.
+color/border/focus|C|{palette/neutral/900},{palette/neutral/50}|Keyboard focus ring: neutral high-contrast stroke (black in Light, white in Dark), same for all controls and types incl. Primary/Danger — like Fluent colorStrokeFocus2. Fields use border/strong instead.
+color/brand/primary|C|{palette/green/500},{palette/lime/300}|Semantic color: brand · primary.
+color/brand/primary-hover|C|{palette/green/400},{palette/lime/200}|Semantic color: brand · primary hover.
+color/brand/primary-pressed|C|{palette/green/300},{palette/lime/400}|Semantic color: brand · primary pressed.
+color/brand/on-primary|C|{palette/neutral/950},{palette/neutral/950}|Semantic color: brand · on primary.
+color/brand/secondary|C|{palette/green/50},{palette/lime/950}|Semantic color: brand · secondary.
+color/brand/secondary-hover|C|{palette/green/100},{palette/lime/900}|Semantic color: brand · secondary hover.
+color/brand/secondary-text|C|{palette/green/800},{palette/lime/300}|Semantic color: brand · secondary text.
+color/brand/secondary-border|C|{palette/green/200},{palette/lime/800}|Semantic color: brand · secondary border.
+color/bg/subtle-hover|C|{palette/overlay-black/4},{palette/overlay-white/8}|Hover overlay for transparent (subtle) controls: secondary/ghost button, tab, list item, neutral switch track.
+color/bg/subtle-pressed|C|{palette/overlay-black/8},{palette/overlay-white/12}|Pressed overlay for transparent (subtle) controls: secondary/ghost button, tab.
+color/bg/disabled|C|{palette/neutral/100},{palette/neutral/800}|Background of disabled controls: button, field, checkbox, switch track.
+color/border/disabled|C|{palette/neutral/200},{palette/neutral/700}|Border of disabled controls and disabled tab indicator.
+color/status/success/primary|C|{palette/success/600},{palette/success/400}|Semantic color: status · success · primary.
+color/status/success/primary-hover|C|{palette/success/700},{palette/success/300}|Semantic color: status · success · primary hover.
+color/status/success/primary-pressed|C|{palette/success/800},{palette/success/500}|Semantic color: status · success · primary pressed.
+color/status/success/on-primary|C|{palette/white},{palette/neutral/950}|Semantic color: status · success · on primary.
+color/status/success/secondary|C|{palette/success/50},{palette/success/950}|Semantic color: status · success · secondary.
+color/status/success/secondary-border|C|{palette/success/200},{palette/success/800}|Semantic color: status · success · secondary border.
+color/status/success/secondary-text|C|{palette/success/800},{palette/success/300}|Semantic color: status · success · secondary text.
+color/status/warning/primary|C|{palette/warning/500},{palette/warning/400}|Semantic color: status · warning · primary.
+color/status/warning/primary-hover|C|{palette/warning/400},{palette/warning/300}|Semantic color: status · warning · primary hover.
+color/status/warning/primary-pressed|C|{palette/warning/300},{palette/warning/500}|Semantic color: status · warning · primary pressed.
+color/status/warning/on-primary|C|{palette/neutral/950},{palette/neutral/950}|Semantic color: status · warning · on primary.
+color/status/warning/secondary|C|{palette/warning/50},{palette/warning/950}|Semantic color: status · warning · secondary.
+color/status/warning/secondary-border|C|{palette/warning/200},{palette/warning/800}|Semantic color: status · warning · secondary border.
+color/status/warning/secondary-text|C|{palette/warning/900},{palette/warning/300}|Semantic color: status · warning · secondary text.
+color/status/danger/primary|C|{palette/danger/600},{palette/danger/400}|Semantic color: status · danger · primary.
+color/status/danger/primary-hover|C|{palette/danger/700},{palette/danger/300}|Semantic color: status · danger · primary hover.
+color/status/danger/primary-pressed|C|{palette/danger/800},{palette/danger/500}|Semantic color: status · danger · primary pressed.
+color/status/danger/on-primary|C|{palette/white},{palette/neutral/950}|Semantic color: status · danger · on primary.
+color/status/danger/secondary|C|{palette/danger/50},{palette/danger/950}|Semantic color: status · danger · secondary.
+color/status/danger/secondary-border|C|{palette/danger/200},{palette/danger/800}|Semantic color: status · danger · secondary border.
+color/status/danger/secondary-text|C|{palette/danger/800},{palette/danger/300}|Semantic color: status · danger · secondary text.
+color/status/info/primary|C|{palette/info/600},{palette/info/400}|Semantic color: status · info · primary.
+color/status/info/primary-hover|C|{palette/info/700},{palette/info/300}|Semantic color: status · info · primary hover.
+color/status/info/primary-pressed|C|{palette/info/800},{palette/info/500}|Semantic color: status · info · primary pressed.
+color/status/info/on-primary|C|{palette/white},{palette/neutral/950}|Semantic color: status · info · on primary.
+color/status/info/secondary|C|{palette/info/50},{palette/info/950}|Semantic color: status · info · secondary.
+color/status/info/secondary-border|C|{palette/info/200},{palette/info/800}|Semantic color: status · info · secondary border.
+color/status/info/secondary-text|C|{palette/info/800},{palette/info/300}|Semantic color: status · info · secondary text.
+spacing/padding/xs|F|{space/1},{space/1}|Semantic spacing: padding · xs.
+spacing/padding/sm|F|{space/2},{space/2}|Semantic spacing: padding · S.
+spacing/padding/md|F|{space/3},{space/3}|Semantic spacing: padding · M.
+spacing/padding/lg|F|{space/4},{space/4}|Semantic spacing: padding · L.
+spacing/padding/xl|F|{space/6},{space/6}|Semantic spacing: padding · xl.
+spacing/padding/2xl|F|{space/8},{space/8}|Semantic spacing: padding · 2xl.
+spacing/gap/xs|F|{space/1},{space/1}|Semantic spacing: gap · xs.
+spacing/gap/sm|F|{space/2},{space/2}|Semantic spacing: gap · S.
+spacing/gap/md|F|{space/3},{space/3}|Semantic spacing: gap · M.
+spacing/gap/lg|F|{space/4},{space/4}|Semantic spacing: gap · L.
+spacing/gap/xl|F|{space/6},{space/6}|Semantic spacing: gap · xl.
+spacing/section/sm|F|{space/8},{space/8}|Semantic spacing: section · S.
+spacing/section/md|F|{space/12},{space/12}|Semantic spacing: section · M.
+spacing/section/lg|F|{space/16},{space/16}|Semantic spacing: section · L.
+shape/radius/none|F|{radius/0},{radius/0}|Semantic shape: corner radius · none.
+shape/radius/sm|F|{radius/1},{radius/1}|Semantic shape: corner radius · S.
+shape/radius/md|F|{radius/2},{radius/2}|Semantic shape: corner radius · M.
+shape/radius/lg|F|{radius/3},{radius/3}|Semantic shape: corner radius · L.
+shape/radius/xl|F|{radius/4},{radius/4}|Semantic shape: corner radius · xl.
+shape/radius/full|F|{radius/full},{radius/full}|Semantic shape: corner radius · full.
+shape/border-width/sm|F|{border-width/thin},{border-width/thin}|Semantic shape: border width · S.
+shape/border-width/md|F|{border-width/medium},{border-width/medium}|Semantic shape: border width · M.
+control/height/sm|F|{size/8},{size/8}|Semantic control: height · S.
+control/height/md|F|{size/10},{size/10}|Semantic control: height · M.
+control/height/lg|F|{size/12},{size/12}|Semantic control: height · L.
+control/icon-size/sm|F|{size/4},{size/4}|Semantic control: icon size · S.
+control/icon-size/md|F|{size/5},{size/5}|Semantic control: icon size · M.
+control/icon-size/lg|F|{size/6},{size/6}|Semantic control: icon size · L.
+typography/font-family/font|S|{font/family/Inter},{font/family/Inter}|Semantic typography: font family · font.
+opacity/disabled|F|{opacity/38},{opacity/38}|Semantic opacity: disabled.
+opacity/pressed|F|{opacity/12},{opacity/12}|Semantic opacity: pressed.
+typography/heading/xl/font-size|F|{font/size/32},{font/size/32}|Semantic typography: heading · xl · font size.
+typography/heading/xl/line-height|F|{font/line-height/40},{font/line-height/40}|Semantic typography: heading · xl · line height.
+typography/heading/xl/font-weight|F|{font/weight/bold},{font/weight/bold}|Semantic typography: heading · xl · font weight.
+typography/heading/lg/font-size|F|{font/size/24},{font/size/24}|Semantic typography: heading · L · font size.
+typography/heading/lg/line-height|F|{font/line-height/32},{font/line-height/32}|Semantic typography: heading · L · line height.
+typography/heading/lg/font-weight|F|{font/weight/bold},{font/weight/bold}|Semantic typography: heading · L · font weight.
+typography/heading/md/font-size|F|{font/size/20},{font/size/20}|Semantic typography: heading · M · font size.
+typography/heading/md/line-height|F|{font/line-height/28},{font/line-height/28}|Semantic typography: heading · M · line height.
+typography/heading/md/font-weight|F|{font/weight/semibold},{font/weight/semibold}|Semantic typography: heading · M · font weight.
+typography/heading/sm/font-size|F|{font/size/16},{font/size/16}|Semantic typography: heading · S · font size.
+typography/heading/sm/line-height|F|{font/line-height/24},{font/line-height/24}|Semantic typography: heading · S · line height.
+typography/heading/sm/font-weight|F|{font/weight/semibold},{font/weight/semibold}|Semantic typography: heading · S · font weight.
+typography/body/lg/font-size|F|{font/size/16},{font/size/16}|Semantic typography: body · L · font size.
+typography/body/lg/line-height|F|{font/line-height/24},{font/line-height/24}|Semantic typography: body · L · line height.
+typography/body/lg/font-weight|F|{font/weight/regular},{font/weight/regular}|Semantic typography: body · L · font weight.
+typography/body/md/font-size|F|{font/size/14},{font/size/14}|Semantic typography: body · M · font size.
+typography/body/md/line-height|F|{font/line-height/20},{font/line-height/20}|Semantic typography: body · M · line height.
+typography/body/md/font-weight|F|{font/weight/regular},{font/weight/regular}|Semantic typography: body · M · font weight.
+typography/body/sm/font-size|F|{font/size/12},{font/size/12}|Semantic typography: body · S · font size.
+typography/body/sm/line-height|F|{font/line-height/16},{font/line-height/16}|Semantic typography: body · S · line height.
+typography/body/sm/font-weight|F|{font/weight/regular},{font/weight/regular}|Semantic typography: body · S · font weight.
+typography/label/lg/font-size|F|{font/size/16},{font/size/16}|Semantic typography: label · L · font size.
+typography/label/lg/line-height|F|{font/line-height/24},{font/line-height/24}|Semantic typography: label · L · line height.
+typography/label/lg/font-weight|F|{font/weight/medium},{font/weight/medium}|Semantic typography: label · L · font weight.
+typography/label/md/font-size|F|{font/size/14},{font/size/14}|Semantic typography: label · M · font size.
+typography/label/md/line-height|F|{font/line-height/24},{font/line-height/24}|Semantic typography: label · M · line height.
+typography/label/md/font-weight|F|{font/weight/medium},{font/weight/medium}|Semantic typography: label · M · font weight.
+typography/label/sm/font-size|F|{font/size/12},{font/size/12}|Semantic typography: label · S · font size.
+typography/label/sm/line-height|F|{font/line-height/16},{font/line-height/16}|Semantic typography: label · S · line height.
+typography/label/sm/font-weight|F|{font/weight/medium},{font/weight/medium}|Semantic typography: label · S · font weight.
+typography/code/md/font-size|F|{font/size/14},{font/size/14}|Semantic typography: code · M · font size.
+typography/code/md/line-height|F|{font/line-height/20},{font/line-height/20}|Semantic typography: code · M · line height.
+typography/code/md/font-weight|F|{font/weight/regular},{font/weight/regular}|Semantic typography: code · M · font weight.
+typography/heading/2xl/font-size|F|{font/size/40},{font/size/40}|H1 / page title font size
+typography/heading/2xl/line-height|F|{font/line-height/48},{font/line-height/48}|H1 / page title line height
+typography/heading/2xl/font-weight|F|{font/weight/bold},{font/weight/bold}|H1 / page title font weight
+typography/heading/3xl/font-size|F|{font/size/64},{font/size/64}|Display / marketing hero font size (desktop)
+typography/heading/3xl/line-height|F|{font/line-height/72},{font/line-height/72}|Display / marketing hero line height (desktop)
+typography/heading/3xl/font-weight|F|{font/weight/bold},{font/weight/bold}|Display / marketing hero font weight
+control/icon-size/xs|F|{size/3},{size/3}|Extra-small icon (12px) for badges and chips
+color/border/secondary-hover|C|{palette/neutral/600},{palette/neutral/400}|Hovered border of interactive fields (one step stronger than border/secondary)
+color/border/strong|C|{palette/neutral/700},{palette/neutral/300}|High-emphasis border: focused / active fields
+color/bg/hover|C|{palette/neutral/25},{palette/neutral/900}|Opaque surface for hovered fields/rows (lighter than bg/secondary, never confused with disabled/readonly)
+control/height/xs|F|{size/6},{size/6}|Compact element height 24: badge L, chips, small tags.
+control/height/2xs|F|{size/5},{size/5}|Compact element height 20: badge M.
+control/height/3xs|F|{size/4},{size/4}|Compact element height 16: badge S, counters.
+color/bg/elevated|C|{palette/white},{palette/neutral/800}|Raised surface above the page or a grey track: selected segmented tab, later card/menu/popover. Light white, Dark one step lighter than bg.
+spacing/padding/2xs|F|{space/0-5},{space/0-5}|Hairline inset 2: switch thumb inset, tight compact elements.
+color/bg/thumb|C|{palette/white},{palette/neutral/200}|Thumb on a neutral track (switch off, later slider): white in Light, light neutral in Dark for contrast on dark tracks.
+color/shadow/key|C|{palette/overlay-black/8},{palette/overlay-black/40}|Shadow key layer (close, sharp). Darker in Dark mode to stay visible.
+color/shadow/ambient|C|{palette/overlay-black/4},{palette/overlay-black/24}|Shadow ambient layer (wide, soft).
+elevation/sm/key-y|F|{space/0-25},{space/0-25}|Elevation SM · key y — raised small surfaces: selected segment, switch thumb, card on page.
+elevation/sm/key-blur|F|{space/0-5},{space/0-5}|Elevation SM · key blur — raised small surfaces: selected segment, switch thumb, card on page.
+elevation/sm/ambient-y|F|{space/0-25},{space/0-25}|Elevation SM · ambient y — raised small surfaces: selected segment, switch thumb, card on page.
+elevation/sm/ambient-blur|F|{space/1},{space/1}|Elevation SM · ambient blur — raised small surfaces: selected segment, switch thumb, card on page.
+elevation/md/key-y|F|{space/1},{space/1}|Elevation MD · key y — floating UI: dropdown, menu, popover, tooltip, toast.
+elevation/md/key-blur|F|{space/2},{space/2}|Elevation MD · key blur — floating UI: dropdown, menu, popover, tooltip, toast.
+elevation/md/ambient-y|F|{space/2},{space/2}|Elevation MD · ambient y — floating UI: dropdown, menu, popover, tooltip, toast.
+elevation/md/ambient-blur|F|{space/6},{space/6}|Elevation MD · ambient blur — floating UI: dropdown, menu, popover, tooltip, toast.
+elevation/lg/key-y|F|{space/2},{space/2}|Elevation LG · key y — modal layer: dialog, drawer, sheet.
+elevation/lg/key-blur|F|{space/4},{space/4}|Elevation LG · key blur — modal layer: dialog, drawer, sheet.
+elevation/lg/ambient-y|F|{space/6},{space/6}|Elevation LG · ambient y — modal layer: dialog, drawer, sheet.
+elevation/lg/ambient-blur|F|{space/12},{space/12}|Elevation LG · ambient blur — modal layer: dialog, drawer, sheet.

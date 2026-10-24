@@ -1,0 +1,157 @@
+/* Button — Figma: Omnitaki DS › Button (22:32). Tokens: button/* (sizes) + Semantic colors. */
+
+.ot-button {
+  /* Per-type colors, set by modifiers below (Semantic tokens only) */
+  --_bg: var(--ot-color-bg-transparent);
+  --_border: var(--ot-color-bg-transparent);
+  --_fg: var(--ot-color-text-primary);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: var(--ot-button-border-width) solid var(--_border);
+  border-radius: var(--ot-button-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Size ── */
+.ot-button--sm {
+  height: var(--ot-button-size-sm-height);
+  padding: var(--ot-button-size-sm-padding-y) var(--ot-button-size-sm-padding-x);
+  gap: var(--ot-button-size-sm-gap);
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+  --_icon-size: var(--ot-button-size-sm-icon-size);
+}
+.ot-button--md {
+  height: var(--ot-button-size-md-height);
+  padding: var(--ot-button-size-md-padding-y) var(--ot-button-size-md-padding-x);
+  gap: var(--ot-button-size-md-gap);
+  font-size: var(--ot-typography-label-md-font-size);
+  line-height: var(--ot-typography-label-md-line-height);
+  font-weight: var(--ot-typography-label-md-font-weight);
+  --_icon-size: var(--ot-button-size-md-icon-size);
+}
+.ot-button--lg {
+  height: var(--ot-button-size-lg-height);
+  padding: var(--ot-button-size-lg-padding-y) var(--ot-button-size-lg-padding-x);
+  gap: var(--ot-button-size-lg-gap);
+  font-size: var(--ot-typography-label-lg-font-size);
+  line-height: var(--ot-typography-label-lg-line-height);
+  font-weight: var(--ot-typography-label-lg-font-weight);
+  --_icon-size: var(--ot-button-size-lg-icon-size);
+}
+
+.ot-button__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+}
+.ot-button__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Type ──
+   data-preview-state forces a state for docs/visual tests (Storybook AllVariants). */
+
+/* Primary */
+.ot-button--primary {
+  --_bg: var(--ot-color-brand-primary);
+  --_border: var(--ot-color-brand-primary);
+  --_fg: var(--ot-color-brand-on-primary);
+}
+.ot-button--primary:hover:not(:disabled),
+.ot-button--primary[data-preview-state='hover'] {
+  --_bg: var(--ot-color-brand-primary-hover);
+  --_border: var(--ot-color-brand-primary-hover);
+}
+.ot-button--primary:active:not(:disabled),
+.ot-button--primary[data-preview-state='pressed'] {
+  --_bg: var(--ot-color-brand-primary-pressed);
+  --_border: var(--ot-color-brand-primary-pressed);
+}
+
+/* Secondary */
+.ot-button--secondary {
+  --_bg: var(--ot-color-bg-transparent);
+  --_border: var(--ot-color-border-secondary);
+  --_fg: var(--ot-color-text-primary);
+}
+.ot-button--secondary:hover:not(:disabled),
+.ot-button--secondary[data-preview-state='hover'] {
+  --_bg: var(--ot-color-bg-subtle-hover);
+}
+.ot-button--secondary:active:not(:disabled),
+.ot-button--secondary[data-preview-state='pressed'] {
+  --_bg: var(--ot-color-bg-subtle-pressed);
+}
+
+/* Ghost — no visible border, width kept so all types share one box size */
+.ot-button--ghost {
+  --_bg: var(--ot-color-bg-transparent);
+  --_border: var(--ot-color-bg-transparent);
+  --_fg: var(--ot-color-text-primary);
+}
+.ot-button--ghost:hover:not(:disabled),
+.ot-button--ghost[data-preview-state='hover'] {
+  --_bg: var(--ot-color-bg-subtle-hover);
+}
+.ot-button--ghost:active:not(:disabled),
+.ot-button--ghost[data-preview-state='pressed'] {
+  --_bg: var(--ot-color-bg-subtle-pressed);
+}
+
+/* Danger */
+.ot-button--danger {
+  --_bg: var(--ot-color-status-danger-primary);
+  --_border: var(--ot-color-status-danger-primary);
+  --_fg: var(--ot-color-status-danger-on-primary);
+}
+.ot-button--danger:hover:not(:disabled),
+.ot-button--danger[data-preview-state='hover'] {
+  --_bg: var(--ot-color-status-danger-primary-hover);
+  --_border: var(--ot-color-status-danger-primary-hover);
+}
+.ot-button--danger:active:not(:disabled),
+.ot-button--danger[data-preview-state='pressed'] {
+  --_bg: var(--ot-color-status-danger-primary-pressed);
+  --_border: var(--ot-color-status-danger-primary-pressed);
+}
+
+/* ── Focus: one neutral ring for every type (OUTSIDE, = Figma "Focus ring" layer) ── */
+.ot-button:focus {
+  outline: none;
+}
+.ot-button:focus-visible,
+.ot-button[data-preview-state='focus'] {
+  outline: var(--ot-button-focus-ring-width) solid var(--ot-color-border-focus);
+  outline-offset: 0;
+}
+
+/* ── Disabled ── */
+.ot-button:disabled {
+  --_fg: var(--ot-color-text-disabled);
+  cursor: not-allowed;
+}
+.ot-button--primary:disabled,
+.ot-button--danger:disabled {
+  --_bg: var(--ot-color-bg-disabled);
+  --_border: var(--ot-color-border-disabled);
+}
+.ot-button--secondary:disabled {
+  --_border: var(--ot-color-border-disabled);
+}
