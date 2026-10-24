@@ -1,0 +1,167 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CaretDown, FloppyDisk, Plus, Trash } from '@phosphor-icons/react'
+
+import * as ButtonStories from './Button.stories'
+import { Button } from './Button'
+
+<Meta of={ButtonStories} name="Guidelines" />
+
+export const Row = ({ children }) => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'var(--ot-spacing-gap-md)' }}>{children}</div>
+)
+
+export const Rule = ({ kind, title, children, example }) => {
+  const ok = kind === 'do'
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gap: 'var(--ot-spacing-gap-md)',
+        padding: 'var(--ot-spacing-padding-lg)',
+        borderRadius: 'var(--ot-shape-radius-lg)',
+        border: 'var(--ot-shape-border-width-sm) solid var(--ot-color-border-primary)',
+        borderTop: `var(--ot-shape-border-width-md) solid var(${ok ? '--ot-color-status-success-primary' : '--ot-color-status-danger-primary'})`,
+        background: 'var(--ot-color-bg-primary)',
+      }}
+    >
+      <div
+        style={{
+          minHeight: 96,
+          display: 'grid',
+          placeItems: 'center',
+          padding: 'var(--ot-spacing-padding-lg)',
+          borderRadius: 'var(--ot-shape-radius-md)',
+          background: 'var(--ot-color-bg-secondary)',
+        }}
+      >
+        {example}
+      </div>
+      <div>
+        <div
+          className="ot-text-caption-caption-strong"
+          style={{ color: `var(${ok ? '--ot-color-status-success-secondary-text' : '--ot-color-status-danger-secondary-text'})` }}
+        >
+          {ok ? 'Do' : "Don't"}
+        </div>
+        <div className="ot-text-heading-subtitle-2" style={{ color: 'var(--ot-color-text-primary)' }}>{title}</div>
+        <div className="ot-text-body-body-1" style={{ color: 'var(--ot-color-text-secondary)' }}>{children}</div>
+      </div>
+    </div>
+  )
+}
+
+export const Rules = ({ children }) => (
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 'var(--ot-spacing-gap-lg)', margin: '16px 0 32px' }}>
+    {children}
+  </div>
+)
+
+# Button
+
+Buttons trigger an action: save, submit, open a menu, delete. For navigation to another page use a link, not a Button.
+
+<Canvas of={ButtonStories.Default} />
+<Controls of={ButtonStories.Default} />
+
+```tsx
+import { Button } from './components/Button'
+import { Plus } from '@phosphor-icons/react'
+
+<Button variant="primary" size="md" leadingIcon={<Plus />} onClick={create}>
+  Create project
+</Button>
+```
+
+## Choosing a type
+
+| Type | When to use | Example |
+|---|---|---|
+| `primary` | The single most important action of a screen, dialog or form | Save, Create, Continue |
+| `secondary` | Alternatives and supporting actions next to a primary | Cancel, Back, Export |
+| `ghost` | Low-emphasis actions in toolbars, cards, tables and dense UI | Edit, Filter, More |
+| `danger` | Destructive or hard-to-undo actions; usually confirmed in a dialog | Delete, Remove, Revoke |
+
+<Canvas of={ButtonStories.Variants} />
+
+## Size
+
+`sm` 32px · `md` 40px (default) · `lg` 48px. Heights match Input and Select of the same size — keep one size within a row or form. Use `lg` for marketing and touch-first layouts, `sm` for dense tables and toolbars.
+
+<Canvas of={ButtonStories.Sizes} />
+
+## Icons
+
+Icons are optional. Use a **leading** icon to reinforce the action (Plus for create, Trash for delete), a **trailing** `CaretDown` only when the button opens a menu. Use Phosphor icons from the DS set; the button sizes and colors them.
+
+<Canvas of={ButtonStories.WithIcons} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="One primary per area" example={<Row><Button variant="secondary">Cancel</Button><Button>Save changes</Button></Row>}>
+    Pair a single primary with secondary or ghost actions, primary last (right) in dialogs and forms.
+  </Rule>
+  <Rule kind="dont" title="Several primaries side by side" example={<Row><Button>Save</Button><Button>Publish</Button><Button>Share</Button></Row>}>
+    Competing primaries hide the main action. Demote the rest to secondary or ghost.
+  </Rule>
+  <Rule kind="do" title="Clear verb labels" example={<Row><Button leadingIcon={<FloppyDisk />}>Save draft</Button></Row>}>
+    Start with a verb and say what happens: "Save draft", "Add member". Sentence case, no period.
+  </Rule>
+  <Rule kind="dont" title="Vague or long labels" example={<Row><Button>OK</Button><Button variant="secondary">Click here to continue to the next step</Button></Row>}>
+    "OK", "Yes", "Click here" don't describe the action; long labels wrap poorly. Keep it to 1–3 words.
+  </Rule>
+  <Rule kind="do" title="Danger for destructive actions" example={<Row><Button variant="secondary">Keep</Button><Button variant="danger" leadingIcon={<Trash />}>Delete project</Button></Row>}>
+    Name the object ("Delete project") and confirm irreversible actions in a dialog.
+  </Rule>
+  <Rule kind="dont" title="Danger for emphasis" example={<Row><Button variant="danger">Upgrade plan</Button></Row>}>
+    Red means destructive. Don't use Danger to draw attention to a normal action.
+  </Rule>
+  <Rule kind="do" title="Match sizes in a row" example={<Row><Button size="md" variant="secondary">Back</Button><Button size="md">Next</Button></Row>}>
+    Controls of one size share one height (32/40/48) and align with fields.
+  </Rule>
+  <Rule kind="dont" title="Mix sizes or misuse the caret" example={<Row><Button size="sm" variant="secondary">Back</Button><Button size="lg" trailingIcon={<CaretDown />}>Next</Button></Row>}>
+    Mixed heights look broken; a trailing caret promises a menu — use it only when one opens.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Button renders a native `<button type="button">`, so semantics, focus and keyboard support come from the browser.
+
+### Keyboard
+
+| Key | Behavior |
+|---|---|
+| `Tab` / `Shift + Tab` | Moves focus to / away from the button. Disabled buttons are skipped. |
+| `Enter` | Activates the button (fires `onClick`). |
+| `Space` | Activates the button on key release (fires `onClick`). |
+
+- **Focus ring.** Keyboard focus shows a 2px neutral ring (`--ot-color-border-focus`, black in Light, white in Dark) on every type, via `:focus-visible` — it appears for keyboard users and not on mouse click. Never remove it with custom CSS.
+- **Order.** Keep DOM order equal to visual order so Tab moves left → right, top → bottom.
+- **Forms.** Inside a `<form>` the default `type="button"` never submits by accident; set `type="submit"` on the form's main action so `Enter` in a field submits it.
+
+### Screen readers
+
+- **Accessible name = label.** The visible text (`children`) is what is announced: "Save draft, button". Make it unique on the page — "Delete" ×10 in a table should become "Delete invoice #42" (visually hidden text or `aria-label`).
+- **Icons are decorative.** Leading/trailing icons are rendered with `aria-hidden="true"` and are not announced. An icon-only button needs an `aria-label` (use the IconButton component when it's added).
+- **Menus.** A button that opens a menu should set `aria-haspopup="menu"` and `aria-expanded={open}`; a toggle should use `aria-pressed`.
+- **Disabled.** Native `disabled` removes the button from Tab order and screen readers announce it as "dimmed/unavailable" only when browsing. If users need to discover *why* it's unavailable, keep it enabled and validate on click, or use `aria-disabled="true"` with a visible explanation.
+- **Loading.** While an async action runs, keep the label meaningful ("Saving…") and announce completion with a live region instead of relying on visuals.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Primary label on brand fill | 6.3 : 1 | 15.0 : 1 |
+| Danger label on danger fill | 4.8 : 1 | 5.8 : 1 |
+| Secondary / Ghost label on page | 16.0 : 1 | 15.3 : 1 |
+| Focus ring on page background | 16.0 : 1 | 15.3 : 1 |
+| Secondary border on page | 4.4 : 1 | 4.1 : 1 |
+
+All labels pass AA (4.5 : 1) and the ring and border pass the 3 : 1 non-text minimum. Disabled buttons are intentionally low-contrast; WCAG exempts inactive controls.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Button](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=22-32)
+- Sizes: `--ot-button-size-{sm|md|lg}-{height|padding-x|padding-y|gap|icon-size}`, `--ot-button-radius`, `--ot-button-border-width`, `--ot-button-focus-ring-width`
+- Colors (Semantic): `--ot-color-brand-*`, `--ot-color-status-danger-*`, `--ot-color-bg-subtle-hover|subtle-pressed|disabled`, `--ot-color-border-secondary|disabled|focus`, `--ot-color-text-primary|disabled`

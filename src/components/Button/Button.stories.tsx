@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { CaretDown, MagnifyingGlass, Plus, Star, X } from '@phosphor-icons/react'
+import { fn } from 'storybook/test'
 
 import { Button, type ButtonSize, type ButtonVariant } from './Button'
 
@@ -21,6 +22,7 @@ const STATES = ['default', 'hover', 'pressed', 'focus', 'disabled'] as const
 const meta = {
   title: 'Components/Button',
   component: Button,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     design: {
@@ -33,21 +35,27 @@ const meta = {
     variant: 'primary',
     size: 'md',
     disabled: false,
+    onClick: fn(),
   },
   argTypes: {
     variant: { control: 'inline-radio', options: VARIANTS },
     size: { control: 'inline-radio', options: SIZES },
     leadingIcon: iconArg,
     trailingIcon: iconArg,
+    type: { control: 'inline-radio', options: ['button', 'submit', 'reset'] },
+    className: { control: false },
   },
 } satisfies Meta<typeof Button>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
+const story = (text: string) => ({ docs: { description: { story: text } } })
+
 export const Default: Story = {}
 
 export const Variants: Story = {
+  parameters: story('One `primary` per area; `secondary` and `ghost` for the rest; `danger` only for destructive actions.'),
   render: args => (
     <div style={{ display: 'flex', gap: 'var(--ot-spacing-gap-md)' }}>
       {VARIANTS.map(v => (
@@ -60,6 +68,7 @@ export const Variants: Story = {
 }
 
 export const Sizes: Story = {
+  parameters: story('`sm` 32 · `md` 40 · `lg` 48 — the same heights as fields, so controls of one size align in a row.'),
   render: args => (
     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--ot-spacing-gap-md)' }}>
       {SIZES.map(s => (
@@ -72,10 +81,12 @@ export const Sizes: Story = {
 }
 
 export const WithIcons: Story = {
+  parameters: story('Leading icon reinforces the action; trailing `CaretDown` signals that the button opens a menu. Icons are decorative (`aria-hidden`).'),
   args: { leadingIcon: <Plus />, trailingIcon: <CaretDown />, children: 'Create' },
 }
 
 export const Disabled: Story = {
+  parameters: story('Native `disabled`: not focusable and ignores clicks. Explain nearby why the action is unavailable.'),
   args: { disabled: true },
 }
 
@@ -128,7 +139,11 @@ function Grid({ theme }: { theme: 'light' | 'dark' }) {
 }
 
 export const AllVariants: Story = {
-  parameters: { layout: 'padded', controls: { disable: true } },
+  parameters: {
+    layout: 'padded',
+    controls: { disable: true },
+    ...story('Every Type × Size × State as in the Figma set, Light and Dark side by side. Hover, Pressed and Focus are forced for preview.'),
+  },
   render: () => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--ot-spacing-section-sm)' }}>
       <Grid theme="light" />
