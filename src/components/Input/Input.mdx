@@ -1,0 +1,189 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { At, MagnifyingGlass, WarningCircle } from '@phosphor-icons/react'
+
+import * as InputStories from './Input.stories'
+import { Input } from './Input'
+import { Button } from '../Button'
+
+<Meta of={InputStories} name="Guidelines" />
+
+export const Stack = ({ children }) => (
+  <div style={{ display: 'grid', gap: 'var(--ot-spacing-gap-lg)', width: '100%', maxWidth: 280 }}>{children}</div>
+)
+
+export const Rule = ({ kind, title, children, example }) => {
+  const ok = kind === 'do'
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gap: 'var(--ot-spacing-gap-md)',
+        padding: 'var(--ot-spacing-padding-lg)',
+        borderRadius: 'var(--ot-shape-radius-lg)',
+        border: 'var(--ot-shape-border-width-sm) solid var(--ot-color-border-primary)',
+        borderTop: `var(--ot-shape-border-width-md) solid var(${ok ? '--ot-color-status-success-primary' : '--ot-color-status-danger-primary'})`,
+        background: 'var(--ot-color-bg-primary)',
+      }}
+    >
+      <div
+        style={{
+          minHeight: 120,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minWidth: 0,
+          overflow: 'hidden',
+          padding: 'var(--ot-spacing-padding-lg)',
+          borderRadius: 'var(--ot-shape-radius-md)',
+          background: 'var(--ot-color-bg-secondary)',
+        }}
+      >
+        {example}
+      </div>
+      <div>
+        <div
+          className="ot-text-caption-caption-strong"
+          style={{ color: `var(${ok ? '--ot-color-status-success-secondary-text' : '--ot-color-status-danger-secondary-text'})` }}
+        >
+          {ok ? 'Do' : "Don't"}
+        </div>
+        <div className="ot-text-heading-subtitle-2" style={{ color: 'var(--ot-color-text-primary)' }}>{title}</div>
+        <div className="ot-text-body-body-1" style={{ color: 'var(--ot-color-text-secondary)' }}>{children}</div>
+      </div>
+    </div>
+  )
+}
+
+export const Rules = ({ children }) => (
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 'var(--ot-spacing-gap-lg)', margin: '16px 0 32px' }}>
+    {children}
+  </div>
+)
+
+# Input
+
+A single-line text field with a label and an optional helper or error message. Use it for short free-form values: names, emails, search, amounts. For multi-line text use Textarea; to pick from a list use Select.
+
+<Canvas of={InputStories.Default} />
+<Controls of={InputStories.Default} />
+
+```tsx
+import { Input } from './components/Input'
+
+<Input
+  label="Email"
+  type="email"
+  placeholder="name@company.com"
+  helperText="We never share your email."
+  value={email}
+  onChange={e => setEmail(e.target.value)}
+/>
+```
+
+## Anatomy
+
+1. **Label** — always visible above the field; says what to enter. Caption Strong (S/M) or Label M (L).
+2. **Field** — the box: value, placeholder, optional leading/trailing icons. Shared with Select and other fields.
+3. **Helper text** — hint, format, or the error/success message. Caption.
+
+## Size
+
+`sm` 32px · `md` 40px (default) · `lg` 48px — identical to Button heights, so a field and its submit button align. Keep one size within a form.
+
+<Canvas of={InputStories.Sizes} />
+
+## States
+
+| State | How | Use |
+|---|---|---|
+| Default / Hover / Focus | automatic | Focus shows a stronger neutral border (`--ot-color-border-strong`) |
+| Filled | has a value | Value in `--ot-color-text-primary` |
+| Error | `invalid` + `helperText` | Value failed validation; the helper explains how to fix it |
+| Success | `valid` + `helperText` | Value checked on the server (e.g. username available) |
+| Disabled | `disabled` | Not available right now and not submitted |
+| Read-only | `readOnly` | Can be read, selected and copied, but not edited |
+
+<Canvas of={InputStories.Invalid} />
+
+## Validation
+
+- Validate **on blur or on submit**, not on every keystroke; clear the error as soon as the value becomes valid.
+- The error message replaces the helper text: say what is wrong **and** how to fix it ("Enter a valid email, e.g. name@company.com").
+- Don't rely on color alone — the message text and an optional `WarningCircle` trailing icon carry the meaning.
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Always show a label" example={<Stack><Input label="Work email" placeholder="name@company.com" /></Stack>}>
+    A visible label tells what to enter and stays when the user types. Keep it short, sentence case.
+  </Rule>
+  <Rule kind="dont" title="Placeholder as the label" example={<Stack><Input placeholder="Work email" aria-label="Work email" /></Stack>}>
+    The placeholder disappears on typing, has low emphasis and is often not read as a label.
+  </Rule>
+  <Rule kind="do" title="Helpful error messages" example={<Stack><Input label="Email" defaultValue="name@company" invalid trailingIcon={<WarningCircle />} helperText="Enter a valid email, e.g. name@company.com" /></Stack>}>
+    Explain the problem and the fix in the helper; pair the red border with text.
+  </Rule>
+  <Rule kind="dont" title="Vague or color-only errors" example={<Stack><Input label="Email" defaultValue="name@company" invalid helperText="Invalid input" /></Stack>}>
+    "Invalid input" or a red border alone doesn't tell users what to change.
+  </Rule>
+  <Rule kind="do" title="Match the field to its action" example={<div style={{ display: 'flex', gap: 'var(--ot-spacing-gap-sm)', alignItems: 'flex-end', width: '100%', minWidth: 0 }}><Input size="md" placeholder="Search" aria-label="Search" leadingIcon={<MagnifyingGlass />} /><Button size="md">Search</Button></div>}>
+    Same size for a field and its button gives one shared height (here 40px).
+  </Rule>
+  <Rule kind="dont" title="Mix sizes in a row" example={<div style={{ display: 'flex', gap: 'var(--ot-spacing-gap-sm)', alignItems: 'flex-end', width: '100%', minWidth: 0 }}><Input size="sm" placeholder="Search" aria-label="Search" /><Button size="lg">Search</Button></div>}>
+    Different heights break the line and look like a bug.
+  </Rule>
+  <Rule kind="do" title="Read-only for non-editable values" example={<Stack><Input label="Account email" readOnly defaultValue="nikita@omnitaki.com" leadingIcon={<At />} /></Stack>}>
+    Users can still focus, select and copy the value, and it is submitted with the form.
+  </Rule>
+  <Rule kind="dont" title="Disabled to show data" example={<Stack><Input label="Account email" disabled defaultValue="nikita@omnitaki.com" /></Stack>}>
+    Disabled text is low-contrast, skipped by Tab and not submitted — use it only for unavailable fields.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Input renders a native `<label>` + `<input>`; the label is linked with `htmlFor`/`id` (generated with `useId` when no `id` is passed), so clicking the label focuses the field.
+
+### Keyboard
+
+| Key | Behavior |
+|---|---|
+| `Tab` / `Shift + Tab` | Moves focus into / out of the field. Read-only fields are focusable; disabled fields are skipped. |
+| Typing, `←` `→`, `Home` / `End` | Native text editing and caret movement. |
+| `Enter` | Submits the surrounding `<form>` (native behavior). |
+| `Esc` (with `type="search"`) | Clears the value in most browsers. |
+
+- **Focus.** Focus is shown by a stronger neutral border (`--ot-color-border-strong`, 8.5 : 1 in Light) plus the text caret — no extra ring is needed. Don't remove it.
+- **Click target.** Clicking anywhere in the box (padding, icons) focuses the input.
+- **Autofill.** Set `type`, `name` and `autoComplete` (`email`, `username`, `current-password`, `tel`…) so browsers and password managers can fill the field.
+
+### Screen readers
+
+- **Name.** The label is announced as the field name: "Email, edit text". Without a visible label, pass `aria-label` (e.g. a search bar) — the placeholder is not a reliable name.
+- **Description.** `helperText` is linked with `aria-describedby` and read after the name: "Email, edit text, We never share your email."
+- **Errors.** `invalid` sets `aria-invalid="true"` ("invalid entry") and the error text is read as the description. After submit, move focus to the first invalid field or announce a summary in a live region.
+- **Required.** `required` is announced as "required"; also mark it visually in the label (e.g. "Email (required)").
+- **Icons.** Leading/trailing icons are `aria-hidden` and not announced. A clear or show-password control must be a separate `<button>` with an `aria-label`.
+- **Read-only / disabled.** Announced as "read-only" or "dimmed/unavailable".
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Value and label (`text/primary`) on field | 16.0 : 1 | 15.3 : 1 |
+| Placeholder (`text/tertiary`) | 6.1 : 1 | 5.8 : 1 |
+| Helper (`text/secondary`) | 6.1 : 1 | 7.9 : 1 |
+| Error helper (`status/danger/secondary-text`) | 10.9 : 1 | 7.6 : 1 |
+| Success helper (`status/success/secondary-text`) | 11.0 : 1 | 8.3 : 1 |
+| Read-only value on `bg/tertiary` | 12.1 : 1 | 10.1 : 1 |
+| Border default / focus | 4.4 : 1 / 8.5 : 1 | 4.1 : 1 / 7.9 : 1 |
+| Border error / success | 4.8 : 1 / 5.0 : 1 | 5.7 : 1 / 6.4 : 1 |
+
+All text passes AA (4.5 : 1); field borders pass the 3 : 1 non-text minimum. Disabled fields are exempt.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Input](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=27-145), built on [Field](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=72-171)
+- Sizes: `--ot-field-size-{sm|md|lg}-{height|padding-x|padding-y|gap|icon-size}`, `--ot-field-radius`, `--ot-field-border-width`, `--ot-field-label-gap`
+- Colors (Semantic): `--ot-color-bg-primary|hover|tertiary|disabled`, `--ot-color-border-secondary|secondary-hover|strong|primary|disabled`, `--ot-color-text-primary|secondary|tertiary|disabled`, `--ot-color-status-{danger|success}-{primary|secondary-text}`
+- Code: `Input` is public; `Field` (`src/components/Field`) is the internal box reused by future Select, Date picker and Combobox.

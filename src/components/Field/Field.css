@@ -1,0 +1,135 @@
+/* Field — Figma: Omnitaki DS › Field (72:171). Base box for Input, Select, Date picker…
+   Tokens: field/* (sizes) + Semantic colors. Focus = stronger border, no ring or effects. */
+
+.ot-field {
+  --_bg: var(--ot-color-bg-primary);
+  --_border: var(--ot-color-border-secondary);
+  --_fg: var(--ot-color-text-primary);
+  --_icon: var(--ot-color-text-secondary);
+  --_trailing-icon: var(--_icon);
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  border: var(--ot-field-border-width) solid var(--_border);
+  border-radius: var(--ot-field-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+  cursor: text;
+}
+
+/* ── Size: height fixed by token; value text = Caption / Body 1 / Body 2 ── */
+.ot-field--sm {
+  height: var(--ot-field-size-sm-height);
+  padding: var(--ot-field-size-sm-padding-y) var(--ot-field-size-sm-padding-x);
+  gap: var(--ot-field-size-sm-gap);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+  --_icon-size: var(--ot-field-size-sm-icon-size);
+}
+.ot-field--md {
+  height: var(--ot-field-size-md-height);
+  padding: var(--ot-field-size-md-padding-y) var(--ot-field-size-md-padding-x);
+  gap: var(--ot-field-size-md-gap);
+  font-size: var(--ot-typography-body-md-font-size);
+  line-height: var(--ot-typography-body-md-line-height);
+  font-weight: var(--ot-typography-body-md-font-weight);
+  --_icon-size: var(--ot-field-size-md-icon-size);
+}
+.ot-field--lg {
+  height: var(--ot-field-size-lg-height);
+  padding: var(--ot-field-size-lg-padding-y) var(--ot-field-size-lg-padding-x);
+  gap: var(--ot-field-size-lg-gap);
+  font-size: var(--ot-typography-body-lg-font-size);
+  line-height: var(--ot-typography-body-lg-line-height);
+  font-weight: var(--ot-typography-body-lg-font-weight);
+  --_icon-size: var(--ot-field-size-lg-icon-size);
+}
+
+/* ── Parts ── */
+.ot-field__control {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+.ot-field__control::placeholder {
+  color: var(--ot-color-text-tertiary);
+  opacity: 1;
+}
+
+.ot-field__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  color: var(--_icon);
+}
+.ot-field__icon--trailing {
+  color: var(--_trailing-icon);
+}
+.ot-field__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── State ──
+   data-preview-state forces a state for docs/visual tests (Storybook AllVariants). */
+.ot-field:hover,
+.ot-field[data-preview-state='hover'] {
+  --_bg: var(--ot-color-bg-hover);
+  --_border: var(--ot-color-border-secondary-hover);
+}
+.ot-field:focus-within,
+.ot-field[data-preview-state='focus'] {
+  --_bg: var(--ot-color-bg-primary);
+  --_border: var(--ot-color-border-strong);
+}
+
+.ot-field--invalid,
+.ot-field--invalid:hover,
+.ot-field--invalid:focus-within {
+  --_border: var(--ot-color-status-danger-primary);
+  --_trailing-icon: var(--ot-color-status-danger-primary);
+}
+.ot-field--valid,
+.ot-field--valid:hover,
+.ot-field--valid:focus-within {
+  --_border: var(--ot-color-status-success-primary);
+  --_trailing-icon: var(--ot-color-status-success-primary);
+}
+
+.ot-field--readonly,
+.ot-field--readonly:hover,
+.ot-field--readonly:focus-within {
+  --_bg: var(--ot-color-bg-tertiary);
+  --_border: var(--ot-color-border-primary);
+}
+
+.ot-field--disabled,
+.ot-field--disabled:hover {
+  --_bg: var(--ot-color-bg-disabled);
+  --_border: var(--ot-color-border-disabled);
+  --_fg: var(--ot-color-text-disabled);
+  --_icon: var(--ot-color-text-disabled);
+  --_trailing-icon: var(--ot-color-text-disabled);
+  cursor: not-allowed;
+}
+.ot-field--disabled .ot-field__control {
+  cursor: not-allowed;
+}
+.ot-field--disabled .ot-field__control::placeholder {
+  color: var(--ot-color-text-disabled);
+}

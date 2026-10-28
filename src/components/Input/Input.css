@@ -1,0 +1,45 @@
+/* Input — Figma: Omnitaki DS › Input (27:145) = Label + Field + Helper.
+   Tokens: field/label-gap + Semantic colors; the box itself is styled by Field.css. */
+
+.ot-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ot-field-label-gap);
+  width: 100%;
+  min-width: 0;
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Label: Caption Strong for S/M, Label M for L */
+.ot-input__label {
+  color: var(--ot-color-text-primary);
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+}
+.ot-input--lg .ot-input__label {
+  font-size: var(--ot-typography-label-md-font-size);
+  line-height: var(--ot-typography-label-md-line-height);
+  font-weight: var(--ot-typography-label-md-font-weight);
+}
+
+/* Helper: Caption, colored by state */
+.ot-input__helper {
+  margin: 0;
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+}
+.ot-input--invalid .ot-input__helper {
+  color: var(--ot-color-status-danger-secondary-text);
+}
+.ot-input--valid .ot-input__helper {
+  color: var(--ot-color-status-success-secondary-text);
+}
+
+.ot-input--disabled .ot-input__label,
+.ot-input--disabled .ot-input__helper {
+  color: var(--ot-color-text-disabled);
+}
