@@ -50,8 +50,7 @@
   cursor: inherit;
 }
 .ot-switch__track {
-  --_track: var(--ot-color-border-primary);
-  --_overlay: transparent;
+  --_track: var(--ot-color-border-secondary);
   --_thumb-bg: var(--ot-color-bg-thumb);
   --_thumb-shadow: var(--ot-shadow-sm);
 
@@ -62,8 +61,7 @@
   align-items: center;
   padding: var(--ot-switch-padding);
   border-radius: var(--ot-switch-radius);
-  background-color: var(--_track);
-  background-image: linear-gradient(var(--_overlay), var(--_overlay));
+  background: var(--_track);
 }
 .ot-switch__thumb {
   width: var(--_thumb);
@@ -79,10 +77,10 @@
   }
 }
 
-/* ── Off ── */
+/* ── Off: neutral track (≥3:1 on the page), stronger on hover like unchecked selection controls ── */
 .ot-switch:hover .ot-switch__input:not(:disabled) + .ot-switch__track,
 .ot-switch[data-preview-state='hover'] .ot-switch__track {
-  --_overlay: var(--ot-color-bg-subtle-hover);
+  --_track: var(--ot-color-border-secondary-hover);
 }
 
 /* ── On ── */
@@ -96,7 +94,6 @@
 .ot-switch:hover .ot-switch__input:checked:not(:disabled) + .ot-switch__track,
 .ot-switch[data-preview-state='hover'] .ot-switch__input:checked + .ot-switch__track {
   --_track: var(--ot-color-brand-primary-hover);
-  --_overlay: transparent;
 }
 
 /* ── Focus: neutral ring OUTSIDE the track ── */
@@ -113,7 +110,6 @@
 }
 .ot-switch .ot-switch__input:disabled + .ot-switch__track {
   --_track: var(--ot-color-bg-disabled);
-  --_overlay: transparent;
   --_thumb-bg: var(--ot-color-bg-primary);
   --_thumb-shadow: none;
 }

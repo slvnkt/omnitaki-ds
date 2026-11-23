@@ -137,7 +137,7 @@
       },
       "thumb": {
         "$value": "{palette.white}",
-        "$description": "Thumb on a neutral track (switch off, later slider): white in Light, light neutral in Dark for contrast on dark tracks.",
+        "$description": "Thumb on a neutral track (switch off, later slider): white in both themes; ≥3:1 on the border/secondary track.",
         "$extensions": {
           "com.figma": {
             "collection": "Semantic",
@@ -297,7 +297,7 @@
       },
       "secondary": {
         "$value": "{palette.neutral.500}",
-        "$description": "Semantic color: border · secondary.",
+        "$description": "Semantic color: border · secondary. Also the off track of Switch.",
         "$extensions": {
           "com.figma": {
             "collection": "Semantic",

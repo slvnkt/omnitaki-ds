@@ -12,7 +12,7 @@ color/text/inverse|C|{palette/white},{palette/neutral/950}|Semantic color: text 
 color/text/link|C|{palette/violet/700},{palette/violet/300}|Semantic color: text · link.
 color/text/link-hover|C|{palette/violet/800},{palette/violet/200}|Semantic color: text · link hover.
 color/border/primary|C|{palette/neutral/200},{palette/neutral/700}|Semantic color: border · primary.
-color/border/secondary|C|{palette/neutral/500},{palette/neutral/500}|Semantic color: border · secondary.
+color/border/secondary|C|{palette/neutral/500},{palette/neutral/500}|Semantic color: border · secondary. Also the off track of Switch.
 color/border/focus|C|{palette/neutral/900},{palette/neutral/50}|Keyboard focus ring: neutral high-contrast stroke (black in Light, white in Dark), same for all controls and types incl. Primary/Danger — like Fluent colorStrokeFocus2. Fields use border/strong instead.
 color/brand/primary|C|{palette/violet/500},{palette/violet/300}|Brand fill: primary button, checked selection, active tab indicator. Violet 500 (#7465ED) in Light, 300 in Dark.
 color/brand/primary-hover|C|{palette/violet/600},{palette/violet/200}|Hover of brand fill. Light goes darker (600) because text on it is white; Dark goes lighter (200).
@@ -133,7 +133,7 @@ control/height/2xs|F|{size/5},{size/5}|Compact element height 20: badge M.
 control/height/3xs|F|{size/4},{size/4}|Compact element height 16: badge S, counters.
 color/bg/elevated|C|{palette/white},{palette/neutral/800}|Raised surface above the page or a grey track: selected segmented tab, later card/menu/popover. Light white, Dark one step lighter than bg.
 spacing/padding/2xs|F|{space/0-5},{space/0-5}|Hairline inset 2: switch thumb inset, tight compact elements.
-color/bg/thumb|C|{palette/white},{palette/neutral/200}|Thumb on a neutral track (switch off, later slider): white in Light, light neutral in Dark for contrast on dark tracks.
+color/bg/thumb|C|{palette/white},{palette/white}|Thumb on a neutral track (switch off, later slider): white in both themes; ≥3:1 on the border/secondary track.
 color/shadow/key|C|{palette/overlay-black/8},{palette/overlay-black/40}|Shadow key layer (close, sharp). Darker in Dark mode to stay visible.
 color/shadow/ambient|C|{palette/overlay-black/4},{palette/overlay-black/24}|Shadow ambient layer (wide, soft).
 elevation/sm/key-y|F|{space/0-25},{space/0-25}|Elevation SM · key y — raised small surfaces: selected segment, switch thumb, card on page.
