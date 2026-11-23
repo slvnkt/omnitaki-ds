@@ -1,0 +1,89 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './Disclosure.stories'
+import { Disclosure } from './Disclosure'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Disclosure
+
+Shows and hides secondary content under a short label: methodology notes, "why numbers change", advanced details. Several disclosures with Dividers between them form an accordion.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Disclosure } from './components/Disclosure'
+
+<Disclosure label="How delivery is calculated">
+  Confirmed impressions are reconciled with the ad server daily…
+</Disclosure>
+
+// controlled
+<Disclosure label="Methodology" open={open} onOpenChange={setOpen}>…</Disclosure>
+```
+
+## Accordion
+
+<Canvas of={Stories.Variants} />
+
+```tsx
+{items.map((item, i) => (
+  <Fragment key={item.id}>
+    {i > 0 && <Divider />}
+    <Disclosure label={item.title} headingLevel={3}>{item.body}</Disclosure>
+  </Fragment>
+))}
+```
+
+Let each item open independently. Closing the others automatically ("only one open") hides content the user was reading and is rarely worth it.
+
+## In a Card
+
+<Canvas of={Stories.Sizes} />
+
+## States
+
+<Canvas of={Stories.States} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Label says what's inside" example={<Stack><Disclosure label="How delivery is calculated">{'…'}</Disclosure></Stack>}>
+    The user should know whether to open it without opening it.
+  </Rule>
+  <Rule kind="dont" title="Vague label" example={<Stack><Disclosure label="More">{'…'}</Disclosure></Stack>}>
+    "More" or "Details" forces users to open every item.
+  </Rule>
+  <Rule kind="do" title="Secondary content only" example={<Stack><Disclosure label="Why numbers change" defaultOpen>Late reports adjust totals.</Disclosure></Stack>}>
+    Notes and explanations the user can skip.
+  </Rule>
+  <Rule kind="dont" title="Hiding key numbers or actions" example={<Stack><Disclosure label="Delivered impressions">36.2M of 48.0M</Disclosure></Stack>}>
+    The main metric or the primary action must stay visible.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **Pattern.** WAI-ARIA disclosure: the trigger is a `<button>` with `aria-expanded` and `aria-controls` pointing at the panel.
+- **Keyboard.** Tab moves to the trigger; Enter or Space toggles it. Collapsed panel content is `visibility: hidden`, so it is skipped by Tab and screen readers.
+- **Headings.** In an accordion or a document, pass `headingLevel` so each trigger sits inside a heading and the sections appear in the page outline.
+- **Focus.** The standard `border/focus` ring is drawn inside the trigger (2 px), on top of the hover surface.
+- **Motion.** Height (200 ms) and chevron rotation (160 ms) animate; both are instant under `prefers-reduced-motion: reduce`.
+- **Disabled.** A disabled trigger can't be focused; prefer hiding the disclosure when it has nothing to show.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Label (`text/primary`) on `bg/primary` | 16.1 : 1 | 15.3 : 1 |
+| Chevron and panel text (`text/secondary`) on `bg/primary` | 6.1 : 1 | 7.9 : 1 |
+| Focus ring (`border/focus`) on `bg/primary` | 16.1 : 1 | 15.3 : 1 |
+| Disabled label (`text/disabled`), exempt | 3.1 : 1 | 2.9 : 1 |
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Disclosure](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=206-65)
+- Tokens: `--ot-disclosure-{height|padding-x|gap|icon-size|radius|focus-ring-width|panel-padding-y}`
+- Colors: transparent trigger `--ot-color-bg-{transparent|subtle-hover|subtle-pressed}`, `--ot-color-text-{primary|secondary|disabled}`, `--ot-color-border-focus`

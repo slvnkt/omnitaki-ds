@@ -1,0 +1,98 @@
+/* Disclosure — Figma: Omnitaki DS › Disclosure (206:65).
+   Full-width ghost trigger 40 (Label M + CaretDown, rotates 180° when expanded) and a panel aligned to the trigger padding.
+   Tokens: disclosure/*. */
+
+.ot-disclosure {
+  display: grid;
+  min-width: 0;
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+.ot-disclosure__heading {
+  margin: 0;
+  font: inherit;
+}
+.ot-disclosure__trigger {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--ot-disclosure-gap);
+  width: 100%;
+  height: var(--ot-disclosure-height);
+  margin: 0;
+  padding: 0 var(--ot-disclosure-padding-x);
+  border: 0;
+  border-radius: var(--ot-disclosure-radius);
+  background: var(--ot-color-bg-transparent);
+  color: var(--ot-color-text-primary);
+  font: inherit;
+  font-size: var(--ot-typography-label-md-font-size);
+  line-height: var(--ot-typography-label-md-line-height);
+  font-weight: var(--ot-typography-label-md-font-weight);
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ot-disclosure__label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.ot-disclosure__chevron {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--ot-color-text-secondary);
+  transition: transform 160ms ease-out;
+}
+.ot-disclosure__chevron > svg {
+  width: var(--ot-disclosure-icon-size);
+  height: var(--ot-disclosure-icon-size);
+}
+.ot-disclosure__trigger[aria-expanded='true'] .ot-disclosure__chevron { transform: rotate(180deg); }
+
+.ot-disclosure__trigger:hover,
+.ot-disclosure__trigger[data-preview-state='hover'] { background: var(--ot-color-bg-subtle-hover); }
+.ot-disclosure__trigger:active,
+.ot-disclosure__trigger[data-preview-state='pressed'] { background: var(--ot-color-bg-subtle-pressed); }
+.ot-disclosure__trigger:focus { outline: none; }
+.ot-disclosure__trigger:focus-visible,
+.ot-disclosure__trigger[data-preview-state='focus'] {
+  background: var(--ot-color-bg-subtle-hover);
+  box-shadow: inset 0 0 0 var(--ot-disclosure-focus-ring-width) var(--ot-color-border-focus);
+}
+.ot-disclosure__trigger:disabled {
+  background: var(--ot-color-bg-transparent);
+  color: var(--ot-color-text-disabled);
+  cursor: not-allowed;
+}
+.ot-disclosure__trigger:disabled .ot-disclosure__chevron { color: var(--ot-color-text-disabled); }
+
+/* Panel: animated height via grid rows; hidden from AT and tab order when collapsed (visibility). */
+.ot-disclosure__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 200ms ease-out, visibility 0s linear 200ms;
+}
+.ot-disclosure--open > .ot-disclosure__panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows 200ms ease-out, visibility 0s;
+}
+.ot-disclosure__panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.ot-disclosure__content {
+  padding: var(--ot-disclosure-panel-padding-y) var(--ot-disclosure-padding-x);
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-md-font-size);
+  line-height: var(--ot-typography-body-md-line-height);
+  font-weight: var(--ot-typography-body-md-font-weight);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ot-disclosure__chevron,
+  .ot-disclosure__panel,
+  .ot-disclosure--open > .ot-disclosure__panel { transition: none; }
+}
