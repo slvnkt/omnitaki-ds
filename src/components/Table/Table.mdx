@@ -1,0 +1,92 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './Table.stories'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Table
+
+A compact data table for cards and panels: up to ~50 rows, no pagination in v1. A native `<table>` with sortable headers, numeric alignment, an optional total row, clickable and selected rows, loading and empty states, and a sticky header.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Table, NumberCell, ProgressCell } from './components/Table'
+
+<Table
+  caption="Delivery by campaign"
+  rows={campaigns}
+  getRowKey={r => r.id}
+  defaultSort={{ key: 'impressions', direction: 'desc' }}
+  columns={[
+    { key: 'name', header: 'Campaign', sortable: true, footer: 'Total' },
+    { key: 'status', header: 'Status', render: r => <Badge variant="success">{r.status}</Badge> },
+    { key: 'impressions', header: 'Impressions', align: 'right', sortable: true,
+      render: r => <NumberCell value={r.impressions} unit="M" />, footer: <NumberCell value="37.2" unit="M" /> },
+    { key: 'delivery', header: 'Delivery', render: r => <ProgressCell value={r.delivery} /> },
+  ]}
+/>
+```
+
+## Cells
+
+| Cell | Helper | Rule |
+|---|---|---|
+| Text | default | Left-aligned, Body 1, truncate long names upstream |
+| Number + unit | `NumberCell` | `align: 'right'`, tabular figures, unit in `text/secondary` |
+| Two-line | `TwoLineCell` | Name + dates / ID; default density only |
+| Status | `Badge` | Badge size md with a word, not a color alone |
+| Progress | `ProgressCell` | Mini Progress (size sm) + percentage |
+
+<Canvas of={Stories.Variants} />
+
+## Density
+
+<Canvas of={Stories.Sizes} />
+
+## States
+
+Sorting: click a sortable header (or focus it and press Enter / Space). The first click sorts ascending, the next toggles. Without a controlled `sort`, the table sorts rows itself by `row[key]` or `sortValue`; with `sort` + `onSortChange`, you sort (e.g. on the server).
+
+<Canvas of={Stories.States} />
+
+## In a Card
+
+<Canvas of={Stories.InCard} />
+
+## Do's and don'ts
+
+- **Do** right-align numbers and keep units out of the value so digits line up.
+- **Do** keep the caption: hide it visually (`hideCaption`) when a Card title shows the same name.
+- **Do** show an EmptyState that says why there are no rows and how to fix it.
+- **Don't** put more than one interactive control in a clickable row; give the row one action, or make the row non-clickable and use buttons in cells.
+- **Don't** use the table for layout or for more than ~50 rows; add pagination or a dedicated data grid instead.
+- **Don't** color whole rows to signal status; use a Badge cell.
+
+## Accessibility
+
+- **Semantics.** Native `<table>` with `<caption>`, `<th scope="col">` headers and a `<th scope="row">` label in the total row. Screen readers announce row and column headers for every cell.
+- **Sorting.** Sortable headers contain a `<button>`; the `<th>` carries `aria-sort="ascending | descending | none"`. The arrow icon is decorative.
+- **Clickable rows.** Rows are in the Tab order and activate on Click, Enter or Space. Give them a name with `rowLabel` ("Select Summer launch"). The focus ring is the standard `border/focus`, drawn inside the row.
+- **Selection.** Selected rows get the `brand/secondary` background plus a visually hidden "Selected:" prefix in the first cell, so it isn't conveyed by color only.
+- **Loading.** The wrapper gets `aria-busy`; skeleton rows are hidden from assistive tech.
+- **Scrolling.** With `maxHeight` the scroll area is focusable so keyboard users can scroll it.
+- **Numbers.** Body and total cells use tabular figures.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Body text (`text/primary`) on `bg/primary` | 16.1 : 1 | 15.3 : 1 |
+| Header and unit (`text/secondary`) on `bg/primary` | 6.1 : 1 | 7.9 : 1 |
+| Sort hint arrow (`text/tertiary`) on `bg/primary` | 6.1 : 1 | 5.8 : 1 |
+| Text on selected row (`brand/secondary`) | 13.6 : 1 | 15.3 : 1 |
+| Total row text on `bg/secondary` | 13.7 : 1 | 13.7 : 1 |
+| Focus ring (`border/focus`) on `bg/primary` | 16.1 : 1 | 15.3 : 1 |
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Table](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=203-936), parts TableHeaderCell, TableCell, TableRow
+- Tokens: `--ot-table-size-{sm|md}-row-height`, `--ot-table-{cell-padding-x|cell-gap|sort-icon-size|divider-width|focus-ring-width|caption-gap}`
+- Colors: `--ot-color-border-primary` dividers, `--ot-color-bg-subtle-hover` hover, `--ot-color-brand-secondary` selected, `--ot-color-bg-secondary` total row. Override `--ot-table-sticky-bg` when the table sits on a non-primary surface.

@@ -6,6 +6,7 @@ import {
   useLayoutEffect,
   useRef,
   useState,
+  type CSSProperties,
   type HTMLAttributes,
   type ReactElement,
   type ReactNode,
@@ -26,7 +27,7 @@ export interface TooltipRow {
   color?: string
 }
 
-export interface TooltipContentProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
+export interface TooltipContentProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'title'> {
   /** Surface (Figma `Variant`): `dark` for short hints, `light` for charts and multi-line values. @default 'dark' */
   variant?: TooltipVariant
   /** Optional bold first line (Figma `Title` + `Show title`). */
@@ -36,7 +37,7 @@ export interface TooltipContentProps extends Omit<HTMLAttributes<HTMLDivElement>
   /** "label · value" rows for charts (Figma `Show rows`). */
   rows?: TooltipRow[]
   /** Ref to the surface element. */
-  ref?: Ref<HTMLDivElement>
+  ref?: Ref<HTMLSpanElement>
 }
 
 /**
@@ -45,9 +46,9 @@ export interface TooltipContentProps extends Omit<HTMLAttributes<HTMLDivElement>
  */
 export function TooltipContent({ variant = 'dark', title, text, rows, className, children, ref, ...rest }: TooltipContentProps) {
   return (
-    <div ref={ref} className={['ot-tooltip', variant === 'light' && 'ot-tooltip--light', className].filter(Boolean).join(' ')} {...rest}>
-      {title && <div className="ot-tooltip__title">{title}</div>}
-      {text && <div className="ot-tooltip__text">{text}</div>}
+    <span ref={ref} className={['ot-tooltip', variant === 'light' && 'ot-tooltip--light', className].filter(Boolean).join(' ')} {...rest}>
+      {title && <span className="ot-tooltip__title">{title}</span>}
+      {text && <span className="ot-tooltip__text">{text}</span>}
       {rows && rows.length > 0 && (
         <dl className="ot-tooltip__rows">
           {rows.map((row, i) => (
@@ -62,7 +63,7 @@ export function TooltipContent({ variant = 'dark', title, text, rows, className,
         </dl>
       )}
       {children}
-    </div>
+    </span>
   )
 }
 
@@ -75,6 +76,10 @@ export interface TooltipProps extends Omit<TooltipContentProps, 'children'> {
   delay?: number
   /** Controlled open state (for docs and visual tests). */
   open?: boolean
+  /** Class name on the wrapper around the trigger (e.g. to position it absolutely). */
+  anchorClassName?: string
+  /** Inline style on the wrapper around the trigger. */
+  anchorStyle?: CSSProperties
 }
 
 const OPPOSITE: Record<TooltipPlacement, TooltipPlacement> = { top: 'bottom', bottom: 'top', left: 'right', right: 'left' }
@@ -84,12 +89,12 @@ let lastClosedAt = 0
  * Short contextual hint on hover and keyboard focus. Escape closes it; the pointer can move onto it
  * without closing (WCAG 1.4.13). Never put required information only in a tooltip.
  */
-export function Tooltip({ children, placement = 'top', delay = 300, open: controlled, variant = 'dark', title, text, rows, className, ...rest }: TooltipProps) {
+export function Tooltip({ children, placement = 'top', delay = 300, open: controlled, variant = 'dark', title, text, rows, className, anchorClassName, anchorStyle, ...rest }: TooltipProps) {
   const id = useId()
   const [open, setOpen] = useState(false)
   const [flipped, setFlipped] = useState(false)
   const timer = useRef<number | undefined>(undefined)
-  const tip = useRef<HTMLDivElement>(null)
+  const tip = useRef<HTMLSpanElement>(null)
   const isOpen = controlled ?? open
   const side = flipped ? OPPOSITE[placement] : placement
 
@@ -127,7 +132,7 @@ export function Tooltip({ children, placement = 'top', delay = 300, open: contro
     : children
 
   return (
-    <span className="ot-tooltip-anchor" onMouseEnter={show} onMouseLeave={hide} onFocus={show} onBlur={hide}>
+    <span className={['ot-tooltip-anchor', anchorClassName].filter(Boolean).join(' ')} style={anchorStyle} onMouseEnter={show} onMouseLeave={hide} onFocus={show} onBlur={hide}>
       {trigger}
       {isOpen && (
         <TooltipContent

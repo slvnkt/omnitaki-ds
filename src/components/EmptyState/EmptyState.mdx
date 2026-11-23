@@ -1,0 +1,93 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './EmptyState.stories'
+import { EmptyState } from './EmptyState'
+import { Button } from '../Button'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# EmptyState
+
+Fills a widget, table or page when there is nothing to show, and says **why** and **what to do next**. It replaces the content area; the surrounding header and filters stay.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { EmptyState } from './components/EmptyState'
+
+<EmptyState
+  size="compact"
+  variant="error"
+  title="Couldn't load delivery"
+  description="Something went wrong on our side. Try again in a moment."
+  actions={<Button variant="secondary" size="sm" onClick={retry}>Retry</Button>}
+/>
+```
+
+## Choosing a variant
+
+| Variant | Icon | When | Typical action |
+|---|---|---|---|
+| `no-data` | ChartLine | The query worked but returned nothing | Refresh, change dates, clear filters |
+| `error` | WarningCircle (danger tint) | The load failed | Retry |
+| `no-access` | Prohibit | The user lacks permission | Go back, request access |
+| `not-started` | Clock | Data will exist later (flight not started) | Edit campaign |
+
+<Canvas of={Stories.Variants} />
+
+For a small, recoverable problem *above* existing content, use an [Alert](?path=/docs/components-alert--guidelines) instead; EmptyState is for when the content itself is missing.
+
+## Sizes
+
+`compact` inside a Card or a Table body; `default` for a page or a whole panel.
+
+<Canvas of={Stories.Sizes} />
+
+## Content
+
+<Canvas of={Stories.States} />
+
+- **Title**: what happened, 2–6 words. No "Oops".
+- **Description**: why, and what changes it. Up to three lines; longer text is clamped.
+- **Actions**: zero to two Buttons. Use `secondary` for the main recovery action inside a widget; reserve `primary` for page-level creation ("Create campaign").
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Explain and offer a way out" example={<Stack><EmptyState size="compact" title="No results" description="Try a different date range." actions={<Button variant="secondary" size="sm">Clear filters</Button>} /></Stack>}>
+    Say why it's empty and give one clear next step.
+  </Rule>
+  <Rule kind="dont" title="Blank or a lone dash" example={<Stack><EmptyState size="compact" title="—" /></Stack>}>
+    An empty frame or "—" looks like a broken widget.
+  </Rule>
+  <Rule kind="do" title="Error variant for failures" example={<Stack><EmptyState size="compact" variant="error" title="Couldn't load data" actions={<Button variant="secondary" size="sm">Retry</Button>} /></Stack>}>
+    Failures get the danger tint and Retry.
+  </Rule>
+  <Rule kind="dont" title="Error look for normal emptiness" example={<Stack><EmptyState size="compact" variant="error" title="No campaigns yet" /></Stack>}>
+    "Nothing yet" is not an error; don't alarm the user.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **Semantics.** The title is a real heading (`titleAs`, default `h3`) so the empty region stays in the page outline. The icon is decorative (`aria-hidden`).
+- **Announcement.** `error` renders with `role="alert"`, so a failure that replaces content is announced. Other variants are static text; if one appears after a user action (filters), move focus to its title or announce the change from the control.
+- **Keyboard.** The component itself is not focusable; its Buttons are in the Tab order with the standard focus ring.
+- **Not color alone.** Each variant has its own icon and the title states the situation in words.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Title (`text/primary`) on `bg/primary` | 16.1 : 1 | 15.3 : 1 |
+| Description (`text/secondary`) on `bg/primary` | 6.1 : 1 | 7.9 : 1 |
+| Icon (`text/secondary`) on `bg/secondary` circle | 5.2 : 1 | 7.1 : 1 |
+| Error icon on `status/danger/secondary` circle | 9.0 : 1 | 7.6 : 1 |
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Empty State](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=200-335)
+- Tokens: `--ot-empty-state-size-{sm|md}-{padding|gap|icon-box|icon-size}`, `--ot-empty-state-{text-gap|action-gap|icon-radius}`
+- Text: Heading/Subtitle 1 (default) · Subtitle 2 (compact), Body 1 description

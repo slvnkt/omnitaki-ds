@@ -1,0 +1,183 @@
+/* Progress — Figma: Omnitaki DS › Progress (199:600) + ProgressMarker (199:8).
+   Track (data/track) with solid / hatch segments, dashed ghost, target / marker lines and a legend.
+   Radius on track ends only. Tokens: progress/*, color/data/*. */
+
+.ot-progress {
+  --_confirmed: var(--ot-color-data-confirmed);
+  --_preliminary: var(--ot-color-data-preliminary);
+  --_projected: var(--ot-color-data-projected);
+  --_expected: var(--ot-color-data-expected);
+  --_h: var(--ot-progress-size-md-height);
+
+  display: grid;
+  gap: var(--ot-progress-label-gap);
+  min-width: 0;
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.ot-progress--sm { --_h: var(--ot-progress-size-sm-height); }
+.ot-progress--lg { --_h: var(--ot-progress-size-lg-height); }
+.ot-progress--muted {
+  --_confirmed: var(--ot-color-border-secondary);
+  --_preliminary: var(--ot-color-border-secondary);
+  --_projected: var(--ot-color-text-tertiary);
+  --_expected: var(--ot-color-text-tertiary);
+}
+
+.ot-progress__labels {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--ot-spacing-gap-md);
+}
+.ot-progress__label {
+  color: var(--ot-color-text-primary);
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+  font-variant-numeric: tabular-nums;
+}
+.ot-progress--muted .ot-progress__label { color: var(--ot-color-text-secondary); }
+.ot-progress__caption,
+.ot-progress__legend-label,
+.ot-progress__marker-label {
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ot-progress__plot {
+  display: grid;
+  gap: var(--ot-spacing-gap-xs);
+}
+.ot-progress__marker-labels {
+  position: relative;
+  height: var(--ot-typography-label-sm-line-height);
+}
+.ot-progress__marker-label {
+  position: absolute;
+  top: 0;
+}
+.ot-progress__marker-label--start { padding-left: var(--ot-spacing-gap-xs); transform: translateX(calc(-1 * var(--ot-progress-marker-width) / 2)); }
+.ot-progress__marker-label--end { padding-right: var(--ot-spacing-gap-xs); transform: translateX(calc(-100% + var(--ot-progress-marker-width) / 2)); }
+.ot-progress__marker-label--target {
+  color: var(--ot-color-text-primary);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+}
+
+.ot-progress__bar {
+  position: relative;
+  padding-block: var(--ot-progress-marker-overhang);
+}
+.ot-progress__track {
+  position: relative;
+  height: var(--_h);
+  overflow: hidden;
+  border-radius: var(--ot-progress-radius);
+  background: var(--ot-color-data-track);
+}
+.ot-progress__segment,
+.ot-progress__track > .ot-tooltip-anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.ot-progress__track > .ot-tooltip-anchor > .ot-progress__segment {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+.ot-progress__segment {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--_c, var(--_confirmed));
+}
+.ot-progress__segment--hatch {
+  background-color: transparent;
+  background-image: repeating-linear-gradient(135deg, var(--_c, var(--_preliminary)) 0 var(--ot-pattern-hatch-width), transparent var(--ot-pattern-hatch-width) calc(var(--ot-pattern-hatch-width) + var(--ot-pattern-hatch-gap)));
+}
+.ot-progress__ghost {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  border: var(--ot-progress-ghost-width) dashed var(--_projected);
+}
+
+/* interactive segments: dim the others on hover, ring on focus */
+.ot-progress--interactive .ot-progress__segment { cursor: pointer; }
+.ot-progress--interactive .ot-progress__track:hover .ot-tooltip-anchor:not(:hover) .ot-progress__segment,
+.ot-progress--interactive .ot-progress__track:focus-within .ot-tooltip-anchor:not(:focus-within) .ot-progress__segment {
+  opacity: var(--ot-opacity-disabled);
+}
+.ot-progress--interactive .ot-progress__track { overflow: visible; }
+.ot-progress--interactive .ot-progress__track { clip-path: inset(0 round var(--ot-progress-radius)); }
+.ot-progress__segment:focus { outline: none; }
+.ot-progress__bar:has(.ot-progress__segment:focus-visible) .ot-progress__track { clip-path: none; }
+.ot-progress__segment:focus-visible {
+  outline: var(--ot-progress-focus-ring-width) solid var(--ot-color-border-focus);
+  outline-offset: var(--ot-spacing-padding-2xs);
+  border-radius: var(--ot-progress-radius);
+}
+
+.ot-progress__marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--ot-progress-marker-width);
+  transform: translateX(-50%);
+  background: var(--_expected);
+}
+.ot-progress__marker--marker::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--ot-progress-marker-overhang));
+  left: 50%;
+  transform: translateX(-50%);
+  border-inline: 4px solid transparent; /* decorative 8×6 triangle */
+  border-top: 6px solid var(--_expected);
+}
+
+.ot-progress__legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ot-spacing-gap-xs) var(--ot-spacing-gap-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ot-progress__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ot-spacing-gap-xs);
+}
+.ot-progress__swatch {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--ot-control-icon-size-xs);
+  height: var(--ot-control-icon-size-xs);
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--ot-progress-radius);
+}
+.ot-progress__swatch--solid { background: var(--_c, var(--_confirmed)); }
+.ot-progress__swatch--hatch {
+  background-color: var(--ot-color-data-track);
+  background-image: repeating-linear-gradient(135deg, var(--_c, var(--_preliminary)) 0 var(--ot-pattern-hatch-width), transparent var(--ot-pattern-hatch-width) calc(var(--ot-pattern-hatch-width) + var(--ot-pattern-hatch-gap)));
+}
+.ot-progress__swatch--ghost { border: var(--ot-progress-ghost-width) dashed var(--_projected); }
+.ot-progress__swatch--target::after,
+.ot-progress__swatch--marker::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 50%;
+  width: var(--ot-progress-marker-width);
+  transform: translateX(-50%);
+  background: var(--_expected);
+}
+.ot-progress--muted .ot-progress__marker-label { color: var(--ot-color-text-tertiary); }

@@ -1,0 +1,84 @@
+/* EmptyState — Figma: Omnitaki DS › Empty State (200:335).
+   Icon circle (bg/secondary, error: status/danger/secondary) + title + description + actions, centered.
+   Tokens: empty-state/*. */
+
+.ot-empty-state {
+  --_pad: var(--ot-empty-state-size-md-padding);
+  --_gap: var(--ot-empty-state-size-md-gap);
+  --_box: var(--ot-empty-state-size-md-icon-box);
+  --_icon: var(--ot-empty-state-size-md-icon-size);
+  --_icon-bg: var(--ot-color-bg-secondary);
+  --_icon-fg: var(--ot-color-text-secondary);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--_gap);
+  width: 100%;
+  padding: var(--_pad);
+  text-align: center;
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.ot-empty-state--compact {
+  --_pad: var(--ot-empty-state-size-sm-padding);
+  --_gap: var(--ot-empty-state-size-sm-gap);
+  --_box: var(--ot-empty-state-size-sm-icon-box);
+  --_icon: var(--ot-empty-state-size-sm-icon-size);
+}
+.ot-empty-state--error {
+  --_icon-bg: var(--ot-color-status-danger-secondary);
+  --_icon-fg: var(--ot-color-status-danger-secondary-text);
+}
+
+.ot-empty-state__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--_box);
+  height: var(--_box);
+  border-radius: var(--ot-empty-state-icon-radius);
+  background: var(--_icon-bg);
+  color: var(--_icon-fg);
+}
+.ot-empty-state__icon > svg {
+  width: var(--_icon);
+  height: var(--_icon);
+}
+.ot-empty-state__text {
+  display: grid;
+  gap: var(--ot-empty-state-text-gap);
+  max-width: 40ch;
+}
+.ot-empty-state__title {
+  margin: 0;
+  color: var(--ot-color-text-primary);
+  font-size: var(--ot-typography-heading-md-font-size);
+  line-height: var(--ot-typography-heading-md-line-height);
+  font-weight: var(--ot-typography-heading-md-font-weight);
+}
+.ot-empty-state--compact .ot-empty-state__title {
+  font-size: var(--ot-typography-heading-sm-font-size);
+  line-height: var(--ot-typography-heading-sm-line-height);
+  font-weight: var(--ot-typography-heading-sm-font-weight);
+}
+.ot-empty-state__description {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-md-font-size);
+  line-height: var(--ot-typography-body-md-line-height);
+  font-weight: var(--ot-typography-body-md-font-weight);
+}
+.ot-empty-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--ot-empty-state-action-gap);
+}

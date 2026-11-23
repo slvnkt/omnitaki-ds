@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DotsThree } from '@phosphor-icons/react'
 
 import { ThemePanel } from '../../docs/DocBlocks'
-import { Alert } from '../Alert'
 import { Badge } from '../Badge'
 import { Button } from '../Button'
+import { EmptyState } from '../EmptyState'
 import { IconButton } from '../IconButton'
 import { Stat } from '../Stat'
 import { Card, CardBody, CardDivider, CardFooter, CardHeader, type CardProps } from './Card'
@@ -21,7 +21,7 @@ function DeliveryCard({ variant = 'default', padding = 'md', state = 'default', 
       />
       <CardBody loading={state === 'loading'}>
         {state === 'error' ? (
-          <Alert intent="danger" title="Could not load delivery" action={<Button variant="ghost" size="sm">Retry</Button>}>Something went wrong on our side.</Alert>
+          <EmptyState size="compact" variant="error" title="Couldn't load delivery" description="Something went wrong on our side." actions={<Button variant="secondary" size="sm">Retry</Button>} />
         ) : (
           <Stat size="lg" label="Delivered impressions" value="36.2" unit="M of 48.0M" secondary="through Nov 16" />
         )}
@@ -82,7 +82,7 @@ export const Sizes: Story = {
 }
 
 export const States: Story = {
-  parameters: story('Loading swaps the body for a skeleton of the same geometry (aria-busy); Error swaps it for an Alert (or an EmptyState for a whole-widget failure). Header and footer stay.'),
+  parameters: story('Loading swaps the body for a skeleton of the same geometry (aria-busy); Error swaps it for a compact EmptyState (variant error, Retry); use an Alert above the content for a partial problem. Header and footer stay.'),
   render: () => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--ot-spacing-gap-xl)', alignItems: 'flex-start' }}>
       <DeliveryCard state="default" divider />

@@ -1,0 +1,98 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './Progress.stories'
+import { Progress } from './Progress'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Progress
+
+A horizontal meter for progress toward a goal: delivered impressions, spent budget, completed tasks. It separates **confirmed** data (solid) from **preliminary** data (hatch), and can show a dashed **forecast**, the **expected** value for today and the **goal**.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Progress } from './components/Progress'
+
+<Progress
+  max={60}
+  label="Delivered 36.2M"
+  caption="Goal 48.0M"
+  segments={[
+    { value: 32.1, fill: 'solid', label: 'Confirmed 32.1M' },
+    { value: 4.1, fill: 'hatch', label: 'Preliminary 4.1M' },
+  ]}
+  ghost={{ from: 36.2, to: 44, label: 'Forecast 44.0M' }}
+  markers={[
+    { value: 40, type: 'marker', label: 'Expected 40.0M' },
+    { value: 48, type: 'target', label: 'Goal 48.0M' },
+  ]}
+/>
+```
+
+## Anatomy
+
+| Part | Look | Meaning |
+|---|---|---|
+| Track | `data/track` | The full scale, 0 → `max` |
+| Solid segment | `data/confirmed` | Final, reconciled data |
+| Hatch segment | `data/preliminary` stripes | Data that can still change. Readable without color |
+| Ghost | dashed `data/projected` outline | Forecast, not delivered yet |
+| Marker | line + triangle, `data/expected` | Where you should be today |
+| Target | full-height line | The goal |
+
+Set `max` above the goal when over-delivery is possible (goal 100, max 120) so the bar never clips.
+
+<Canvas of={Stories.Variants} />
+
+## Sizes
+
+<Canvas of={Stories.Sizes} />
+
+## States
+
+<Canvas of={Stories.States} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Label with numbers" example={<Stack><Progress label="Delivered 36.2M" caption="Goal 48.0M" max={60} segments={[{ value: 36.2, label: 'Delivered 36.2M' }]} markers={[{ value: 48, label: 'Goal 48.0M' }]} showMarkerLabels={false} showLegend={false} /></Stack>}>
+    The bar shows the shape; the label gives the exact value.
+  </Rule>
+  <Rule kind="dont" title="A bar with no context" example={<Stack><Progress segments={[{ value: 60, label: '60%' }]} showLegend={false} /></Stack>}>
+    60% of what? Always name the value and the goal.
+  </Rule>
+  <Rule kind="do" title="Hatch for preliminary data" example={<Stack><Progress segments={[{ value: 50, label: 'Confirmed' }, { value: 15, fill: 'hatch', label: 'Preliminary' }]} /></Stack>}>
+    Stripes keep "can still change" readable for everyone, including color-blind users and print.
+  </Rule>
+  <Rule kind="dont" title="Too many segments" example={<Stack><Progress segments={[10, 8, 12, 9, 11, 7, 10].map((v, i) => ({ value: v, color: `var(--ot-color-chart-${(i % 5) + 1})`, label: `S${i + 1}` }))} /></Stack>}>
+    Above 4–5 segments use a chart or a table instead.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **Roles.** A single segment without markers is `role="meter"` with `aria-valuenow / min / max`. Composite bars are `role="img"` with one full `aria-label` built from the label, segments, forecast and markers ("Delivered 36.2M. Confirmed 32.1M, Preliminary 4.1M. Forecast 44.0M. Expected 40.0M, Goal 48.0M"). Pass `ariaLabel` to write a better sentence.
+- **Interactive.** With `interactive`, each segment is a button in the Tab order with its own name; hover or focus opens a light Tooltip and dims the other segments. The wrapper becomes `role="group"`.
+- **Not color alone.** Preliminary data uses a hatch pattern, the forecast a dashed outline, markers differ by shape (triangle vs plain line), and the legend names every part.
+- **Numbers.** Labels use tabular figures so values line up.
+- **Motion.** The component does not animate; loading uses Skeleton, which turns static under `prefers-reduced-motion`.
+
+### Contrast (WCAG 2.2, non-text 3:1)
+
+| Pair | Light | Dark |
+|---|---|---|
+| `data/confirmed` and `data/preliminary` on `data/track` | 3.2 : 1 | 5.1 : 1 |
+| `data/projected` (forecast outline) on `bg/primary` | 6.1 : 1 | 7.9 : 1 |
+| `data/expected` (marker, target) on `bg/primary` | 16.1 : 1 | 15.3 : 1 |
+| Caption, legend (`text/secondary`) on `bg/primary` | 6.1 : 1 | 7.9 : 1 |
+
+Muted bars are intentionally low-contrast (inactive entity); the label still carries the value in text.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Progress](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=199-600)
+- Tokens: `--ot-progress-size-{sm|md|lg}-height`, `--ot-progress-{radius|segment-gap|label-gap|marker-width|marker-overhang|ghost-width|focus-ring-width}`
+- Colors: `--ot-color-data-{track|confirmed|preliminary|projected|expected}`, series `--ot-color-chart-{1..5}`; hatch `--ot-pattern-hatch-{width|gap}`

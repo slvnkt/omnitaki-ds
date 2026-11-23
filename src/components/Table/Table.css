@@ -1,0 +1,198 @@
+/* Table — Figma: Omnitaki DS › Table (203:936) + TableHeaderCell (202:85), TableCell (202:192), TableRow (202:619).
+   Native <table>. Header 32 (Caption Strong), rows 32 / 40 (Body 1), dividers inside the row height,
+   footer total row Label M on bg/secondary. Tokens: table/*. */
+
+.ot-table-wrap {
+  --_row: var(--ot-table-size-md-row-height);
+  --_head: var(--ot-table-size-sm-row-height);
+  --_divider: inset 0 calc(-1 * var(--ot-table-divider-width)) 0 var(--ot-color-border-primary);
+  --ot-table-sticky-bg: var(--ot-color-bg-primary);
+
+  position: relative;
+  min-width: 0;
+  overflow: auto;
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.ot-table-wrap--compact { --_row: var(--ot-table-size-sm-row-height); }
+
+.ot-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--ot-color-text-primary);
+  font-size: var(--ot-typography-body-md-font-size);
+  line-height: var(--ot-typography-body-md-line-height);
+  font-weight: var(--ot-typography-body-md-font-weight);
+}
+.ot-table__caption {
+  padding-bottom: var(--ot-table-caption-gap);
+  caption-side: top;
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+  text-align: left;
+}
+.ot-table__caption--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ── Cells ── */
+.ot-table th,
+.ot-table td {
+  box-sizing: border-box;
+  height: var(--_row);
+  padding: 0 var(--ot-table-cell-padding-x);
+  box-shadow: var(--_divider);
+  text-align: left;
+  vertical-align: middle;
+}
+.ot-table [data-align='right'] { text-align: right; }
+
+/* ── Header ── */
+.ot-table thead th {
+  height: var(--_head);
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+  white-space: nowrap;
+}
+.ot-table thead th[aria-sort='ascending'],
+.ot-table thead th[aria-sort='descending'] { color: var(--ot-color-text-primary); }
+.ot-table-wrap--sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--ot-table-sticky-bg);
+}
+.ot-table th.ot-table__th--sortable { padding: 0; }
+.ot-table__sort {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--ot-spacing-gap-xs);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 var(--ot-table-cell-padding-x);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+[data-align='right'] > .ot-table__sort { flex-direction: row-reverse; }
+.ot-table__sort:hover,
+.ot-table__sort[data-preview-state='hover'] { background: var(--ot-color-bg-subtle-hover); }
+.ot-table__sort:focus { outline: none; }
+.ot-table__sort:focus-visible,
+.ot-table__sort[data-preview-state='focus'] {
+  background: var(--ot-color-bg-subtle-hover);
+  box-shadow: inset 0 0 0 var(--ot-table-focus-ring-width) var(--ot-color-border-focus);
+}
+.ot-table__sort-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--ot-color-text-tertiary);
+  visibility: hidden;
+}
+.ot-table__sort-icon > svg {
+  width: var(--ot-table-sort-icon-size);
+  height: var(--ot-table-sort-icon-size);
+}
+.ot-table__sort:hover .ot-table__sort-icon,
+.ot-table__sort:focus-visible .ot-table__sort-icon,
+.ot-table__sort[data-preview-state] .ot-table__sort-icon { visibility: visible; }
+[aria-sort='ascending'] .ot-table__sort-icon,
+[aria-sort='descending'] .ot-table__sort-icon {
+  color: var(--ot-color-text-primary);
+  visibility: visible;
+}
+
+/* ── Body rows ── */
+.ot-table tbody td { font-variant-numeric: tabular-nums; }
+.ot-table tbody tr:hover > td,
+.ot-table tbody tr[data-preview-state='hover'] > td { background: var(--ot-color-bg-subtle-hover); }
+.ot-table tbody tr[data-selected] > td { background: var(--ot-color-brand-secondary); }
+.ot-table__row--clickable { cursor: pointer; }
+.ot-table__row--clickable:focus { outline: none; }
+.ot-table__row--clickable:focus-visible > td,
+.ot-table tbody tr[data-preview-state='focus'] > td {
+  background: var(--ot-color-bg-subtle-hover);
+  box-shadow: var(--_divider), inset 0 var(--ot-table-focus-ring-width) 0 var(--ot-color-border-focus), inset 0 calc(-1 * var(--ot-table-focus-ring-width)) 0 var(--ot-color-border-focus);
+}
+.ot-table__row--clickable:focus-visible > td:first-child,
+.ot-table tbody tr[data-preview-state='focus'] > td:first-child {
+  box-shadow: inset 0 var(--ot-table-focus-ring-width) 0 var(--ot-color-border-focus), inset 0 calc(-1 * var(--ot-table-focus-ring-width)) 0 var(--ot-color-border-focus), inset var(--ot-table-focus-ring-width) 0 0 var(--ot-color-border-focus);
+}
+.ot-table__row--clickable:focus-visible > td:last-child,
+.ot-table tbody tr[data-preview-state='focus'] > td:last-child {
+  box-shadow: inset 0 var(--ot-table-focus-ring-width) 0 var(--ot-color-border-focus), inset 0 calc(-1 * var(--ot-table-focus-ring-width)) 0 var(--ot-color-border-focus), inset calc(-1 * var(--ot-table-focus-ring-width)) 0 0 var(--ot-color-border-focus);
+}
+.ot-table__empty-cell { padding: 0; }
+.ot-table tbody .ot-table__empty-cell { height: auto; box-shadow: none; }
+.ot-table tbody tr:hover > .ot-table__empty-cell { background: none; }
+
+/* ── Footer (total row) ── */
+.ot-table tfoot td,
+.ot-table tfoot th {
+  background: var(--ot-color-bg-secondary);
+  color: var(--ot-color-text-primary);
+  font-size: var(--ot-typography-label-md-font-size);
+  line-height: var(--ot-typography-label-md-line-height);
+  font-weight: var(--ot-typography-label-md-font-weight);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Cell helpers ── */
+.ot-table-number {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--ot-spacing-gap-xs);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ot-table-number__unit { color: var(--ot-color-text-secondary); }
+.ot-table-two-line {
+  display: grid;
+  padding-block: var(--ot-spacing-padding-xs);
+}
+.ot-table-two-line__secondary {
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+}
+.ot-table-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--ot-table-cell-gap);
+  min-width: 120px;
+}
+.ot-table-progress > .ot-progress { flex: 1 1 auto; }
+.ot-table-progress__value {
+  min-width: 4ch;
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.ot-table__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
