@@ -1,7 +1,7 @@
 color/bg/primary|C|{palette/white},{palette/neutral/950}|Semantic color: background · primary.
 color/bg/secondary|C|{palette/neutral/50},{palette/neutral/900}|Semantic color: background · secondary.
 color/bg/tertiary|C|{palette/neutral/100},{palette/neutral/800}|Semantic color: background · tertiary.
-color/bg/inverse|C|{palette/neutral/900},{palette/neutral/50}|Semantic color: background · inverse.
+color/bg/inverse|C|{palette/navy/900},{palette/neutral/50}|Inverse surface (tooltips, snackbars): deep navy in Light, light neutral in Dark.
 color/bg/overlay|C|{palette/overlay-black/40},{palette/overlay-black/40}|Semantic color: background · overlay.
 color/bg/transparent|C|{palette/transparent},{palette/transparent}|Semantic color: background · transparent.
 color/text/primary|C|{palette/neutral/900},{palette/neutral/50}|Semantic color: text · primary.
@@ -152,3 +152,11 @@ color/bg/brand|C|{palette/violet/25},{palette/violet/950}|Brand background canva
 color/bg/brand-pattern|C|{palette/violet/100},{palette/violet/900}|Dots of the brand background pattern; subtle on color/bg/brand.
 pattern/dot/size|F|{space/0-25},{space/0-25}|Brand background dot size (1px).
 pattern/dot/gap|F|{space/2},{space/2}|Brand background dot pitch (8px grid).
+color/bg/brand-strong|C|{palette/navy/900},{palette/navy/900}|Deep navy brand surface for hero, promo and footer blocks. Text on it: color/text/on-brand-strong.
+color/text/on-brand-strong|C|{palette/white},{palette/white}|Text and icons on color/bg/brand-strong and the brand gradient.
+color/brand/gradient-start|C|{palette/violet/400},{palette/violet/500}|Brand gradient start (Gradient/Brand style). Decorative surfaces; large text only.
+color/brand/gradient-end|C|{palette/violet/600},{palette/violet/700}|Brand gradient end (Gradient/Brand style).
+typography/font-family/mono|S|{font/family/Geist-Mono},{font/family/Geist-Mono}|Monospace family: data, IDs, amounts in tables, code. Code/* text styles.
+typography/code/sm/font-size|F|{font/size/12},{font/size/12}|Semantic typography: code · S · font size.
+typography/code/sm/line-height|F|{font/line-height/16},{font/line-height/16}|Semantic typography: code · S · line height.
+typography/code/sm/font-weight|F|{font/weight/regular},{font/weight/regular}|Semantic typography: code · S · font weight.

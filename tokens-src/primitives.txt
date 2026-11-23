@@ -1,17 +1,17 @@
 palette/white|C|#ffffff|
 palette/black|C|#000000|
 palette/transparent|C|#00000000|
-palette/neutral/50|C|#ecedec|
-palette/neutral/100|C|#dfe0df|
-palette/neutral/200|C|#c4c7c4|
-palette/neutral/300|C|#a9adaa|
-palette/neutral/400|C|#8e948f|
-palette/neutral/500|C|#737a75|
-palette/neutral/600|C|#5e6460|
-palette/neutral/700|C|#4a4e4b|
-palette/neutral/800|C|#353836|
-palette/neutral/900|C|#202221|
-palette/neutral/950|C|#161716|
+palette/neutral/50|C|#ececf3|
+palette/neutral/100|C|#dfdfe7|
+palette/neutral/200|C|#c5c5cf|
+palette/neutral/300|C|#aaabb6|
+palette/neutral/400|C|#90919d|
+palette/neutral/500|C|#767784|Cool neutral scale: lightness of the former neutrals, violet undertone (OKLCH hue ≈284) to match the brand.
+palette/neutral/600|C|#60616e|
+palette/neutral/700|C|#4b4c58|
+palette/neutral/800|C|#363641|
+palette/neutral/900|C|#20202b|
+palette/neutral/950|C|#16161f|
 palette/green/50|C|#e3f4e9|
 palette/green/100|C|#cfecd9|
 palette/green/200|C|#a7ddb9|
@@ -154,7 +154,7 @@ font/line-height/54|F|54|
 font/line-height/62|F|62|
 font/size/64|F|64|
 font/line-height/72|F|72|
-palette/neutral/25|C|#f6f7f6|
+palette/neutral/25|C|#f6f6fb|
 space/0-5|F|2|2px (0.5 × 4). Smallest inset.
 space/0-25|F|1|1px (0.25 × 4). Hairline offsets (shadows).
 palette/overlay-black/24|C|#0000003d|Black 24%.
@@ -170,3 +170,6 @@ palette/violet/800|C|#352e6d|
 palette/violet/900|C|#1f1b40|
 palette/violet/950|C|#16132d|
 palette/violet/25|C|#f2f2f9|Brand canvas #F2F2F9: desaturated violet tint (Veridian-style background).
+palette/navy/900|C|#1e155d|Deep navy brand surface (Veridian hero background).
+palette/navy/950|C|#110d67|Deepest navy accent.
+font/family/Geist-Mono|S|Geist Mono|Monospace family for data, code and numbers.

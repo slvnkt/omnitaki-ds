@@ -154,9 +154,9 @@ Button renders a native `<button type="button">`, so semantics, focus and keyboa
 |---|---|---|
 | Primary label on brand fill (default) | 4.4 : 1 | 7.7 : 1 |
 | Primary label on brand fill (hover / pressed) | 6.1 : 1 / 8.4 : 1 | 10.3 : 1 / 5.7 : 1 |
-| Danger label on danger fill | 4.8 : 1 | 5.8 : 1 |
-| Secondary / Ghost label on page | 16.0 : 1 | 15.3 : 1 |
-| Focus ring on page background | 16.0 : 1 | 15.3 : 1 |
+| Danger label on danger fill | 4.8 : 1 | 5.7 : 1 |
+| Secondary / Ghost label on page | 16.1 : 1 | 15.3 : 1 |
+| Focus ring on page background | 16.1 : 1 | 15.3 : 1 |
 | Secondary border on page | 4.4 : 1 | 4.1 : 1 |
 
 The ring and border pass the 3 : 1 non-text minimum, and all labels pass AA (4.5 : 1) **except the Primary label in Light at rest: white on the brand violet `#7465ED` is 4.4 : 1** — it meets the 3 : 1 large-text level, but not AA for 12–16px labels. This is an accepted design decision: the brand fill stays exactly `#7465ED`. If AA becomes a hard requirement, move Light `brand/primary` one step darker (`violet/600`, 6.1 : 1). Disabled buttons are intentionally low-contrast; WCAG exempts inactive controls.

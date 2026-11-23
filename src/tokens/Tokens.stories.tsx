@@ -140,6 +140,54 @@ function BrandBackgroundDemo() {
   )
 }
 
+const surfaceCard = {
+  display: 'grid',
+  alignContent: 'end',
+  gap: 'var(--ot-spacing-gap-xs)',
+  minHeight: 180,
+  padding: 'var(--ot-spacing-padding-xl)',
+  borderRadius: 'var(--ot-shape-radius-lg)',
+  boxSizing: 'border-box',
+} as const
+
+function Surfaces() {
+  return (
+    <div style={{ display: 'grid', gap: 'var(--ot-spacing-gap-lg)' }}>
+      {(['light', 'dark'] as const).map(theme => (
+        <div
+          key={theme}
+          data-theme={theme}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: 'var(--ot-spacing-gap-lg)',
+            padding: 'var(--ot-spacing-padding-xl)',
+            borderRadius: 'var(--ot-shape-radius-lg)',
+            background: 'var(--ot-color-bg-primary)',
+          }}
+        >
+          <div className="ot-bg-brand-strong" style={surfaceCard}>
+            <span className="ot-text-heading-h3">Financial infrastructure</span>
+            <code className="ot-text-code-code-s">.ot-bg-brand-strong</code>
+          </div>
+          <div className="ot-bg-gradient-brand" style={surfaceCard}>
+            <span className="ot-text-heading-h3">Designed for growth</span>
+            <code className="ot-text-code-code-s">.ot-bg-gradient-brand</code>
+          </div>
+          <div className="ot-surface-dashed" style={{ ...surfaceCard, alignContent: 'center', justifyItems: 'center', color: 'var(--ot-color-text-primary)' }}>
+            <span className="ot-text-label-label-m">Drop files here</span>
+            <code className="ot-text-code-code-s" style={{ color: 'var(--ot-color-text-secondary)' }}>.ot-surface-dashed</code>
+          </div>
+          <div className="ot-surface-selected" style={{ ...surfaceCard, background: 'var(--ot-color-bg-elevated)', color: 'var(--ot-color-text-primary)' }}>
+            <span className="ot-text-heading-subtitle-2">Pro plan</span>
+            <code className="ot-text-code-code-s" style={{ color: 'var(--ot-color-text-secondary)' }}>.ot-surface-selected</code>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 const meta = {
   title: 'Foundations/Tokens',
   parameters: { layout: 'padded' },
@@ -160,4 +208,15 @@ export const BrandBackground: Story = {
     },
   },
   render: () => <BrandBackgroundDemo />,
+}
+export const BrandSurfaces: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Navy surface, brand gradient (large text only), dashed placeholder and selected card — utilities from tokens.css. Figma: Brand Surfaces page.',
+      },
+    },
+  },
+  render: () => <Surfaces />,
 }

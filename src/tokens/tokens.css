@@ -5,17 +5,17 @@
   --ot-palette-white: #ffffff;
   --ot-palette-black: #000000;
   --ot-palette-transparent: #00000000;
-  --ot-palette-neutral-50: #ecedec;
-  --ot-palette-neutral-100: #dfe0df;
-  --ot-palette-neutral-200: #c4c7c4;
-  --ot-palette-neutral-300: #a9adaa;
-  --ot-palette-neutral-400: #8e948f;
-  --ot-palette-neutral-500: #737a75;
-  --ot-palette-neutral-600: #5e6460;
-  --ot-palette-neutral-700: #4a4e4b;
-  --ot-palette-neutral-800: #353836;
-  --ot-palette-neutral-900: #202221;
-  --ot-palette-neutral-950: #161716;
+  --ot-palette-neutral-50: #ececf3;
+  --ot-palette-neutral-100: #dfdfe7;
+  --ot-palette-neutral-200: #c5c5cf;
+  --ot-palette-neutral-300: #aaabb6;
+  --ot-palette-neutral-400: #90919d;
+  --ot-palette-neutral-500: #767784;
+  --ot-palette-neutral-600: #60616e;
+  --ot-palette-neutral-700: #4b4c58;
+  --ot-palette-neutral-800: #363641;
+  --ot-palette-neutral-900: #20202b;
+  --ot-palette-neutral-950: #16161f;
   --ot-palette-green-50: #e3f4e9;
   --ot-palette-green-100: #cfecd9;
   --ot-palette-green-200: #a7ddb9;
@@ -158,7 +158,7 @@
   --ot-font-line-height-62: 62px;
   --ot-font-size-64: 64px;
   --ot-font-line-height-72: 72px;
-  --ot-palette-neutral-25: #f6f7f6;
+  --ot-palette-neutral-25: #f6f6fb;
   --ot-space-0-5: 2px;
   --ot-space-0-25: 1px;
   --ot-palette-overlay-black-24: #0000003d;
@@ -174,6 +174,9 @@
   --ot-palette-violet-900: #1f1b40;
   --ot-palette-violet-950: #16132d;
   --ot-palette-violet-25: #f2f2f9;
+  --ot-palette-navy-900: #1e155d;
+  --ot-palette-navy-950: #110d67;
+  --ot-font-family-Geist-Mono: "Geist Mono";
 }
 
 /* ── 2. Semantic · Light (default) ── */
@@ -183,7 +186,7 @@
   --ot-color-bg-primary: var(--ot-palette-white);
   --ot-color-bg-secondary: var(--ot-palette-neutral-50);
   --ot-color-bg-tertiary: var(--ot-palette-neutral-100);
-  --ot-color-bg-inverse: var(--ot-palette-neutral-900);
+  --ot-color-bg-inverse: var(--ot-palette-navy-900);
   --ot-color-bg-overlay: var(--ot-palette-overlay-black-40);
   --ot-color-bg-transparent: var(--ot-palette-transparent);
   --ot-color-text-primary: var(--ot-palette-neutral-900);
@@ -334,12 +337,21 @@
   --ot-color-bg-brand-pattern: var(--ot-palette-violet-100);
   --ot-pattern-dot-size: var(--ot-space-0-25);
   --ot-pattern-dot-gap: var(--ot-space-2);
+  --ot-color-bg-brand-strong: var(--ot-palette-navy-900);
+  --ot-color-text-on-brand-strong: var(--ot-palette-white);
+  --ot-color-brand-gradient-start: var(--ot-palette-violet-400);
+  --ot-color-brand-gradient-end: var(--ot-palette-violet-600);
+  --ot-typography-font-family-mono: var(--ot-font-family-Geist-Mono);
+  --ot-typography-code-sm-font-size: var(--ot-font-size-12);
+  --ot-typography-code-sm-line-height: var(--ot-font-line-height-16);
+  --ot-typography-code-sm-font-weight: var(--ot-font-weight-regular);
 
   /* Elevation and brand pattern (re-declared per theme so their colors follow the theme) */
   --ot-shadow-sm: 0px var(--ot-elevation-sm-key-y) var(--ot-elevation-sm-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-sm-ambient-y) var(--ot-elevation-sm-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-md: 0px var(--ot-elevation-md-key-y) var(--ot-elevation-md-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-md-ambient-y) var(--ot-elevation-md-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-lg: 0px var(--ot-elevation-lg-key-y) var(--ot-elevation-lg-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-lg-ambient-y) var(--ot-elevation-lg-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-bg-brand-pattern: radial-gradient(circle, var(--ot-color-bg-brand-pattern) var(--ot-pattern-dot-size), transparent calc(var(--ot-pattern-dot-size) + 0.5px));
+  --ot-gradient-brand: linear-gradient(135deg, var(--ot-color-brand-gradient-start), var(--ot-color-brand-gradient-end));
 }
 
 /* ── 2. Semantic · Dark (only values that differ from Light) ── */
@@ -406,18 +418,40 @@
   --ot-color-shadow-ambient: var(--ot-palette-overlay-black-24);
   --ot-color-bg-brand: var(--ot-palette-violet-950);
   --ot-color-bg-brand-pattern: var(--ot-palette-violet-900);
+  --ot-color-brand-gradient-start: var(--ot-palette-violet-500);
+  --ot-color-brand-gradient-end: var(--ot-palette-violet-700);
 
   --ot-shadow-sm: 0px var(--ot-elevation-sm-key-y) var(--ot-elevation-sm-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-sm-ambient-y) var(--ot-elevation-sm-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-md: 0px var(--ot-elevation-md-key-y) var(--ot-elevation-md-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-md-ambient-y) var(--ot-elevation-md-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-lg: 0px var(--ot-elevation-lg-key-y) var(--ot-elevation-lg-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-lg-ambient-y) var(--ot-elevation-lg-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-bg-brand-pattern: radial-gradient(circle, var(--ot-color-bg-brand-pattern) var(--ot-pattern-dot-size), transparent calc(var(--ot-pattern-dot-size) + 0.5px));
+  --ot-gradient-brand: linear-gradient(135deg, var(--ot-color-brand-gradient-start), var(--ot-color-brand-gradient-end));
 }
 
-/* ── Brand background: canvas + dot grid ── */
+/* ── Brand surfaces (Figma: Brand Surfaces page) ── */
+/* Brand background: lavender canvas + dot grid */
 .ot-bg-brand {
   background-color: var(--ot-color-bg-brand);
   background-image: var(--ot-bg-brand-pattern);
   background-size: var(--ot-pattern-dot-gap) var(--ot-pattern-dot-gap);
+}
+/* Deep navy surface; text on it uses --ot-color-text-on-brand-strong */
+.ot-bg-brand-strong {
+  background-color: var(--ot-color-bg-brand-strong);
+  color: var(--ot-color-text-on-brand-strong);
+}
+/* Brand gradient (Gradient/Brand); large text only */
+.ot-bg-gradient-brand {
+  background-image: var(--ot-gradient-brand);
+  color: var(--ot-color-text-on-brand-strong);
+}
+/* Dashed placeholder: drop zones, empty slots */
+.ot-surface-dashed {
+  border: var(--ot-shape-border-width-sm) dashed var(--ot-color-border-primary);
+}
+/* Selected card: 2px brand outline drawn inside the box */
+.ot-surface-selected {
+  box-shadow: inset 0 0 0 var(--ot-shape-border-width-md) var(--ot-color-brand-primary), var(--ot-shadow-sm);
 }
 
 /* ── 3. Component (sizes only) ── */
@@ -638,5 +672,23 @@
   font-size: var(--ot-typography-label-sm-font-size);
   line-height: var(--ot-typography-label-sm-line-height);
   font-weight: var(--ot-typography-label-sm-font-weight);
+  letter-spacing: 0;
+}
+
+/* Code/Code M */
+.ot-text-code-code-m {
+  font-family: var(--ot-typography-font-family-mono), ui-monospace, monospace;
+  font-size: var(--ot-typography-code-md-font-size);
+  line-height: var(--ot-typography-code-md-line-height);
+  font-weight: var(--ot-typography-code-md-font-weight);
+  letter-spacing: 0;
+}
+
+/* Code/Code S */
+.ot-text-code-code-s {
+  font-family: var(--ot-typography-font-family-mono), ui-monospace, monospace;
+  font-size: var(--ot-typography-code-sm-font-size);
+  line-height: var(--ot-typography-code-sm-line-height);
+  font-weight: var(--ot-typography-code-sm-font-weight);
   letter-spacing: 0;
 }

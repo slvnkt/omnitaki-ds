@@ -282,6 +282,50 @@
           }
         }
       }
+    },
+    "code": {
+      "code-m": {
+        "$value": {
+          "fontFamily": "{typography.font-family.mono}",
+          "fontSize": "{typography.code.md.font-size}",
+          "fontWeight": "{typography.code.md.font-weight}",
+          "lineHeight": "{typography.code.md.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Data, IDs, amounts and code, 14px mono. Tokens: typography/code/md/*, typography/font-family/mono. Code: .ot-text-code-code-m",
+        "$extensions": {
+          "com.figma": {
+            "style": "Code/Code M",
+            "codeSyntax": {
+              "WEB": ".ot-text-code-code-m"
+            }
+          }
+        }
+      },
+      "code-s": {
+        "$value": {
+          "fontFamily": "{typography.font-family.mono}",
+          "fontSize": "{typography.code.sm.font-size}",
+          "fontWeight": "{typography.code.sm.font-weight}",
+          "lineHeight": "{typography.code.sm.line-height}",
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Small data in tables, timestamps, 12px mono. Tokens: typography/code/sm/*, typography/font-family/mono. Code: .ot-text-code-code-s",
+        "$extensions": {
+          "com.figma": {
+            "style": "Code/Code S",
+            "codeSyntax": {
+              "WEB": ".ot-text-code-code-s"
+            }
+          }
+        }
+      }
     }
   },
   "shadow": {
@@ -399,6 +443,31 @@
           "style": "Elevation/lg",
           "codeSyntax": {
             "WEB": "var(--ot-shadow-lg)"
+          }
+        }
+      }
+    }
+  },
+  "gradient": {
+    "$type": "gradient",
+    "brand": {
+      "$value": [
+        {
+          "color": "{color.brand.gradient-start}",
+          "position": 0
+        },
+        {
+          "color": "{color.brand.gradient-end}",
+          "position": 1
+        }
+      ],
+      "$description": "Brand gradient 135°: color/brand/gradient-start → gradient-end. Hero, covers, illustrations; text on it must be large (≥24px) or use navy. Code: var(--ot-gradient-brand).",
+      "$extensions": {
+        "com.figma": {
+          "style": "Gradient/Brand",
+          "angle": 135,
+          "codeSyntax": {
+            "WEB": "var(--ot-gradient-brand)"
           }
         }
       }

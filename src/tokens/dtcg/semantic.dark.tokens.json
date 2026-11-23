@@ -41,7 +41,7 @@
       },
       "inverse": {
         "$value": "{palette.neutral.50}",
-        "$description": "Semantic color: background · inverse.",
+        "$description": "Inverse surface (tooltips, snackbars): deep navy in Light, light neutral in Dark.",
         "$extensions": {
           "com.figma": {
             "collection": "Semantic",
@@ -170,6 +170,18 @@
             }
           }
         }
+      },
+      "brand-strong": {
+        "$value": "{palette.navy.900}",
+        "$description": "Deep navy brand surface for hero, promo and footer blocks. Text on it: color/text/on-brand-strong.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-brand-strong)"
+            }
+          }
+        }
       }
     },
     "text": {
@@ -253,6 +265,18 @@
             "collection": "Semantic",
             "codeSyntax": {
               "WEB": "var(--ot-color-text-link-hover)"
+            }
+          }
+        }
+      },
+      "on-brand-strong": {
+        "$value": "{palette.white}",
+        "$description": "Text and icons on color/bg/brand-strong and the brand gradient.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-text-on-brand-strong)"
             }
           }
         }
@@ -425,6 +449,30 @@
             "collection": "Semantic",
             "codeSyntax": {
               "WEB": "var(--ot-color-brand-secondary-border)"
+            }
+          }
+        }
+      },
+      "gradient-start": {
+        "$value": "{palette.violet.500}",
+        "$description": "Brand gradient start (Gradient/Brand style). Decorative surfaces; large text only.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-gradient-start)"
+            }
+          }
+        }
+      },
+      "gradient-end": {
+        "$value": "{palette.violet.700}",
+        "$description": "Brand gradient end (Gradient/Brand style).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-brand-gradient-end)"
             }
           }
         }
@@ -1236,6 +1284,18 @@
             }
           }
         }
+      },
+      "mono": {
+        "$value": "{font.family.Geist-Mono}",
+        "$description": "Monospace family: data, IDs, amounts in tables, code. Code/* text styles.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-typography-font-family-mono)"
+            }
+          }
+        }
       }
     },
     "heading": {
@@ -1773,6 +1833,47 @@
               "collection": "Semantic",
               "codeSyntax": {
                 "WEB": "var(--ot-typography-code-md-font-weight)"
+              }
+            }
+          }
+        }
+      },
+      "sm": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{font.size.12}",
+          "$description": "Semantic typography: code · S · font size.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-code-sm-font-size)"
+              }
+            }
+          }
+        },
+        "line-height": {
+          "$type": "dimension",
+          "$value": "{font.line-height.16}",
+          "$description": "Semantic typography: code · S · line height.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-code-sm-line-height)"
+              }
+            }
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{font.weight.regular}",
+          "$description": "Semantic typography: code · S · font weight.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Semantic",
+              "codeSyntax": {
+                "WEB": "var(--ot-typography-code-sm-font-weight)"
               }
             }
           }
