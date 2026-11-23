@@ -61,7 +61,8 @@
 .ot-tab--underline {
   height: var(--ot-tabs-height);
   padding: var(--ot-tabs-padding-y) var(--ot-tabs-padding-x);
-  border-radius: var(--ot-tabs-radius);
+  /* top corners only (Figma 4/4/0/0): the indicator stays a straight line on the divider */
+  border-radius: var(--ot-tabs-radius) var(--ot-tabs-radius) 0 0;
   box-shadow: inset 0 calc(-1 * var(--ot-tabs-indicator-width)) 0 0 var(--_indicator);
 }
 /* Filled tab: 32px segment */
@@ -130,6 +131,10 @@
 .ot-tabs__panel {
   padding-top: var(--ot-spacing-padding-lg);
   color: var(--ot-color-text-primary);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  font-size: var(--ot-typography-body-md-font-size);
+  line-height: var(--ot-typography-body-md-line-height);
+  font-weight: var(--ot-typography-body-md-font-weight);
 }
 .ot-tabs__panel:focus-visible {
   outline: var(--ot-tabs-focus-ring-width) solid var(--ot-color-border-focus);
