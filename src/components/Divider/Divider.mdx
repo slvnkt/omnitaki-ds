@@ -1,0 +1,50 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './Divider.stories'
+import { Divider } from './Divider'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Divider
+
+A 1px line that separates groups of content: sections inside a Card, footer from body, items in an inline row. Use it sparingly — spacing alone often separates better.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Divider } from './components/Divider'
+
+<Divider spacing="md" />
+<Divider orientation="vertical" spacing="sm" />
+```
+
+<Canvas of={Stories.Variants} />
+
+## Spacing
+
+`none` (the parent's gap handles spacing, as in Card) · `sm` 8 · `md` 12 · `lg` 16 on both sides.
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Separate distinct groups" example={<Stack style={{ gap: 0 }}><span className="ot-text-body-body-1">Delivery details</span><Divider spacing="md" /><span className="ot-text-caption-caption">Updated 5 min ago</span></Stack>}>
+    One divider between body and footer clarifies structure.
+  </Rule>
+  <Rule kind="dont" title="A line between every row" example={<Stack style={{ gap: 0 }}><span>TV</span><Divider spacing="sm" /><span>CTV</span><Divider spacing="sm" /><span>Digital</span><Divider spacing="sm" /></Stack>}>
+    Too many lines add noise; use spacing or a Table for lists of rows.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **Decorative by default:** `aria-hidden="true"`, ignored by screen readers.
+- **Semantic separator:** pass `decorative={false}` when the line separates groups of content — it becomes `role="separator"` with `aria-orientation`.
+- **Keyboard.** Not focusable.
+- **Contrast.** `border/primary` on `bg/primary` is 1.7 : 1 (Light) / 2.1 : 1 (Dark) — decorative; structure must also be clear from layout and headings.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Divider](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=205-30)
+- Tokens: `--ot-divider-thickness`, `--ot-divider-size-{sm|md|lg}-spacing`; color `--ot-color-border-primary`

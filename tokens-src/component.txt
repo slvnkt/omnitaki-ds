@@ -97,3 +97,86 @@ menu/border-width|F|{shape/border-width/sm}|Menu surface border width.
 menu/radius|F|{shape/radius/md}|Menu surface corner radius.
 menu/padding|F|{spacing/padding/xs}|Inner padding of the menu around list items.
 menu/offset|F|{spacing/gap/xs}|Distance between the trigger (Field, Button) and the open menu.
+skeleton/size/sm/height|F|{control/icon-size/xs}|Skeleton text line S (12): stands in for Caption.
+skeleton/size/md/height|F|{control/icon-size/sm}|Skeleton text line M (16): stands in for Body 1 / Label.
+skeleton/size/lg/height|F|{control/icon-size/md}|Skeleton text line L (20): stands in for Body 2 / Subtitle.
+skeleton/radius|F|{shape/radius/sm}|Skeleton text line radius.
+skeleton/block/radius|F|{shape/radius/md}|Skeleton block radius (charts, images, cards).
+skeleton/circle/radius|F|{shape/radius/full}|Skeleton circle (avatar, icon).
+tooltip/padding-x|F|{spacing/padding/sm}|Dark tooltip horizontal padding.
+tooltip/padding-y|F|{spacing/padding/xs}|Dark tooltip vertical padding.
+tooltip/radius|F|{shape/radius/sm}|Dark tooltip radius.
+tooltip/gap|F|{spacing/gap/xs}|Gap between tooltip title, text and rows.
+tooltip/offset|F|{spacing/gap/xs}|Distance between trigger and tooltip arrow tip.
+tooltip/light/padding-x|F|{spacing/padding/md}|Light (chart) tooltip horizontal padding.
+tooltip/light/padding-y|F|{spacing/padding/sm}|Light (chart) tooltip vertical padding.
+tooltip/light/radius|F|{shape/radius/md}|Light (chart) tooltip radius, same as Menu surface.
+tooltip/light/row-gap|F|{spacing/gap/md}|Gap between label and value in a tooltip row.
+tooltip/border-width|F|{shape/border-width/sm}|Light tooltip surface border.
+term/radius|F|{shape/radius/sm}|Term focus ring radius.
+term/focus/ring-width|F|{shape/border-width/md}|Term keyboard focus ring.
+alert/padding-x|F|{spacing/padding/md}|Inline alert horizontal padding.
+alert/padding-y|F|{spacing/padding/sm}|Inline alert vertical padding.
+alert/gap|F|{spacing/gap/sm}|Gap between icon, content, action and dismiss.
+alert/content-gap|F|{spacing/gap/xs}|Gap between alert title and text.
+alert/radius|F|{shape/radius/md}|Inline alert radius (banner = none).
+alert/border-width|F|{shape/border-width/sm}|Alert border.
+alert/icon-size|F|{control/icon-size/sm}|Alert intent icon (16), aligned to the first text line.
+alert/banner/padding-x|F|{spacing/padding/lg}|Banner (full-width) horizontal padding.
+alert/banner/padding-y|F|{spacing/padding/md}|Banner (full-width) vertical padding.
+stat/gap|F|{spacing/gap/xs}|Vertical gap between label, value and secondary line.
+stat/value-gap|F|{spacing/gap/xs}|Gap between value and unit.
+stat/padding|F|{spacing/padding/sm}|Inset of an interactive Stat (hover/focus area).
+stat/radius|F|{shape/radius/md}|Radius of an interactive Stat surface and focus ring.
+stat/icon-size|F|{control/icon-size/sm}|Label hint icon and trailing chevron (16).
+stat/focus/ring-width|F|{shape/border-width/md}|Focus ring of an interactive Stat.
+stat/delta/gap|F|{spacing/gap/xs}|Gap inside Delta: arrow, value, comparison text.
+stat/delta/icon-size|F|{control/icon-size/xs}|Delta arrow (12).
+card/size/md/padding|F|{spacing/padding/lg}|Card padding M (16).
+card/size/lg/padding|F|{spacing/padding/xl}|Card padding L (24).
+card/size/md/gap|F|{spacing/gap/lg}|Gap between header, body and footer, M (16).
+card/size/lg/gap|F|{spacing/gap/xl}|Gap between header, body and footer, L (24).
+card/radius|F|{shape/radius/xl}|Card radius (16).
+card/border-width|F|{shape/border-width/sm}|Card border.
+card/header-gap|F|{spacing/gap/xs}|Gap between card title and subtitle.
+card/action-gap|F|{spacing/gap/sm}|Gap between header text and the right slot; between footer actions.
+progress/size/sm/height|F|{control/height/5xs}|Progress bar S (8), also mini progress in Table.
+progress/size/md/height|F|{control/height/4xs}|Progress bar M (12).
+progress/size/lg/height|F|{control/height/3xs}|Progress bar L (16).
+progress/radius|F|{shape/radius/sm}|Track radius (ends of the track only, not segments).
+progress/segment-gap|F|{spacing/padding/2xs}|Gap between adjacent segments (2) so they separate without color.
+progress/marker-width|F|{shape/border-width/md}|Marker / target line width (2).
+progress/marker-overhang|F|{spacing/padding/xs}|How far target lines extend above and below the track (4).
+progress/label-gap|F|{spacing/gap/sm}|Gap between labels and the bar.
+progress/ghost-width|F|{shape/border-width/sm}|Dashed outline of the ghost (projected) segment.
+progress/focus/ring-width|F|{shape/border-width/md}|Focus ring around a focused segment or marker.
+empty-state/size/sm/padding|F|{spacing/padding/lg}|Compact empty state padding (inside Card).
+empty-state/size/md/padding|F|{spacing/padding/2xl}|Default (page) empty state padding.
+empty-state/size/sm/gap|F|{spacing/gap/md}|Gap between icon, text and actions, compact.
+empty-state/size/md/gap|F|{spacing/gap/lg}|Gap between icon, text and actions, default.
+empty-state/size/sm/icon-box|F|{control/height/md}|Icon circle 40, compact.
+empty-state/size/md/icon-box|F|{control/height/lg}|Icon circle 48, default.
+empty-state/size/sm/icon-size|F|{control/icon-size/md}|Icon 20, compact.
+empty-state/size/md/icon-size|F|{control/icon-size/lg}|Icon 24, default.
+empty-state/text-gap|F|{spacing/gap/xs}|Gap between title and description.
+empty-state/action-gap|F|{spacing/gap/sm}|Gap between actions.
+empty-state/icon-radius|F|{shape/radius/full}|Icon circle radius.
+table/size/sm/row-height|F|{control/height/sm}|Compact row 32.
+table/size/md/row-height|F|{control/height/md}|Default row 40.
+table/cell-padding-x|F|{spacing/padding/md}|Horizontal cell padding (12).
+table/cell-gap|F|{spacing/gap/sm}|Gap inside a cell (value + unit, text + icon).
+table/sort-icon-size|F|{control/icon-size/xs}|Sort arrow in header cells (12).
+table/divider-width|F|{shape/border-width/sm}|Row divider (inside the row height).
+table/focus/ring-width|F|{shape/border-width/md}|Focus ring of a clickable row or sortable header.
+table/caption-gap|F|{spacing/gap/sm}|Gap between caption and table.
+divider/thickness|F|{shape/border-width/sm}|Divider line thickness (1).
+divider/size/sm/spacing|F|{spacing/gap/sm}|Space on both sides of a divider, S (8).
+divider/size/md/spacing|F|{spacing/gap/md}|Space on both sides of a divider, M (12).
+divider/size/lg/spacing|F|{spacing/gap/lg}|Space on both sides of a divider, L (16).
+disclosure/height|F|{control/height/md}|Disclosure trigger height (40), in line with md controls.
+disclosure/padding-x|F|{spacing/padding/md}|Trigger horizontal padding; panel uses the same so text aligns.
+disclosure/gap|F|{spacing/gap/sm}|Gap between label and chevron / leading icon.
+disclosure/icon-size|F|{control/icon-size/sm}|Chevron (16), rotates 180° when expanded.
+disclosure/radius|F|{shape/radius/md}|Trigger radius (hover surface and focus ring).
+disclosure/focus/ring-width|F|{shape/border-width/md}|Trigger keyboard focus ring.
+disclosure/panel-padding-y|F|{spacing/padding/sm}|Panel vertical padding.

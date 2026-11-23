@@ -1,0 +1,52 @@
+/* Skeleton — Figma: Omnitaki DS › Skeleton (187:37). Loading placeholder with the geometry of real content.
+   Fill bg/tertiary; shimmer or pulse, static with prefers-reduced-motion. Tokens: skeleton/*. */
+
+.ot-skeleton {
+  display: block;
+  flex-shrink: 0;
+  max-width: 100%;
+  background-color: var(--ot-color-bg-tertiary);
+}
+
+.ot-skeleton--text {
+  border-radius: var(--ot-skeleton-radius);
+}
+.ot-skeleton--text.ot-skeleton--sm { height: var(--ot-skeleton-size-sm-height); }
+.ot-skeleton--text.ot-skeleton--md { height: var(--ot-skeleton-size-md-height); }
+.ot-skeleton--text.ot-skeleton--lg { height: var(--ot-skeleton-size-lg-height); }
+
+.ot-skeleton--block {
+  border-radius: var(--ot-skeleton-block-radius);
+}
+
+.ot-skeleton--circle {
+  border-radius: var(--ot-skeleton-circle-radius);
+}
+.ot-skeleton--circle.ot-skeleton--sm { width: var(--ot-control-icon-size-lg); height: var(--ot-control-icon-size-lg); }
+.ot-skeleton--circle.ot-skeleton--md { width: var(--ot-control-height-sm); height: var(--ot-control-height-sm); }
+.ot-skeleton--circle.ot-skeleton--lg { width: var(--ot-control-height-md); height: var(--ot-control-height-md); }
+
+/* ── Animation ── */
+.ot-skeleton--shimmer {
+  background-image: linear-gradient(90deg, transparent 0%, var(--ot-color-bg-hover) 50%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 50% 100%;
+  animation: ot-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+.ot-skeleton--pulse {
+  animation: ot-skeleton-pulse 1.6s ease-in-out infinite;
+}
+@keyframes ot-skeleton-shimmer {
+  from { background-position: -100% 0; }
+  to { background-position: 200% 0; }
+}
+@keyframes ot-skeleton-pulse {
+  50% { opacity: var(--ot-opacity-disabled); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ot-skeleton--shimmer,
+  .ot-skeleton--pulse {
+    animation: none;
+    background-image: none;
+  }
+}

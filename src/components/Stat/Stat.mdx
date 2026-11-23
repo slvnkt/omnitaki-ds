@@ -1,0 +1,93 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './Stat.stories'
+import { Stat } from './Stat'
+import { Rule, Rules, Row } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Stat
+
+A number with context: what it is, the value with its unit, a context line and an optional change. Use `lg` for the hero figure of a widget and `sm` / `md` for KPI rows.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Stat } from './components/Stat'
+
+<Stat
+  size="lg"
+  label="Delivered impressions"
+  value="36.2"
+  unit="M of 48.0M"
+  secondary="through Nov 16"
+  hint="Reconciled impressions plus preliminary counts."
+  delta={{ value: '+12%', direction: 'up', comparison: 'vs last week' }}
+  deltaIntent="success"
+/>
+```
+
+## Anatomy
+
+1. **Label** (+ optional hint icon → Tooltip)
+2. **Value** — tabular figures, so numbers don't jump as they update
+3. **Unit** — muted and smaller: "%", "M", "of 48.0M"
+4. **Secondary line** — context: "through Nov 16", "4 preempted"
+5. **Delta** (optional) — arrow + value + comparison
+6. **Chevron** — only when the Stat is clickable
+
+<Canvas of={Stories.Variants} />
+
+## Delta: color by meaning
+
+"More" is not always "better": more preempted spots is bad, a lower CPM is good. Pick `deltaIntent` by meaning (`success` / `danger` / `neutral`); the arrow and the sign show direction independently of color.
+
+<Canvas of={Stories.DeltaStory} />
+
+## States
+
+Clickable stats (`onClick` / `href`) become a button or link with hover, pressed and focus; the surface extends 8px outside the content, so the numbers stay aligned with neighbouring content. `loading` shows a skeleton of the same geometry; `unavailableReason` shows "—" and explains why in a Tooltip.
+
+<Canvas of={Stories.States} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Unit next to value" example={<Row><Stat size="md" label="Delivery" value="75" unit="%" secondary="of plan" /></Row>}>
+    Formatted value + muted unit reads instantly and keeps digits aligned.
+  </Rule>
+  <Rule kind="dont" title="Unit inside the label" example={<Row><Stat size="md" label="Delivery (%)" value="75" /></Row>}>
+    Moving the unit away from the number makes users look twice.
+  </Rule>
+  <Rule kind="do" title="Intent by meaning" example={<Row><Stat size="sm" label="Preempted spots" value="4" delta={{ value: '−3', direction: 'down' }} deltaIntent="success" /></Row>}>
+    Fewer preemptions is good, so a downward delta is green.
+  </Rule>
+  <Rule kind="dont" title="Explain unavailable with zero" example={<Row><Stat size="sm" label="Frequency" value="0" /></Row>}>
+    0 is a value. When data is missing, use "—" with a reason (`unavailableReason`).
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **One phrase.** Value and unit are read together from a visually hidden text: "Delivered impressions, 36.2 M of 48.0M, through Nov 16".
+- **Delta** is announced with its direction in words ("up +12% vs last week"), not by color.
+- **Hint.** In a static Stat the info icon is a button with the name `"About {label}"` that opens the Tooltip on hover and focus. In a clickable Stat a nested button isn't allowed, so the hint becomes the Stat's `aria-describedby` description.
+- **Clickable.** Rendered as `<button>` or `<a>`; `Tab` focuses it, `Enter` (and `Space` for buttons) activates it; focus shows a 2px ring on the outset surface.
+- **Loading.** `aria-busy="true"` with an accessible name `"{label}: loading"`; skeletons are hidden.
+- **Unavailable.** "—" is a focusable button named "Not available" whose Tooltip gives the reason.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Value (`text/primary`) | 16.1 : 1 | 15.3 : 1 |
+| Label, unit, secondary (`text/secondary`) | 6.1 : 1 | 7.9 : 1 |
+| Delta success / danger text | 11.0 / 10.9 : 1 | 8.3 / 7.6 : 1 |
+| Unavailable "—" (`text/tertiary`) | 6.1 : 1 | 5.8 : 1 |
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Stat](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=191-332), [Delta](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=190-162)
+- Tokens: `--ot-stat-{gap|value-gap|padding|radius|icon-size|focus-ring-width}`, `--ot-stat-delta-{gap|icon-size}`; type from `--ot-typography-heading-{md|lg|2xl}-*`
+- Colors: `--ot-color-text-{primary|secondary|tertiary}`, `--ot-color-status-{success|danger}-secondary-text`, `--ot-color-bg-subtle-{hover|pressed}`, `--ot-color-border-focus`

@@ -1,0 +1,88 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './Card.stories'
+import { Card, CardBody, CardFooter, CardHeader } from './Card'
+import { Badge } from '../Badge'
+import { Button } from '../Button'
+import { Stat } from '../Stat'
+import { Rule, Rules } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Card
+
+The container for dashboard widgets and blocks: a header with a title and a right slot, a body, an optional divider and a footer with meta text and actions.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Card, CardBody, CardDivider, CardFooter, CardHeader } from './components/Card'
+
+<Card>
+  <CardHeader title="Campaign delivery" subtitle="Summer launch" action={<Badge variant="success">Live</Badge>} />
+  <CardBody loading={isLoading}>
+    <Stat size="lg" label="Delivered impressions" value="36.2" unit="M of 48.0M" />
+  </CardBody>
+  <CardDivider />
+  <CardFooter meta="Updated 5 min ago"><Button variant="ghost" size="sm">View report</Button></CardFooter>
+</Card>
+```
+
+## Variants and padding
+
+| Variant | Use |
+|---|---|
+| `default` | Standalone widgets on a page background (`Elevation/sm`) |
+| `outlined` | Dense grids of cards where shadows add noise |
+| `muted` | Inactive entities — paused or archived campaigns; title in `text/secondary` |
+
+Padding `md` 16 for most widgets, `lg` 24 for hero blocks.
+
+<Canvas of={Stories.Variants} />
+
+## States
+
+Keep the header and footer; swap only the body. **Loading** → `CardBody loading` (skeleton, `aria-busy`); pass `skeleton` to mirror your exact content. **Error** → an `Alert` for a partial problem, or an `EmptyState` with `variant="error"` when the whole widget failed.
+
+<Canvas of={Stories.States} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="One topic per card" example={<Card style={{ width: 240 }} variant="outlined"><CardHeader title="Delivery" action={<Badge variant="success" size="sm">Live</Badge>} /><CardBody><Stat size="sm" label="Delivered" value="75" unit="%" /></CardBody></Card>}>
+    A clear title and one main figure or visual.
+  </Rule>
+  <Rule kind="dont" title="Cards inside cards" example={<Card style={{ width: 240 }}><CardHeader title="Overview" /><CardBody><Card variant="outlined"><CardHeader title="Delivery" /></Card></CardBody></Card>}>
+    Nested borders and shadows blur the hierarchy. Use a Divider or a Table inside instead.
+  </Rule>
+  <Rule kind="do" title="Header stays during loading" example={<Card style={{ width: 240 }}><CardHeader title="Delivery" /><CardBody loading /></Card>}>
+    Users know what is loading; only the body becomes a skeleton.
+  </Rule>
+  <Rule kind="dont" title="Many actions in the footer" example={<Card style={{ width: 240 }}><CardHeader title="Delivery" /><CardFooter><Button size="sm" variant="ghost">Edit</Button><Button size="sm" variant="ghost">Export</Button><Button size="sm" variant="ghost">Share</Button></CardFooter></Card>}>
+    One or two actions; move the rest to a Menu in the header slot.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **Landmark and name.** Renders a `<section>` labelled by its `CardHeader` title (`aria-labelledby`), so screen-reader users can jump between widgets. Use `as="div"` for purely visual grouping or `as="article"` for self-contained items; pass `aria-label` to override the name.
+- **Heading level.** The title is an `<h3>` by default; set `titleAs` to fit the page outline.
+- **Keyboard.** The card itself isn't focusable; its actions follow the normal Tab order. Don't make the whole card clickable when it contains other controls — use a clickable `Stat` or a link in the title instead.
+- **Loading.** `aria-busy="true"` on the body while loading; skeletons are hidden.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Title (`text/primary` on `bg/primary`) | 16.1 : 1 | 15.3 : 1 |
+| Subtitle, meta (`text/secondary`) | 6.1 : 1 | 7.9 : 1 |
+| Muted title (`text/secondary` on `bg/secondary`) | 5.2 : 1 | 7.1 : 1 |
+
+The 1px border (`border/primary`) is decorative; cards are also separated by spacing and elevation.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Card](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=192-592)
+- Tokens: `--ot-card-size-{md|lg}-{padding|gap}`, `--ot-card-{radius|border-width|header-gap|action-gap}`
+- Colors: `--ot-color-bg-{primary|secondary}`, `--ot-color-border-primary`, `--ot-color-text-{primary|secondary}`; shadow `--ot-shadow-sm`

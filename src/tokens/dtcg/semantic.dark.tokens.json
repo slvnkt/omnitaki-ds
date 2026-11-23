@@ -849,6 +849,154 @@
           }
         }
       }
+    },
+    "data": {
+      "confirmed": {
+        "$value": "{palette.violet.300}",
+        "$description": "Confirmed (final) data: solid segments and bars. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-data-confirmed)"
+            }
+          }
+        }
+      },
+      "preliminary": {
+        "$value": "{palette.violet.300}",
+        "$description": "Preliminary data: hatch stripes over the track. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-data-preliminary)"
+            }
+          }
+        }
+      },
+      "track": {
+        "$value": "{palette.violet.800}",
+        "$description": "Track of meters and progress bars (the full scale). Visible on bg/primary in both themes (1.3 / 1.5 : 1); segments on it ≥3.2 : 1. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-data-track)"
+            }
+          }
+        }
+      },
+      "expected": {
+        "$value": "{palette.neutral.50}",
+        "$description": "Expected / target value: target lines and markers. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-data-expected)"
+            }
+          }
+        }
+      },
+      "projected": {
+        "$value": "{palette.neutral.300}",
+        "$description": "Projected / forecast value: dashed ghost segments and lines. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-data-projected)"
+            }
+          }
+        }
+      }
+    },
+    "chart": {
+      "1": {
+        "$value": "{palette.violet.300}",
+        "$description": "Series 1 (primary series, brand). ≥3:1 on bg/primary; series pairwise ΔE(OKLab) ≥10 for normal, protan, deutan, tritan vision. Maps to shadcn --chart-1. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-chart-1)"
+            }
+          }
+        }
+      },
+      "2": {
+        "$value": "{palette.violet.100}",
+        "$description": "Series 2 (deep violet; light in Dark). ≥3:1 on bg/primary; series pairwise ΔE(OKLab) ≥10 for normal, protan, deutan, tritan vision. Maps to shadcn --chart-2. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-chart-2)"
+            }
+          }
+        }
+      },
+      "3": {
+        "$value": "{palette.neutral.500}",
+        "$description": "Series 3 (neutral). ≥3:1 on bg/primary; series pairwise ΔE(OKLab) ≥10 for normal, protan, deutan, tritan vision. Maps to shadcn --chart-3. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-chart-3)"
+            }
+          }
+        }
+      },
+      "4": {
+        "$value": "{palette.warning.400}",
+        "$description": "Series 4 (amber). ≥3:1 on bg/primary; series pairwise ΔE(OKLab) ≥10 for normal, protan, deutan, tritan vision. Maps to shadcn --chart-4. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-chart-4)"
+            }
+          }
+        }
+      },
+      "5": {
+        "$value": "{palette.info.500}",
+        "$description": "Series 5 (blue). ≥3:1 on bg/primary; series pairwise ΔE(OKLab) ≥10 for normal, protan, deutan, tritan vision. Maps to shadcn --chart-5. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-chart-5)"
+            }
+          }
+        }
+      },
+      "grid": {
+        "$value": "{palette.neutral.700}",
+        "$description": "Chart grid lines. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-chart-grid)"
+            }
+          }
+        }
+      },
+      "axis-text": {
+        "$value": "{palette.neutral.300}",
+        "$description": "Chart axis labels and ticks. Data-viz role, themed independently from brand/text (white-label charts).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-chart-axis-text)"
+            }
+          }
+        }
+      }
     }
   },
   "spacing": {
@@ -1214,6 +1362,30 @@
             "collection": "Semantic",
             "codeSyntax": {
               "WEB": "var(--ot-control-height-3xs)"
+            }
+          }
+        }
+      },
+      "4xs": {
+        "$value": "{size.3}",
+        "$description": "Thin element height 12: progress bar M, meters.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-4xs)"
+            }
+          }
+        }
+      },
+      "5xs": {
+        "$value": "{size.2}",
+        "$description": "Thin element height 8: progress bar S, mini progress in tables.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-control-height-5xs)"
             }
           }
         }
@@ -2084,6 +2256,32 @@
             "collection": "Semantic",
             "codeSyntax": {
               "WEB": "var(--ot-pattern-dot-gap)"
+            }
+          }
+        }
+      }
+    },
+    "hatch": {
+      "width": {
+        "$value": "{space.0-5}",
+        "$description": "Hatch stripe width (2px). Hatch = preliminary / not-final data; readable without color.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-pattern-hatch-width)"
+            }
+          }
+        }
+      },
+      "gap": {
+        "$value": "{space.1}",
+        "$description": "Gap between hatch stripes (4px), 45° diagonal.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-pattern-hatch-gap)"
             }
           }
         }

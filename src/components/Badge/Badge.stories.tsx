@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { CheckCircle, Clock, Star, WarningCircle, XCircle } from '@phosphor-icons/react'
+import { CheckCircle, Clock, Star, Warning, WarningCircle, X, XCircle } from '@phosphor-icons/react'
 
 import { ThemePanel } from '../../docs/DocBlocks'
 import { Badge, type BadgeSize, type BadgeVariant } from './Badge'
 
-const ICONS = { None: undefined, Star: <Star />, CheckCircle: <CheckCircle />, WarningCircle: <WarningCircle />, Clock: <Clock />, XCircle: <XCircle /> }
+const ICONS = { None: undefined, Star: <Star />, CheckCircle: <CheckCircle />, Warning: <Warning />, WarningCircle: <WarningCircle />, Clock: <Clock />, XCircle: <XCircle />, X: <X /> }
 const VARIANTS: BadgeVariant[] = ['neutral', 'brand', 'success', 'warning', 'danger', 'info']
 const SIZES: BadgeSize[] = ['sm', 'md', 'lg']
 
@@ -21,6 +21,7 @@ const meta = {
     variant: { control: 'inline-radio', options: VARIANTS },
     size: { control: 'inline-radio', options: SIZES },
     icon: { options: Object.keys(ICONS), mapping: ICONS, control: { type: 'select' } },
+    trailingIcon: { options: Object.keys(ICONS), mapping: ICONS, control: { type: 'select' } },
     className: { control: false },
   },
 } satisfies Meta<typeof Badge>
@@ -62,6 +63,18 @@ export const WithIcon: Story = {
       <Badge variant="warning" icon={<Clock />}>Pending</Badge>
       <Badge variant="danger" icon={<XCircle />}>Failed</Badge>
       <Badge variant="brand" icon={<Star />}>New</Badge>
+    </div>
+  ),
+}
+
+export const TrailingIcon: Story = {
+  parameters: story('Status icon on the left (check, warning, clock) at size M, or a trailing icon on the right — e.g. a removable filter chip.'),
+  render: () => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--ot-spacing-gap-sm)' }}>
+      <Badge variant="success" icon={<CheckCircle />}>Delivered</Badge>
+      <Badge variant="warning" icon={<Warning />}>At risk</Badge>
+      <Badge variant="info" icon={<Clock />}>Scheduled</Badge>
+      <Badge variant="neutral" dot={false} trailingIcon={<X />}>Filter: TV</Badge>
     </div>
   ),
 }

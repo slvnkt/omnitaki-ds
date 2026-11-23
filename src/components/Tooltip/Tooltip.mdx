@@ -1,0 +1,97 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { Info } from '@phosphor-icons/react'
+
+import * as Stories from './Tooltip.stories'
+import { Term, Tooltip } from './Tooltip'
+import { Button } from '../Button'
+import { IconButton } from '../IconButton'
+import { Rule, Rules, Row } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Tooltip & Term
+
+A short hint that appears on hover and keyboard focus: what an icon means, how a metric is defined, the exact value under a chart point. **Term** is inline text with a dotted underline that opens its definition.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Term, Tooltip, TooltipContent } from './components/Tooltip'
+
+<Tooltip text="Reconciled with the ad server">
+  <IconButton variant="ghost" icon={<Info />} label="About confirmed impressions" />
+</Tooltip>
+
+<p>Delivered 36.2M <Term definition="Reconciled with the ad server.">confirmed impressions</Term>.</p>
+
+// Recharts / shadcn charts
+<RechartsTooltip content={({ payload }) => <TooltipContent variant="light" rows={…} />} />
+```
+
+## Dark or Light
+
+| Variant | Use for | Surface |
+|---|---|---|
+| `dark` (default) | One-line hints on icons, truncated text, definitions | `bg/inverse` + `text/inverse` |
+| `light` | Chart points, several values, a title + rows | `bg/elevated` + border + `Elevation/md` |
+
+<Canvas of={Stories.Variants} />
+
+## Behavior
+
+- Opens after **~300 ms** of hover or keyboard focus; when moving between nearby triggers it opens **instantly**.
+- **Escape** closes it; moving the pointer onto the tooltip keeps it open (you can read and select text).
+- Placement `top` / `bottom` / `left` / `right`, 4px from the trigger; **flips** to the opposite side if it would leave the viewport.
+
+<Canvas of={Stories.TermStory} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Clarify, don't hide" example={<Row><Tooltip open text="Reconciled; will not change"><IconButton variant="ghost" size="sm" icon={<Info />} label="About confirmed" /></Tooltip></Row>}>
+    A tooltip adds a definition to something already visible.
+  </Rule>
+  <Rule kind="dont" title="Required info in a tooltip" example={<Row><Tooltip open text="You must accept the terms first"><Button size="sm" disabled>Continue</Button></Tooltip></Row>}>
+    Touch users and many screen-reader users never see it. Show requirements and errors inline.
+  </Rule>
+  <Rule kind="do" title="Light for chart values" example={<Row><Tooltip open variant="light" title="Nov 16" rows={[{ label: 'Confirmed', value: '12.4M', color: 'var(--ot-color-chart-1)' }]}><Button size="sm" variant="secondary">Point</Button></Tooltip></Row>}>
+    Rows with series markers and tabular values are easy to scan.
+  </Rule>
+  <Rule kind="dont" title="Interactive content" example={<Row><Tooltip open text="Click here to learn more →"><Button size="sm" variant="secondary">Help</Button></Tooltip></Row>}>
+    Tooltips can't hold links or buttons; use a Popover or an inline Disclosure.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+### Keyboard
+
+| Key | Behavior |
+|---|---|
+| `Tab` | Focusing the trigger (or Term) opens the tooltip. |
+| `Escape` | Closes the tooltip without moving focus. |
+| `Shift + Tab` / blur | Closes it. |
+
+- The trigger must be focusable (button, link, `Term` renders a `<button>`). Don't attach tooltips to plain text or disabled elements.
+- **Term** shows a 2px focus ring (`--ot-color-border-focus`) and stronger underline on focus.
+
+### Screen readers
+
+- The popup is `role="tooltip"`; while open, the trigger has `aria-describedby` pointing to it, so the hint is read after the trigger's name: "About confirmed impressions, button, Reconciled with the ad server".
+- An icon-only trigger still needs its own `label` (IconButton) — the tooltip is a description, not the name.
+- Chart tooltips duplicate visible data; provide the same numbers in a table or text summary.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Dark tooltip text (`text/inverse` on `bg/inverse`) | 15.9 : 1 | 15.3 : 1 |
+| Light tooltip text (`text/primary` on `bg/elevated`) | 16.1 : 1 | 10.1 : 1 |
+| Row labels (`text/secondary` on `bg/elevated`) | 6.1 : 1 | 5.2 : 1 |
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Tooltip](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=188-131), [Term](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=188-139)
+- Tokens: `--ot-tooltip-{padding-x|padding-y|radius|gap|offset|border-width}`, `--ot-tooltip-light-{padding-x|padding-y|radius|row-gap}`, `--ot-term-{radius|focus-ring-width}`
+- Colors: `--ot-color-bg-inverse`, `--ot-color-text-inverse`, `--ot-color-bg-elevated`, `--ot-color-border-primary`, `--ot-color-text-{primary|secondary}`, series `--ot-color-chart-*`; shadow `--ot-shadow-md`

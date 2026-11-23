@@ -1,0 +1,25 @@
+/* Divider — Figma: Omnitaki DS › Divider (205:30). 1px border/primary line with optional spacing. Tokens: divider/*. */
+
+.ot-divider {
+  flex-shrink: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--ot-color-border-primary);
+}
+.ot-divider--horizontal {
+  align-self: stretch;
+  width: auto;
+  height: var(--ot-divider-thickness);
+}
+.ot-divider--vertical {
+  align-self: stretch;
+  width: var(--ot-divider-thickness);
+  min-height: 1em;
+}
+
+.ot-divider--horizontal.ot-divider--sm { margin-block: var(--ot-divider-size-sm-spacing); }
+.ot-divider--horizontal.ot-divider--md { margin-block: var(--ot-divider-size-md-spacing); }
+.ot-divider--horizontal.ot-divider--lg { margin-block: var(--ot-divider-size-lg-spacing); }
+.ot-divider--vertical.ot-divider--sm { margin-inline: var(--ot-divider-size-sm-spacing); }
+.ot-divider--vertical.ot-divider--md { margin-inline: var(--ot-divider-size-md-spacing); }
+.ot-divider--vertical.ot-divider--lg { margin-inline: var(--ot-divider-size-lg-spacing); }

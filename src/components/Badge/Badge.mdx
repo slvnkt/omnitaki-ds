@@ -36,9 +36,10 @@ import { Badge } from './components/Badge'
 
 ## Size, dot and icon
 
-`sm` 16px for dense tables and counters, `md` 20px default, `lg` 24px next to 40–48px controls. Show either the dot **or** a 12px icon, never both; an icon is worth it only when it adds meaning (✓ paid, ⏱ pending).
+`sm` 16px for dense tables and counters, `md` 20px default, `lg` 24px next to 40–48px controls. Show either the dot **or** a 12px leading icon, never both; an icon is worth it only when it adds meaning (✓ paid, ⏱ pending). A **trailing icon** (`trailingIcon`) goes on the right — e.g. ✕ on a filter chip; if it removes the badge, make the whole chip a button with an accessible label.
 
 <Canvas of={BadgeStories.WithIcon} />
+<Canvas of={BadgeStories.TrailingIcon} />
 
 ## Do's and don'ts
 

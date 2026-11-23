@@ -225,6 +225,12 @@ const shadowDecls = shadowStyles.map(s => `  --ot-shadow-${s.level}: ${s.layers
 // Brand background dot pattern (Figma: Brand Background component). Re-declared per theme like shadows.
 const patternDecls = [
   '  --ot-bg-brand-pattern: radial-gradient(circle, var(--ot-color-bg-brand-pattern) var(--ot-pattern-dot-size), transparent calc(var(--ot-pattern-dot-size) + 0.5px));',
+  // Hatch = preliminary data (Figma: Hatch). Color hooks default to brand; override per element or use .ot-bg-hatch--<intent>.
+  '  --ot-pattern-hatch-color: var(--ot-color-brand-primary);',
+  '  --ot-pattern-hatch-bg: var(--ot-color-brand-secondary);',
+  '  --ot-bg-hatch-pattern: repeating-linear-gradient(135deg, var(--ot-pattern-hatch-color) 0 var(--ot-pattern-hatch-width), transparent var(--ot-pattern-hatch-width) calc(var(--ot-pattern-hatch-width) + var(--ot-pattern-hatch-gap)));',
+  // shadcn/ui charts read --chart-N
+  ...[1, 2, 3, 4, 5].map(n => `  --chart-${n}: var(--ot-color-chart-${n});`),
 ]
 const gradientDecls = gradientStyles.map(s => `  --ot-gradient-${s.key}: linear-gradient(${s.angle}deg, ${s.stops.map(c => `var(${cssVar(c)})`).join(', ')});`)
 const themeDecls = [...shadowDecls, ...patternDecls, ...gradientDecls]
@@ -271,6 +277,23 @@ ${themeDecls.join('\n')}
 .ot-bg-gradient-brand {
   background-image: var(--ot-gradient-brand);
   color: var(--ot-color-text-on-brand-strong);
+}
+/* Hatch: preliminary / not-final data. Gradient is built here so per-element color overrides apply. */
+.ot-bg-hatch {
+  background-color: var(--ot-pattern-hatch-bg);
+  background-image: repeating-linear-gradient(135deg, var(--ot-pattern-hatch-color) 0 var(--ot-pattern-hatch-width), transparent var(--ot-pattern-hatch-width) calc(var(--ot-pattern-hatch-width) + var(--ot-pattern-hatch-gap)));
+}
+.ot-bg-hatch--neutral {
+  --ot-pattern-hatch-color: var(--ot-color-text-secondary);
+  --ot-pattern-hatch-bg: var(--ot-color-bg-tertiary);
+}
+.ot-bg-hatch--success {
+  --ot-pattern-hatch-color: var(--ot-color-status-success-primary);
+  --ot-pattern-hatch-bg: var(--ot-color-status-success-secondary);
+}
+.ot-bg-hatch--warning {
+  --ot-pattern-hatch-color: var(--ot-color-status-warning-secondary-text);
+  --ot-pattern-hatch-bg: var(--ot-color-status-warning-secondary);
 }
 /* Dashed placeholder: drop zones, empty slots */
 .ot-surface-dashed {

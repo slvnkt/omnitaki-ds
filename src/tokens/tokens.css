@@ -345,12 +345,36 @@
   --ot-typography-code-sm-font-size: var(--ot-font-size-12);
   --ot-typography-code-sm-line-height: var(--ot-font-line-height-16);
   --ot-typography-code-sm-font-weight: var(--ot-font-weight-regular);
+  --ot-pattern-hatch-width: var(--ot-space-0-5);
+  --ot-pattern-hatch-gap: var(--ot-space-1);
+  --ot-color-data-confirmed: var(--ot-palette-violet-500);
+  --ot-color-data-preliminary: var(--ot-palette-violet-500);
+  --ot-color-data-track: var(--ot-palette-violet-100);
+  --ot-color-data-expected: var(--ot-palette-neutral-900);
+  --ot-color-data-projected: var(--ot-palette-neutral-600);
+  --ot-color-chart-1: var(--ot-palette-violet-500);
+  --ot-color-chart-2: var(--ot-palette-violet-800);
+  --ot-color-chart-3: var(--ot-palette-neutral-400);
+  --ot-color-chart-4: var(--ot-palette-warning-600);
+  --ot-color-chart-5: var(--ot-palette-info-700);
+  --ot-color-chart-grid: var(--ot-palette-neutral-200);
+  --ot-color-chart-axis-text: var(--ot-palette-neutral-600);
+  --ot-control-height-4xs: var(--ot-size-3);
+  --ot-control-height-5xs: var(--ot-size-2);
 
   /* Elevation and brand pattern (re-declared per theme so their colors follow the theme) */
   --ot-shadow-sm: 0px var(--ot-elevation-sm-key-y) var(--ot-elevation-sm-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-sm-ambient-y) var(--ot-elevation-sm-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-md: 0px var(--ot-elevation-md-key-y) var(--ot-elevation-md-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-md-ambient-y) var(--ot-elevation-md-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-lg: 0px var(--ot-elevation-lg-key-y) var(--ot-elevation-lg-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-lg-ambient-y) var(--ot-elevation-lg-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-bg-brand-pattern: radial-gradient(circle, var(--ot-color-bg-brand-pattern) var(--ot-pattern-dot-size), transparent calc(var(--ot-pattern-dot-size) + 0.5px));
+  --ot-pattern-hatch-color: var(--ot-color-brand-primary);
+  --ot-pattern-hatch-bg: var(--ot-color-brand-secondary);
+  --ot-bg-hatch-pattern: repeating-linear-gradient(135deg, var(--ot-pattern-hatch-color) 0 var(--ot-pattern-hatch-width), transparent var(--ot-pattern-hatch-width) calc(var(--ot-pattern-hatch-width) + var(--ot-pattern-hatch-gap)));
+  --chart-1: var(--ot-color-chart-1);
+  --chart-2: var(--ot-color-chart-2);
+  --chart-3: var(--ot-color-chart-3);
+  --chart-4: var(--ot-color-chart-4);
+  --chart-5: var(--ot-color-chart-5);
   --ot-gradient-brand: linear-gradient(135deg, var(--ot-color-brand-gradient-start), var(--ot-color-brand-gradient-end));
 }
 
@@ -419,11 +443,31 @@
   --ot-color-bg-brand-pattern: var(--ot-palette-violet-900);
   --ot-color-brand-gradient-start: var(--ot-palette-violet-500);
   --ot-color-brand-gradient-end: var(--ot-palette-violet-700);
+  --ot-color-data-confirmed: var(--ot-palette-violet-300);
+  --ot-color-data-preliminary: var(--ot-palette-violet-300);
+  --ot-color-data-track: var(--ot-palette-violet-800);
+  --ot-color-data-expected: var(--ot-palette-neutral-50);
+  --ot-color-data-projected: var(--ot-palette-neutral-300);
+  --ot-color-chart-1: var(--ot-palette-violet-300);
+  --ot-color-chart-2: var(--ot-palette-violet-100);
+  --ot-color-chart-3: var(--ot-palette-neutral-500);
+  --ot-color-chart-4: var(--ot-palette-warning-400);
+  --ot-color-chart-5: var(--ot-palette-info-500);
+  --ot-color-chart-grid: var(--ot-palette-neutral-700);
+  --ot-color-chart-axis-text: var(--ot-palette-neutral-300);
 
   --ot-shadow-sm: 0px var(--ot-elevation-sm-key-y) var(--ot-elevation-sm-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-sm-ambient-y) var(--ot-elevation-sm-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-md: 0px var(--ot-elevation-md-key-y) var(--ot-elevation-md-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-md-ambient-y) var(--ot-elevation-md-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-lg: 0px var(--ot-elevation-lg-key-y) var(--ot-elevation-lg-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-lg-ambient-y) var(--ot-elevation-lg-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-bg-brand-pattern: radial-gradient(circle, var(--ot-color-bg-brand-pattern) var(--ot-pattern-dot-size), transparent calc(var(--ot-pattern-dot-size) + 0.5px));
+  --ot-pattern-hatch-color: var(--ot-color-brand-primary);
+  --ot-pattern-hatch-bg: var(--ot-color-brand-secondary);
+  --ot-bg-hatch-pattern: repeating-linear-gradient(135deg, var(--ot-pattern-hatch-color) 0 var(--ot-pattern-hatch-width), transparent var(--ot-pattern-hatch-width) calc(var(--ot-pattern-hatch-width) + var(--ot-pattern-hatch-gap)));
+  --chart-1: var(--ot-color-chart-1);
+  --chart-2: var(--ot-color-chart-2);
+  --chart-3: var(--ot-color-chart-3);
+  --chart-4: var(--ot-color-chart-4);
+  --chart-5: var(--ot-color-chart-5);
   --ot-gradient-brand: linear-gradient(135deg, var(--ot-color-brand-gradient-start), var(--ot-color-brand-gradient-end));
 }
 
@@ -443,6 +487,23 @@
 .ot-bg-gradient-brand {
   background-image: var(--ot-gradient-brand);
   color: var(--ot-color-text-on-brand-strong);
+}
+/* Hatch: preliminary / not-final data. Gradient is built here so per-element color overrides apply. */
+.ot-bg-hatch {
+  background-color: var(--ot-pattern-hatch-bg);
+  background-image: repeating-linear-gradient(135deg, var(--ot-pattern-hatch-color) 0 var(--ot-pattern-hatch-width), transparent var(--ot-pattern-hatch-width) calc(var(--ot-pattern-hatch-width) + var(--ot-pattern-hatch-gap)));
+}
+.ot-bg-hatch--neutral {
+  --ot-pattern-hatch-color: var(--ot-color-text-secondary);
+  --ot-pattern-hatch-bg: var(--ot-color-bg-tertiary);
+}
+.ot-bg-hatch--success {
+  --ot-pattern-hatch-color: var(--ot-color-status-success-primary);
+  --ot-pattern-hatch-bg: var(--ot-color-status-success-secondary);
+}
+.ot-bg-hatch--warning {
+  --ot-pattern-hatch-color: var(--ot-color-status-warning-secondary-text);
+  --ot-pattern-hatch-bg: var(--ot-color-status-warning-secondary);
 }
 /* Dashed placeholder: drop zones, empty slots */
 .ot-surface-dashed {
@@ -554,6 +615,89 @@
   --ot-menu-radius: var(--ot-shape-radius-md);
   --ot-menu-padding: var(--ot-spacing-padding-xs);
   --ot-menu-offset: var(--ot-spacing-gap-xs);
+  --ot-skeleton-size-sm-height: var(--ot-control-icon-size-xs);
+  --ot-skeleton-size-md-height: var(--ot-control-icon-size-sm);
+  --ot-skeleton-size-lg-height: var(--ot-control-icon-size-md);
+  --ot-skeleton-radius: var(--ot-shape-radius-sm);
+  --ot-skeleton-block-radius: var(--ot-shape-radius-md);
+  --ot-skeleton-circle-radius: var(--ot-shape-radius-full);
+  --ot-tooltip-padding-x: var(--ot-spacing-padding-sm);
+  --ot-tooltip-padding-y: var(--ot-spacing-padding-xs);
+  --ot-tooltip-radius: var(--ot-shape-radius-sm);
+  --ot-tooltip-gap: var(--ot-spacing-gap-xs);
+  --ot-tooltip-offset: var(--ot-spacing-gap-xs);
+  --ot-tooltip-light-padding-x: var(--ot-spacing-padding-md);
+  --ot-tooltip-light-padding-y: var(--ot-spacing-padding-sm);
+  --ot-tooltip-light-radius: var(--ot-shape-radius-md);
+  --ot-tooltip-light-row-gap: var(--ot-spacing-gap-md);
+  --ot-tooltip-border-width: var(--ot-shape-border-width-sm);
+  --ot-term-radius: var(--ot-shape-radius-sm);
+  --ot-term-focus-ring-width: var(--ot-shape-border-width-md);
+  --ot-alert-padding-x: var(--ot-spacing-padding-md);
+  --ot-alert-padding-y: var(--ot-spacing-padding-sm);
+  --ot-alert-gap: var(--ot-spacing-gap-sm);
+  --ot-alert-content-gap: var(--ot-spacing-gap-xs);
+  --ot-alert-radius: var(--ot-shape-radius-md);
+  --ot-alert-border-width: var(--ot-shape-border-width-sm);
+  --ot-alert-icon-size: var(--ot-control-icon-size-sm);
+  --ot-alert-banner-padding-x: var(--ot-spacing-padding-lg);
+  --ot-alert-banner-padding-y: var(--ot-spacing-padding-md);
+  --ot-stat-gap: var(--ot-spacing-gap-xs);
+  --ot-stat-value-gap: var(--ot-spacing-gap-xs);
+  --ot-stat-padding: var(--ot-spacing-padding-sm);
+  --ot-stat-radius: var(--ot-shape-radius-md);
+  --ot-stat-icon-size: var(--ot-control-icon-size-sm);
+  --ot-stat-focus-ring-width: var(--ot-shape-border-width-md);
+  --ot-stat-delta-gap: var(--ot-spacing-gap-xs);
+  --ot-stat-delta-icon-size: var(--ot-control-icon-size-xs);
+  --ot-card-size-md-padding: var(--ot-spacing-padding-lg);
+  --ot-card-size-lg-padding: var(--ot-spacing-padding-xl);
+  --ot-card-size-md-gap: var(--ot-spacing-gap-lg);
+  --ot-card-size-lg-gap: var(--ot-spacing-gap-xl);
+  --ot-card-radius: var(--ot-shape-radius-xl);
+  --ot-card-border-width: var(--ot-shape-border-width-sm);
+  --ot-card-header-gap: var(--ot-spacing-gap-xs);
+  --ot-card-action-gap: var(--ot-spacing-gap-sm);
+  --ot-progress-size-sm-height: var(--ot-control-height-5xs);
+  --ot-progress-size-md-height: var(--ot-control-height-4xs);
+  --ot-progress-size-lg-height: var(--ot-control-height-3xs);
+  --ot-progress-radius: var(--ot-shape-radius-sm);
+  --ot-progress-segment-gap: var(--ot-spacing-padding-2xs);
+  --ot-progress-marker-width: var(--ot-shape-border-width-md);
+  --ot-progress-marker-overhang: var(--ot-spacing-padding-xs);
+  --ot-progress-label-gap: var(--ot-spacing-gap-sm);
+  --ot-progress-ghost-width: var(--ot-shape-border-width-sm);
+  --ot-progress-focus-ring-width: var(--ot-shape-border-width-md);
+  --ot-empty-state-size-sm-padding: var(--ot-spacing-padding-lg);
+  --ot-empty-state-size-md-padding: var(--ot-spacing-padding-2xl);
+  --ot-empty-state-size-sm-gap: var(--ot-spacing-gap-md);
+  --ot-empty-state-size-md-gap: var(--ot-spacing-gap-lg);
+  --ot-empty-state-size-sm-icon-box: var(--ot-control-height-md);
+  --ot-empty-state-size-md-icon-box: var(--ot-control-height-lg);
+  --ot-empty-state-size-sm-icon-size: var(--ot-control-icon-size-md);
+  --ot-empty-state-size-md-icon-size: var(--ot-control-icon-size-lg);
+  --ot-empty-state-text-gap: var(--ot-spacing-gap-xs);
+  --ot-empty-state-action-gap: var(--ot-spacing-gap-sm);
+  --ot-empty-state-icon-radius: var(--ot-shape-radius-full);
+  --ot-table-size-sm-row-height: var(--ot-control-height-sm);
+  --ot-table-size-md-row-height: var(--ot-control-height-md);
+  --ot-table-cell-padding-x: var(--ot-spacing-padding-md);
+  --ot-table-cell-gap: var(--ot-spacing-gap-sm);
+  --ot-table-sort-icon-size: var(--ot-control-icon-size-xs);
+  --ot-table-divider-width: var(--ot-shape-border-width-sm);
+  --ot-table-focus-ring-width: var(--ot-shape-border-width-md);
+  --ot-table-caption-gap: var(--ot-spacing-gap-sm);
+  --ot-divider-thickness: var(--ot-shape-border-width-sm);
+  --ot-divider-size-sm-spacing: var(--ot-spacing-gap-sm);
+  --ot-divider-size-md-spacing: var(--ot-spacing-gap-md);
+  --ot-divider-size-lg-spacing: var(--ot-spacing-gap-lg);
+  --ot-disclosure-height: var(--ot-control-height-md);
+  --ot-disclosure-padding-x: var(--ot-spacing-padding-md);
+  --ot-disclosure-gap: var(--ot-spacing-gap-sm);
+  --ot-disclosure-icon-size: var(--ot-control-icon-size-sm);
+  --ot-disclosure-radius: var(--ot-shape-radius-md);
+  --ot-disclosure-focus-ring-width: var(--ot-shape-border-width-md);
+  --ot-disclosure-panel-padding-y: var(--ot-spacing-padding-sm);
 }
 
 /* ── Text styles ── */

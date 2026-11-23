@@ -1,0 +1,73 @@
+/* Alert — Figma: Omnitaki DS › Alert (189:343). Inline (in a card) or Banner (full width).
+   Intent colors: status/<intent>/secondary (bg), -secondary-border, -secondary-text (title, icon); text text/primary.
+   Tokens: alert/*. */
+
+.ot-alert {
+  --_bg: var(--ot-color-status-info-secondary);
+  --_border: var(--ot-color-status-info-secondary-border);
+  --_accent: var(--ot-color-status-info-secondary-text);
+  --_icon: var(--_accent);
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ot-alert-gap);
+  width: 100%;
+  padding: var(--ot-alert-padding-y) var(--ot-alert-padding-x);
+  border: var(--ot-alert-border-width) solid var(--_border);
+  border-radius: var(--ot-alert-radius);
+  background: var(--_bg);
+  color: var(--ot-color-text-primary);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.ot-alert--banner {
+  padding: var(--ot-alert-banner-padding-y) var(--ot-alert-banner-padding-x);
+  border-width: 0 0 var(--ot-alert-border-width);
+  border-radius: 0;
+}
+
+.ot-alert--success { --_bg: var(--ot-color-status-success-secondary); --_border: var(--ot-color-status-success-secondary-border); --_accent: var(--ot-color-status-success-secondary-text); }
+.ot-alert--warning { --_bg: var(--ot-color-status-warning-secondary); --_border: var(--ot-color-status-warning-secondary-border); --_accent: var(--ot-color-status-warning-secondary-text); }
+.ot-alert--danger { --_bg: var(--ot-color-status-danger-secondary); --_border: var(--ot-color-status-danger-secondary-border); --_accent: var(--ot-color-status-danger-secondary-text); }
+.ot-alert--neutral { --_bg: var(--ot-color-bg-secondary); --_border: var(--ot-color-border-primary); --_accent: var(--ot-color-text-primary); --_icon: var(--ot-color-text-secondary); }
+
+/* Icon aligned to the first line (title line is 24px, icon 16px → 4px inset) */
+.ot-alert__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding-top: var(--ot-spacing-padding-xs);
+  color: var(--_icon);
+}
+.ot-alert--untitled .ot-alert__icon {
+  padding-top: var(--ot-spacing-padding-2xs);
+}
+.ot-alert__icon > svg {
+  width: var(--ot-alert-icon-size);
+  height: var(--ot-alert-icon-size);
+}
+.ot-alert__content {
+  display: grid;
+  flex: 1 1 auto;
+  gap: var(--ot-alert-content-gap);
+  min-width: 0;
+}
+.ot-alert__title {
+  margin: 0;
+  color: var(--_accent);
+  font-size: var(--ot-typography-label-md-font-size);
+  line-height: var(--ot-typography-label-md-line-height);
+  font-weight: var(--ot-typography-label-md-font-weight);
+}
+.ot-alert__text {
+  margin: 0;
+  font-size: var(--ot-typography-body-md-font-size);
+  line-height: var(--ot-typography-body-md-line-height);
+  font-weight: var(--ot-typography-body-md-font-weight);
+}
+.ot-alert__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--ot-alert-gap);
+}

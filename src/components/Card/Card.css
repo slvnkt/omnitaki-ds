@@ -1,0 +1,88 @@
+/* Card — Figma: Omnitaki DS › Card (192:592). Container for dashboard widgets.
+   Default = bg/primary + border/primary + radius xl + Elevation/sm; Outlined = no shadow; Muted = bg/secondary.
+   Tokens: card/*. */
+
+.ot-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ot-card-size-md-gap);
+  min-width: 0;
+  margin: 0;
+  padding: var(--ot-card-size-md-padding);
+  border: var(--ot-card-border-width) solid var(--ot-color-border-primary);
+  border-radius: var(--ot-card-radius);
+  background: var(--ot-color-bg-primary);
+  box-shadow: var(--ot-shadow-sm);
+  color: var(--ot-color-text-primary);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+.ot-card--lg {
+  gap: var(--ot-card-size-lg-gap);
+  padding: var(--ot-card-size-lg-padding);
+}
+.ot-card--outlined { box-shadow: none; }
+.ot-card--muted {
+  background: var(--ot-color-bg-secondary);
+  box-shadow: none;
+}
+.ot-card--muted .ot-card__title { color: var(--ot-color-text-secondary); }
+
+.ot-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ot-card-action-gap);
+}
+.ot-card__heading {
+  display: grid;
+  flex: 1 1 auto;
+  gap: var(--ot-card-header-gap);
+  min-width: 0;
+}
+.ot-card__title {
+  margin: 0;
+  color: var(--ot-color-text-primary);
+  font-size: var(--ot-typography-heading-sm-font-size);
+  line-height: var(--ot-typography-heading-sm-line-height);
+  font-weight: var(--ot-typography-heading-sm-font-weight);
+}
+.ot-card__subtitle {
+  margin: 0;
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+}
+.ot-card__action {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--ot-card-action-gap);
+}
+.ot-card__body {
+  min-width: 0;
+}
+.ot-card__skeleton {
+  display: grid;
+  gap: var(--ot-spacing-gap-sm);
+}
+.ot-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ot-card-action-gap);
+}
+.ot-card__meta {
+  margin: 0;
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+}
+.ot-card__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ot-card-action-gap);
+  margin-left: auto;
+}

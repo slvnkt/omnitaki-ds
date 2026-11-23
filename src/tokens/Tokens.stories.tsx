@@ -209,6 +209,40 @@ export const BrandBackground: Story = {
   },
   render: () => <BrandBackgroundDemo />,
 }
+export const Hatch: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Hatch = preliminary / not-final data. 45° stripes (--ot-pattern-hatch-width 2px, --ot-pattern-hatch-gap 4px) that read without color, also in grayscale. Use `className="ot-bg-hatch"` (brand by default) or `ot-bg-hatch--neutral|success|warning`; override `--ot-pattern-hatch-color` / `--ot-pattern-hatch-bg` on any element. Figma: Hatch (Brand Surfaces page).',
+      },
+    },
+  },
+  render: () => (
+    <div style={{ display: 'grid', gap: 'var(--ot-spacing-gap-lg)' }}>
+      {(['light', 'dark'] as const).map(theme => (
+        <div
+          key={theme}
+          data-theme={theme}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 'var(--ot-spacing-gap-lg)', padding: 'var(--ot-spacing-padding-xl)', borderRadius: 'var(--ot-shape-radius-lg)', background: 'var(--ot-color-bg-primary)' }}
+        >
+          {(['', 'neutral', 'success', 'warning'] as const).map(intent => (
+            <div key={intent || 'brand'} style={{ display: 'grid', gap: 'var(--ot-spacing-gap-xs)' }}>
+              <div className={['ot-bg-hatch', intent && `ot-bg-hatch--${intent}`].filter(Boolean).join(' ')} style={{ height: 48, borderRadius: 'var(--ot-shape-radius-sm)' }} />
+              <code className="ot-text-code-code-s" style={{ color: 'var(--ot-color-text-secondary)' }}>
+                {intent ? `ot-bg-hatch--${intent}` : 'ot-bg-hatch (brand)'}
+              </code>
+            </div>
+          ))}
+          <div style={{ display: 'grid', gap: 'var(--ot-spacing-gap-xs)' }}>
+            <div className="ot-bg-hatch" style={{ height: 48, borderRadius: 'var(--ot-shape-radius-sm)', ['--ot-pattern-hatch-color' as string]: 'var(--ot-color-data-preliminary)', ['--ot-pattern-hatch-bg' as string]: 'var(--ot-color-data-track)' }} />
+            <code className="ot-text-code-code-s" style={{ color: 'var(--ot-color-text-secondary)' }}>data/preliminary on data/track</code>
+          </div>
+        </div>
+      ))}
+    </div>
+  ),
+}
 export const BrandSurfaces: Story = {
   parameters: {
     docs: {

@@ -1,0 +1,155 @@
+/* Stat — Figma: Omnitaki DS › Stat (191:332) + Delta (190:162).
+   Label (+hint), value + muted unit, secondary line, optional Delta, chevron when clickable.
+   The hover/focus surface extends stat/padding OUTSIDE the box, so a Stat aligns with neighbouring content. Tokens: stat/*. */
+
+.ot-stat {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ot-spacing-gap-md);
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ot-color-text-primary);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  text-decoration: none;
+}
+.ot-stat__main {
+  display: grid;
+  gap: var(--ot-stat-gap);
+  min-width: 0;
+}
+.ot-stat__header {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ot-spacing-gap-xs);
+  color: var(--ot-color-text-secondary);
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+}
+.ot-stat__hint {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ot-shape-radius-full);
+  background: none;
+  color: var(--ot-color-text-secondary);
+  cursor: help;
+}
+.ot-stat__hint:focus { outline: none; }
+.ot-stat__hint:focus-visible { outline: var(--ot-stat-focus-ring-width) solid var(--ot-color-border-focus); }
+.ot-stat__hint > svg,
+.ot-stat__chevron > svg {
+  width: var(--ot-stat-icon-size);
+  height: var(--ot-stat-icon-size);
+}
+.ot-stat__value-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--ot-stat-value-gap);
+}
+.ot-stat__value {
+  color: var(--ot-color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.ot-stat__unit {
+  color: var(--ot-color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.ot-stat__secondary {
+  margin: 0;
+  color: var(--ot-color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.ot-stat__chevron {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--ot-color-text-secondary);
+}
+.ot-stat__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.ot-stat--unavailable .ot-stat__value {
+  color: var(--ot-color-text-tertiary);
+}
+.ot-stat__unavailable {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ot-stat-radius);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: help;
+}
+.ot-stat__unavailable:focus { outline: none; }
+.ot-stat__unavailable:focus-visible { outline: var(--ot-stat-focus-ring-width) solid var(--ot-color-border-focus); }
+
+/* ── Sizes: S Subtitle 1 · M H3 · L H1 ── */
+.ot-stat--sm .ot-stat__value { font-size: var(--ot-typography-heading-md-font-size); line-height: var(--ot-typography-heading-md-line-height); font-weight: var(--ot-typography-heading-md-font-weight); }
+.ot-stat--sm .ot-stat__unit { font-size: var(--ot-typography-body-md-font-size); line-height: var(--ot-typography-body-md-line-height); font-weight: var(--ot-typography-body-md-font-weight); }
+.ot-stat--md .ot-stat__value { font-size: var(--ot-typography-heading-lg-font-size); line-height: var(--ot-typography-heading-lg-line-height); font-weight: var(--ot-typography-heading-lg-font-weight); }
+.ot-stat--md .ot-stat__unit { font-size: var(--ot-typography-body-lg-font-size); line-height: var(--ot-typography-body-lg-line-height); font-weight: var(--ot-typography-body-lg-font-weight); }
+.ot-stat--lg .ot-stat__value { font-size: var(--ot-typography-heading-2xl-font-size); line-height: var(--ot-typography-heading-2xl-line-height); font-weight: var(--ot-typography-heading-2xl-font-weight); }
+.ot-stat--lg .ot-stat__unit { font-size: var(--ot-typography-heading-md-font-size); line-height: var(--ot-typography-heading-md-line-height); font-weight: var(--ot-typography-heading-md-font-weight); }
+.ot-stat--sm .ot-stat__secondary,
+.ot-stat--md .ot-stat__secondary { font-size: var(--ot-typography-body-sm-font-size); line-height: var(--ot-typography-body-sm-line-height); font-weight: var(--ot-typography-body-sm-font-weight); }
+.ot-stat--lg .ot-stat__secondary { font-size: var(--ot-typography-body-md-font-size); line-height: var(--ot-typography-body-md-line-height); font-weight: var(--ot-typography-body-md-font-weight); }
+.ot-stat--lg .ot-stat__header { font-size: var(--ot-typography-label-md-font-size); line-height: var(--ot-typography-label-md-line-height); font-weight: var(--ot-typography-label-md-font-weight); }
+
+/* ── Interactive: surface outset by stat/padding ── */
+.ot-stat--interactive {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ot-stat--interactive::before {
+  content: '';
+  position: absolute;
+  inset: calc(-1 * var(--ot-stat-padding));
+  z-index: -1;
+  border-radius: var(--ot-stat-radius);
+  background: transparent;
+}
+.ot-stat--interactive { isolation: isolate; }
+.ot-stat--interactive:hover::before,
+.ot-stat[data-preview-state='hover']::before { background: var(--ot-color-bg-subtle-hover); }
+.ot-stat--interactive:active::before,
+.ot-stat[data-preview-state='pressed']::before { background: var(--ot-color-bg-subtle-pressed); }
+.ot-stat--interactive:focus { outline: none; }
+.ot-stat--interactive:focus-visible::before,
+.ot-stat[data-preview-state='focus']::before {
+  background: var(--ot-color-bg-subtle-hover);
+  box-shadow: inset 0 0 0 var(--ot-stat-focus-ring-width) var(--ot-color-border-focus);
+}
+
+/* ── Delta ── */
+.ot-delta {
+  --_c: var(--ot-color-text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ot-stat-delta-gap);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  letter-spacing: 0;
+}
+.ot-delta--success { --_c: var(--ot-color-status-success-secondary-text); }
+.ot-delta--danger { --_c: var(--ot-color-status-danger-secondary-text); }
+.ot-delta__arrow { display: inline-flex; color: var(--_c); }
+.ot-delta__arrow > svg { width: var(--ot-stat-delta-icon-size); height: var(--ot-stat-delta-icon-size); }
+.ot-delta__value { color: var(--_c); font-weight: var(--ot-typography-label-sm-font-weight); font-variant-numeric: tabular-nums; }
+.ot-delta__comparison { color: var(--ot-color-text-secondary); font-weight: var(--ot-typography-body-sm-font-weight); }

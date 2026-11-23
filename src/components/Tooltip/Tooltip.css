@@ -1,0 +1,144 @@
+/* Tooltip — Figma: Omnitaki DS › Tooltip (188:131) + Term (188:139).
+   Dark (bg/inverse) for short hints; Light (bg/elevated + border + Elevation/md) for charts and rows.
+   Tokens: tooltip/*, term/*. */
+
+.ot-tooltip-anchor {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* ── Surface (also usable alone, e.g. as Recharts tooltip content) ── */
+.ot-tooltip {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ot-tooltip-gap);
+  width: max-content;
+  max-width: min(320px, calc(100vw - 2 * var(--ot-spacing-padding-lg)));
+  padding: var(--ot-tooltip-padding-y) var(--ot-tooltip-padding-x);
+  border-radius: var(--ot-tooltip-radius);
+  background: var(--ot-color-bg-inverse);
+  color: var(--ot-color-text-inverse);
+  box-shadow: var(--ot-shadow-md);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  font-size: var(--ot-typography-body-sm-font-size);
+  line-height: var(--ot-typography-body-sm-line-height);
+  font-weight: var(--ot-typography-body-sm-font-weight);
+  letter-spacing: 0;
+  text-align: left;
+  white-space: normal;
+  pointer-events: auto;
+}
+.ot-tooltip--light {
+  padding: var(--ot-tooltip-light-padding-y) var(--ot-tooltip-light-padding-x);
+  border: var(--ot-tooltip-border-width) solid var(--ot-color-border-primary);
+  border-radius: var(--ot-tooltip-light-radius);
+  background: var(--ot-color-bg-elevated);
+  color: var(--ot-color-text-primary);
+}
+.ot-tooltip__title {
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+}
+.ot-tooltip__rows {
+  display: grid;
+  gap: var(--ot-tooltip-gap);
+  margin: 0;
+}
+.ot-tooltip__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ot-tooltip-light-row-gap);
+}
+.ot-tooltip__series {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ot-tooltip-gap);
+  margin: 0;
+  color: var(--ot-color-text-secondary);
+}
+.ot-tooltip:not(.ot-tooltip--light) .ot-tooltip__series {
+  color: inherit;
+}
+.ot-tooltip__marker {
+  width: 8px; /* decorative series marker */
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: var(--ot-shape-radius-full);
+}
+.ot-tooltip__value {
+  margin: 0;
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Positioned popup ── */
+.ot-tooltip--floating {
+  position: absolute;
+  z-index: 50;
+}
+.ot-tooltip--top { bottom: calc(100% + var(--ot-tooltip-offset) + 6px); left: 50%; transform: translateX(-50%); }
+.ot-tooltip--bottom { top: calc(100% + var(--ot-tooltip-offset) + 6px); left: 50%; transform: translateX(-50%); }
+.ot-tooltip--left { right: calc(100% + var(--ot-tooltip-offset) + 6px); top: 50%; transform: translateY(-50%); }
+.ot-tooltip--right { left: calc(100% + var(--ot-tooltip-offset) + 6px); top: 50%; transform: translateY(-50%); }
+
+/* Arrow: 8px rotated square sharing the surface color (and border on Light) */
+.ot-tooltip__arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+  transform: rotate(45deg);
+}
+.ot-tooltip--light .ot-tooltip__arrow { border: inherit; }
+.ot-tooltip--top .ot-tooltip__arrow { top: calc(100% - 4px); left: calc(50% - 4px); border-top-color: transparent !important; border-left-color: transparent !important; }
+.ot-tooltip--bottom .ot-tooltip__arrow { bottom: calc(100% - 4px); left: calc(50% - 4px); border-bottom-color: transparent !important; border-right-color: transparent !important; }
+.ot-tooltip--left .ot-tooltip__arrow { left: calc(100% - 4px); top: calc(50% - 4px); border-bottom-color: transparent !important; border-left-color: transparent !important; }
+.ot-tooltip--right .ot-tooltip__arrow { right: calc(100% - 4px); top: calc(50% - 4px); border-top-color: transparent !important; border-right-color: transparent !important; }
+/* invisible bridge so the pointer can move from trigger to tooltip (WCAG 1.4.13 hoverable) */
+.ot-tooltip--floating::before {
+  content: '';
+  position: absolute;
+  inset: calc(-1 * (var(--ot-tooltip-offset) + 6px));
+  z-index: -1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ot-tooltip--floating { animation: ot-tooltip-in 120ms ease-out; }
+  @keyframes ot-tooltip-in { from { opacity: 0; } }
+}
+
+/* ── Term: inline text with a dotted underline ── */
+.ot-term {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ot-term-radius);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--ot-color-text-secondary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+.ot-term:hover,
+.ot-term[data-preview-state='hover'] {
+  background: var(--ot-color-bg-subtle-hover);
+  text-decoration-color: var(--ot-color-text-primary);
+}
+.ot-term:focus { outline: none; }
+.ot-term:focus-visible,
+.ot-term[data-preview-state='focus'] {
+  outline: var(--ot-term-focus-ring-width) solid var(--ot-color-border-focus);
+  outline-offset: 0;
+  text-decoration-color: var(--ot-color-text-primary);
+}

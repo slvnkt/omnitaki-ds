@@ -17,8 +17,10 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   size?: BadgeSize
   /** Shows the leading status dot (Figma `Show dot`). Ignored when `icon` is set — use one of them. @default true */
   dot?: boolean
-  /** Leading 12px icon (Figma `Show icon` + `Icon`), e.g. `<Star />`. Replaces the dot. Decorative. */
+  /** Leading 12px icon (Figma `Show icon` + `Icon`), e.g. `<CheckCircle />` for a status. Replaces the dot. Decorative. */
   icon?: ReactNode
+  /** Trailing 12px icon (Figma `Show trailing icon` + `Trailing icon`), e.g. `<X />` on a filter chip or `<CaretDown />`. Decorative — if it removes the badge, wrap the badge in a button with a label. */
+  trailingIcon?: ReactNode
   /** Badge text (Figma `Label`). One or two words: "Active", "Overdue". */
   children: ReactNode
   /** Extra class names. */
@@ -27,7 +29,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 
 /** Non-interactive status label: a short word with an optional dot or icon. Styled with `--ot-badge-*` and Semantic colors. */
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
-  { variant = 'neutral', size = 'md', dot = true, icon, children, className, ...rest },
+  { variant = 'neutral', size = 'md', dot = true, icon, trailingIcon, children, className, ...rest },
   ref,
 ) {
   const classes = ['ot-badge', `ot-badge--${variant}`, `ot-badge--${size}`, className].filter(Boolean).join(' ')
@@ -41,6 +43,11 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
         dot && <span className="ot-badge__dot" aria-hidden="true" />
       )}
       {children}
+      {trailingIcon && (
+        <span className="ot-badge__icon" aria-hidden="true">
+          {trailingIcon}
+        </span>
+      )}
     </span>
   )
 })

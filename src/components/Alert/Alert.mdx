@@ -1,0 +1,85 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './Alert.stories'
+import { Alert } from './Alert'
+import { Button } from '../Button'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Alert
+
+A message inside a card or page that explains the state of the data: figures being recalculated, delayed data, a failed load. It stays in the layout (unlike a toast) until the situation changes or the user dismisses it.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Alert } from './components/Alert'
+
+<Alert intent="warning" title="Data is delayed" action={<Button variant="ghost" size="sm">Why?</Button>}>
+  The latest data is from Nov 16.
+</Alert>
+```
+
+## Choosing an intent
+
+| Intent | When | Example |
+|---|---|---|
+| `info` | Neutral news about the data | "Data is being recalculated" |
+| `success` | Something finished as expected | "Delivery completed" |
+| `warning` | Usable but degraded or late | "Data is delayed" |
+| `danger` | Failed; the user can't rely on what they see | "Couldn't load data" + Retry |
+| `neutral` | Notes and context without urgency | "Figures were revised" |
+
+<Canvas of={Stories.Variants} />
+
+## Inline or banner
+
+Inline inside a card next to the affected content; banner across a page or a whole widget area.
+
+<Canvas of={Stories.Sizes} />
+
+## Content
+
+- **Title** says what happened in 2–5 words; **text** says what it means for the user, up to two lines.
+- One action at most, as a ghost Button: "Why?", "Retry", "View". Put longer explanations behind it.
+- Dismiss only alerts that are safe to hide; never dismiss a danger alert while the problem persists.
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Specific and actionable" example={<Stack style={{ maxWidth: 320 }}><Alert intent="danger" title="Couldn't load data" action={<Button variant="ghost" size="sm">Retry</Button>}>Try again in a moment.</Alert></Stack>}>
+    Name the problem and offer the next step.
+  </Rule>
+  <Rule kind="dont" title="Vague error" example={<Stack style={{ maxWidth: 320 }}><Alert intent="danger">An error occurred.</Alert></Stack>}>
+    Users can't act on "An error occurred".
+  </Rule>
+  <Rule kind="do" title="Intent matches severity" example={<Stack style={{ maxWidth: 320 }}><Alert intent="warning" title="Data is delayed">Latest data: Nov 16.</Alert></Stack>}>
+    Delayed data is a warning, not an error.
+  </Rule>
+  <Rule kind="dont" title="Stacking many alerts" example={<Stack style={{ maxWidth: 320 }}><Alert intent="info">Recalculating.</Alert><Alert intent="warning">Delayed.</Alert><Alert intent="info">Revised.</Alert></Stack>}>
+    Combine related messages into one; several banners bury the content.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **Roles.** `danger` → `role="alert"` (announced immediately); `info`, `success`, `warning`, `neutral` → `role="status"` (polite). Render the alert into the page when the state appears so the live region is announced.
+- **Not color alone.** Each intent has its own icon (Info, CheckCircle, Warning, WarningCircle) and the title states the status in words.
+- **Keyboard.** The alert itself is not focusable; its action and dismiss buttons are in the normal Tab order and show the standard focus ring. Dismiss has an accessible name (`dismissLabel`, default "Dismiss").
+- **Focus management.** After dismissing, move focus to a logical place (the content the alert described) if focus was on the dismiss button.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Title — info / success / warning / danger on its background | 9.5 / 9.3 / 11.7 / 9.0 : 1 | 8.2 / 8.3 / 10.0 / 7.6 : 1 |
+| Text (`text/primary`) on intent backgrounds | ≥ 13.4 : 1 | ≥ 13.7 : 1 |
+| Neutral text on `bg/secondary` | 13.7 : 1 | 13.7 : 1 |
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Alert](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=189-343)
+- Tokens: `--ot-alert-{padding-x|padding-y|gap|content-gap|radius|border-width|icon-size}`, `--ot-alert-banner-{padding-x|padding-y}`
+- Colors: `--ot-color-status-{info|success|warning|danger}-{secondary|secondary-border|secondary-text}`, neutral `--ot-color-bg-secondary` / `--ot-color-border-primary`, text `--ot-color-text-primary`
