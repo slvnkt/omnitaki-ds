@@ -210,7 +210,7 @@
         }
       },
       "link": {
-        "$value": "{palette.lime.300}",
+        "$value": "{palette.violet.300}",
         "$description": "Semantic color: text · link.",
         "$extensions": {
           "com.figma": {
@@ -222,7 +222,7 @@
         }
       },
       "link-hover": {
-        "$value": "{palette.lime.200}",
+        "$value": "{palette.violet.200}",
         "$description": "Semantic color: text · link hover.",
         "$extensions": {
           "com.figma": {
@@ -310,8 +310,8 @@
     },
     "brand": {
       "primary": {
-        "$value": "{palette.lime.300}",
-        "$description": "Semantic color: brand · primary.",
+        "$value": "{palette.violet.300}",
+        "$description": "Brand fill: primary button, checked selection, active tab indicator. Violet 500 (#7465ED) in Light, 300 in Dark.",
         "$extensions": {
           "com.figma": {
             "collection": "Semantic",
@@ -322,8 +322,8 @@
         }
       },
       "primary-hover": {
-        "$value": "{palette.lime.200}",
-        "$description": "Semantic color: brand · primary hover.",
+        "$value": "{palette.violet.200}",
+        "$description": "Hover of brand fill. Light goes darker (600) because text on it is white; Dark goes lighter (200).",
         "$extensions": {
           "com.figma": {
             "collection": "Semantic",
@@ -334,8 +334,8 @@
         }
       },
       "primary-pressed": {
-        "$value": "{palette.lime.400}",
-        "$description": "Semantic color: brand · primary pressed.",
+        "$value": "{palette.violet.400}",
+        "$description": "Pressed brand fill. Light 700 (darker), Dark 400.",
         "$extensions": {
           "com.figma": {
             "collection": "Semantic",
@@ -347,7 +347,7 @@
       },
       "on-primary": {
         "$value": "{palette.neutral.950}",
-        "$description": "Semantic color: brand · on primary.",
+        "$description": "Text and icons on brand fill: white in Light, neutral/950 in Dark.",
         "$extensions": {
           "com.figma": {
             "collection": "Semantic",
@@ -358,7 +358,7 @@
         }
       },
       "secondary": {
-        "$value": "{palette.lime.950}",
+        "$value": "{palette.violet.950}",
         "$description": "Semantic color: brand · secondary.",
         "$extensions": {
           "com.figma": {
@@ -370,7 +370,7 @@
         }
       },
       "secondary-hover": {
-        "$value": "{palette.lime.900}",
+        "$value": "{palette.violet.900}",
         "$description": "Semantic color: brand · secondary hover.",
         "$extensions": {
           "com.figma": {
@@ -382,7 +382,7 @@
         }
       },
       "secondary-text": {
-        "$value": "{palette.lime.300}",
+        "$value": "{palette.violet.300}",
         "$description": "Semantic color: brand · secondary text.",
         "$extensions": {
           "com.figma": {
@@ -394,7 +394,7 @@
         }
       },
       "secondary-border": {
-        "$value": "{palette.lime.800}",
+        "$value": "{palette.violet.800}",
         "$description": "Semantic color: brand · secondary border.",
         "$extensions": {
           "com.figma": {

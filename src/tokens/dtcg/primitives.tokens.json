@@ -1820,6 +1820,229 @@
           }
         }
       }
+    },
+    "violet": {
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9255,
+            0.9176,
+            0.9922
+          ],
+          "alpha": 1,
+          "hex": "#eceafd"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-50)"
+            }
+          }
+        }
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8745,
+            0.8588,
+            0.9843
+          ],
+          "alpha": 1,
+          "hex": "#dfdbfb"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-100)"
+            }
+          }
+        }
+      },
+      "200": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7686,
+            0.7451,
+            0.9686
+          ],
+          "alpha": 1,
+          "hex": "#c4bef7"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-200)"
+            }
+          }
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6627,
+            0.6275,
+            0.9569
+          ],
+          "alpha": 1,
+          "hex": "#a9a0f4"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-300)"
+            }
+          }
+        }
+      },
+      "400": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5608,
+            0.5137,
+            0.9412
+          ],
+          "alpha": 1,
+          "hex": "#8f83f0"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-400)"
+            }
+          }
+        }
+      },
+      "500": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4549,
+            0.3961,
+            0.9294
+          ],
+          "alpha": 1,
+          "hex": "#7465ed"
+        },
+        "$description": "Brand base #7465ED. Scale: tints/shades of 500, same method as other palettes.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-500)"
+            }
+          }
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3686,
+            0.3216,
+            0.7529
+          ],
+          "alpha": 1,
+          "hex": "#5e52c0"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-600)"
+            }
+          }
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2941,
+            0.2549,
+            0.6
+          ],
+          "alpha": 1,
+          "hex": "#4b4199"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-700)"
+            }
+          }
+        }
+      },
+      "800": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2078,
+            0.1804,
+            0.4275
+          ],
+          "alpha": 1,
+          "hex": "#352e6d"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-800)"
+            }
+          }
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1216,
+            0.1059,
+            0.251
+          ],
+          "alpha": 1,
+          "hex": "#1f1b40"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-900)"
+            }
+          }
+        }
+      },
+      "950": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0863,
+            0.0745,
+            0.1765
+          ],
+          "alpha": 1,
+          "hex": "#16132d"
+        },
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-950)"
+            }
+          }
+        }
+      }
     }
   },
   "space": {

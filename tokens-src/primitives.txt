@@ -158,3 +158,14 @@ palette/neutral/25|C|#f6f7f6|
 space/0-5|F|2|2px (0.5 × 4). Smallest inset.
 space/0-25|F|1|1px (0.25 × 4). Hairline offsets (shadows).
 palette/overlay-black/24|C|#0000003d|Black 24%.
+palette/violet/50|C|#eceafd|
+palette/violet/100|C|#dfdbfb|
+palette/violet/200|C|#c4bef7|
+palette/violet/300|C|#a9a0f4|
+palette/violet/400|C|#8f83f0|
+palette/violet/500|C|#7465ed|Brand base #7465ED. Scale: tints/shades of 500, same method as other palettes.
+palette/violet/600|C|#5e52c0|
+palette/violet/700|C|#4b4199|
+palette/violet/800|C|#352e6d|
+palette/violet/900|C|#1f1b40|
+palette/violet/950|C|#16132d|

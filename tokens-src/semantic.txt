@@ -9,19 +9,19 @@ color/text/secondary|C|{palette/neutral/600},{palette/neutral/300}|Semantic colo
 color/text/tertiary|C|{palette/neutral/600},{palette/neutral/400}|Semantic color: text · tertiary.
 color/text/disabled|C|{palette/neutral/400},{palette/neutral/600}|Text, icons and glyphs (check, radio dot) of disabled controls.
 color/text/inverse|C|{palette/white},{palette/neutral/950}|Semantic color: text · inverse.
-color/text/link|C|{palette/green/700},{palette/lime/300}|Semantic color: text · link.
-color/text/link-hover|C|{palette/green/800},{palette/lime/200}|Semantic color: text · link hover.
+color/text/link|C|{palette/violet/700},{palette/violet/300}|Semantic color: text · link.
+color/text/link-hover|C|{palette/violet/800},{palette/violet/200}|Semantic color: text · link hover.
 color/border/primary|C|{palette/neutral/200},{palette/neutral/700}|Semantic color: border · primary.
 color/border/secondary|C|{palette/neutral/500},{palette/neutral/500}|Semantic color: border · secondary.
 color/border/focus|C|{palette/neutral/900},{palette/neutral/50}|Keyboard focus ring: neutral high-contrast stroke (black in Light, white in Dark), same for all controls and types incl. Primary/Danger — like Fluent colorStrokeFocus2. Fields use border/strong instead.
-color/brand/primary|C|{palette/green/500},{palette/lime/300}|Semantic color: brand · primary.
-color/brand/primary-hover|C|{palette/green/400},{palette/lime/200}|Semantic color: brand · primary hover.
-color/brand/primary-pressed|C|{palette/green/300},{palette/lime/400}|Semantic color: brand · primary pressed.
-color/brand/on-primary|C|{palette/neutral/950},{palette/neutral/950}|Semantic color: brand · on primary.
-color/brand/secondary|C|{palette/green/50},{palette/lime/950}|Semantic color: brand · secondary.
-color/brand/secondary-hover|C|{palette/green/100},{palette/lime/900}|Semantic color: brand · secondary hover.
-color/brand/secondary-text|C|{palette/green/800},{palette/lime/300}|Semantic color: brand · secondary text.
-color/brand/secondary-border|C|{palette/green/200},{palette/lime/800}|Semantic color: brand · secondary border.
+color/brand/primary|C|{palette/violet/500},{palette/violet/300}|Brand fill: primary button, checked selection, active tab indicator. Violet 500 (#7465ED) in Light, 300 in Dark.
+color/brand/primary-hover|C|{palette/violet/600},{palette/violet/200}|Hover of brand fill. Light goes darker (600) because text on it is white; Dark goes lighter (200).
+color/brand/primary-pressed|C|{palette/violet/700},{palette/violet/400}|Pressed brand fill. Light 700 (darker), Dark 400.
+color/brand/on-primary|C|{palette/white},{palette/neutral/950}|Text and icons on brand fill: white in Light, neutral/950 in Dark.
+color/brand/secondary|C|{palette/violet/50},{palette/violet/950}|Semantic color: brand · secondary.
+color/brand/secondary-hover|C|{palette/violet/100},{palette/violet/900}|Semantic color: brand · secondary hover.
+color/brand/secondary-text|C|{palette/violet/800},{palette/violet/300}|Semantic color: brand · secondary text.
+color/brand/secondary-border|C|{palette/violet/200},{palette/violet/800}|Semantic color: brand · secondary border.
 color/bg/subtle-hover|C|{palette/overlay-black/4},{palette/overlay-white/8}|Hover overlay for transparent (subtle) controls: secondary/ghost button, tab, list item, neutral switch track.
 color/bg/subtle-pressed|C|{palette/overlay-black/8},{palette/overlay-white/12}|Pressed overlay for transparent (subtle) controls: secondary/ghost button, tab.
 color/bg/disabled|C|{palette/neutral/100},{palette/neutral/800}|Background of disabled controls: button, field, checkbox, switch track.
