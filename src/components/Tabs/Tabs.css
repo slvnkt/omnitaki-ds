@@ -1,0 +1,138 @@
+/* Tabs — Figma: Omnitaki DS › Tab (27:167) + Tabs (59:97).
+   Underline: tabs on a divider, selected = brand indicator. Filled: segmented, selected = bg/elevated + Elevation/sm.
+   Both lists are 40px high (control md). Tokens: tabs/*, tabs/filled/*. */
+
+/* ── List ── */
+.ot-tabs__list {
+  display: flex;
+  align-items: center;
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+}
+.ot-tabs--underline .ot-tabs__list {
+  gap: var(--ot-tabs-gap);
+  /* divider drawn outside the 40px list, so it doesn't change the height */
+  box-shadow: 0 var(--ot-tabs-divider-width) 0 0 var(--ot-color-border-primary);
+}
+.ot-tabs--filled .ot-tabs__list {
+  display: inline-flex;
+  gap: var(--ot-tabs-filled-list-gap);
+  padding: var(--ot-tabs-filled-list-padding);
+  border-radius: var(--ot-tabs-filled-list-radius);
+  background: var(--ot-color-bg-secondary);
+}
+
+/* ── Tab ── */
+.ot-tab {
+  --_bg: var(--ot-color-bg-transparent);
+  --_fg: var(--ot-color-text-secondary);
+  --_indicator: transparent;
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: var(--ot-tabs-item-gap);
+  margin: 0;
+  border: 0;
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  font-size: var(--ot-typography-label-md-font-size);
+  line-height: var(--ot-typography-label-md-line-height);
+  font-weight: var(--ot-typography-label-md-font-weight);
+  letter-spacing: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ot-tab__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--ot-tabs-icon-size);
+  height: var(--ot-tabs-icon-size);
+}
+.ot-tab__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Underline tab: 40px, indicator inside the bottom edge */
+.ot-tab--underline {
+  height: var(--ot-tabs-height);
+  padding: var(--ot-tabs-padding-y) var(--ot-tabs-padding-x);
+  border-radius: var(--ot-tabs-radius);
+  box-shadow: inset 0 calc(-1 * var(--ot-tabs-indicator-width)) 0 0 var(--_indicator);
+}
+/* Filled tab: 32px segment */
+.ot-tab--filled {
+  height: var(--ot-tabs-filled-height);
+  padding: 0 var(--ot-tabs-filled-padding-x);
+  border-radius: var(--ot-tabs-filled-radius);
+}
+
+/* ── States (data-preview-state forces a state for docs/visual tests) ── */
+.ot-tab:hover:not(:disabled),
+.ot-tab[data-preview-state='hover'] {
+  --_bg: var(--ot-color-bg-subtle-hover);
+  --_fg: var(--ot-color-text-primary);
+}
+.ot-tab--underline:hover:not(:disabled):not([aria-selected='true']),
+.ot-tab--underline[data-preview-state='hover']:not([aria-selected='true']),
+.ot-tab--underline[data-preview-state='pressed']:not([aria-selected='true']),
+.ot-tab--underline:active:not(:disabled):not([aria-selected='true']) {
+  --_indicator: var(--ot-color-border-primary);
+}
+.ot-tab:active:not(:disabled),
+.ot-tab[data-preview-state='pressed'] {
+  --_bg: var(--ot-color-bg-subtle-pressed);
+  --_fg: var(--ot-color-text-primary);
+}
+
+.ot-tab[aria-selected='true'] {
+  --_fg: var(--ot-color-text-primary);
+}
+.ot-tab--underline[aria-selected='true'] {
+  --_indicator: var(--ot-color-brand-primary);
+}
+.ot-tab--filled[aria-selected='true'],
+.ot-tab--filled[aria-selected='true']:hover,
+.ot-tab--filled[aria-selected='true']:active,
+.ot-tab--filled[aria-selected='true'][data-preview-state] {
+  --_bg: var(--ot-color-bg-elevated);
+  box-shadow: var(--ot-shadow-sm);
+}
+
+/* Focus: one neutral ring, drawn INSIDE the tab */
+.ot-tab:focus {
+  outline: none;
+}
+.ot-tab:focus-visible,
+.ot-tab[data-preview-state='focus'] {
+  outline: var(--ot-tabs-focus-ring-width) solid var(--ot-color-border-focus);
+  outline-offset: calc(-1 * var(--ot-tabs-focus-ring-width));
+}
+
+.ot-tab:disabled {
+  --_bg: var(--ot-color-bg-transparent);
+  --_fg: var(--ot-color-text-disabled);
+  cursor: not-allowed;
+}
+.ot-tab--underline[aria-selected='true']:disabled {
+  --_indicator: var(--ot-color-border-disabled);
+}
+.ot-tab--filled[aria-selected='true']:disabled {
+  --_bg: var(--ot-color-bg-elevated);
+  box-shadow: none;
+}
+
+/* ── Panel ── */
+.ot-tabs__panel {
+  padding-top: var(--ot-spacing-padding-lg);
+  color: var(--ot-color-text-primary);
+}
+.ot-tabs__panel:focus-visible {
+  outline: var(--ot-tabs-focus-ring-width) solid var(--ot-color-border-focus);
+  outline-offset: var(--ot-spacing-padding-2xs);
+  border-radius: var(--ot-shape-radius-sm);
+}

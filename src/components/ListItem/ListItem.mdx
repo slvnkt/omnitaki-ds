@@ -1,0 +1,72 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CaretRight, Copy, Trash } from '@phosphor-icons/react'
+
+import * as ListItemStories from './ListItem.stories'
+import { ListItem } from './ListItem'
+import { Rule, Rules } from '../../docs/DocBlocks'
+
+<Meta of={ListItemStories} name="Guidelines" />
+
+# ListItem
+
+The base row of every list surface: [Menu](?path=/docs/components-menu--guidelines) actions and [Select](?path=/docs/components-select--guidelines) options. It owns the row look — height, label, icons, hover overlay, check indicator — while the container owns focus and keyboard. Use it directly only when building a new list component.
+
+<Canvas of={ListItemStories.Default} />
+<Controls of={ListItemStories.Default} />
+
+```tsx
+import { ListItem } from './components/ListItem'
+
+<div role="listbox" aria-label="Currency">
+  <ListItem role="option" selected>EUR</ListItem>
+  <ListItem role="option">USD</ListItem>
+</div>
+```
+
+## Anatomy and states
+
+- **Height** = control height of the same size (32 / 40 / 48), so a menu row lines up with the trigger; label Label S / M / L.
+- **Hover / keyboard focus** = a neutral translucent overlay (`bg/subtle-hover`) that works on any surface; keyboard focus adds the 2px ring inside the row.
+- **Selected** = bold check in `brand/secondary-text` at the end, **no fill** — users can still see hover over a selected row.
+- **Disabled** = `text/disabled`, `aria-disabled`, skipped by keyboard.
+- **Alignment.** Menu padding + row padding-x = field padding-x of the same size, so option text sits exactly under the Select value.
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Check marks the selection" example={<div role="listbox" aria-label="Sort" style={{ width: 200 }}><ListItem role="option" selected>Newest first</ListItem><ListItem role="option">Oldest first</ListItem></div>}>
+    The check is the only selected styling; the row keeps the same surface.
+  </Rule>
+  <Rule kind="dont" title="Brand fill for selected rows" example={<div role="listbox" aria-label="Sort" style={{ width: 200 }}><ListItem role="option" style={{ background: 'var(--ot-color-brand-primary)', color: 'var(--ot-color-brand-on-primary)' }}>Newest first</ListItem></div>}>
+    Filled rows compete with hover and look like buttons. Don't override the row colors.
+  </Rule>
+  <Rule kind="do" title="Icons that add meaning" example={<div role="menu" aria-label="Actions" style={{ width: 200 }}><ListItem leadingIcon={<Copy />}>Duplicate</ListItem><ListItem leadingIcon={<Trash />}>Delete</ListItem></div>}>
+    Use leading icons on all rows of a menu or on none.
+  </Rule>
+  <Rule kind="dont" title="Caret without a submenu" example={<div role="menu" aria-label="Actions" style={{ width: 200 }}><ListItem trailingIcon={<CaretRight />}>Rename</ListItem></div>}>
+    A trailing caret promises a nested menu; don't use it as decoration.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+- **Role comes from the container:** `menuitem` (Menu), `option` (listbox / Select), `menuitemcheckbox` / `menuitemradio` for toggles. `selected` maps to `aria-selected` or `aria-checked` accordingly.
+- **Keyboard** is handled by the container (Menu: roving focus with ↑ ↓; Select: `aria-activedescendant`). The row shows the focus ring on `:focus-visible` and the overlay when `active`.
+- **Icons and the check** are `aria-hidden`; the selected state is exposed through ARIA, not only visually.
+
+### Contrast on the Menu surface (`bg/elevated`)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Label (`text/primary`) | 16.1 : 1 | 10.1 : 1 |
+| Icons (`text/secondary`) | 6.1 : 1 | 5.2 : 1 |
+| Check (`brand/secondary-text`) | 11.9 : 1 | 5.1 : 1 |
+| Focus ring | 16.1 : 1 | 10.1 : 1 |
+
+Disabled rows are exempt.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › ListItem](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=79-201)
+- Sizes: `--ot-list-item-size-{sm|md|lg}-{height|padding-x|icon-size}`, `--ot-list-item-{gap|radius|focus-ring-width}`
+- Colors (Semantic): `--ot-color-bg-subtle-hover`, `--ot-color-text-{primary|secondary|disabled}`, `--ot-color-brand-secondary-text`, `--ot-color-border-focus`

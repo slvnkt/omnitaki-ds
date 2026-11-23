@@ -1,0 +1,109 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as Stories from './SelectionControl.stories'
+import { Checkbox, Radio } from './SelectionControl'
+import { Switch } from '../Switch'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={Stories} name="Guidelines" />
+
+# Selection Control (Checkbox & Radio)
+
+Checkbox and Radio are one component in Figma (`SelectionControl`, switch `Type`) and one in code. Use the `Checkbox` and `Radio` wrappers in product code.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+```tsx
+import { Checkbox, Radio } from './components/SelectionControl'
+
+<Checkbox label="Send me product updates" checked={updates} onChange={e => setUpdates(e.target.checked)} />
+
+<fieldset>
+  <legend>Billing period</legend>
+  <Radio name="period" value="monthly" label="Monthly" defaultChecked />
+  <Radio name="period" value="yearly" label="Yearly" />
+</fieldset>
+```
+
+## Checkbox, Radio or Switch
+
+| Control | Use when | Applies |
+|---|---|---|
+| **Checkbox** | Independent choices; any number can be selected; or a single opt-in ("I accept…") | On submit |
+| **Radio** | Exactly one option from 2–6 visible choices | On submit |
+| **Switch** | Turning a setting on/off with immediate effect | Instantly |
+
+For more than ~6 options use Select.
+
+<Canvas of={Stories.CheckboxStates} />
+<Canvas of={Stories.RadioGroup} />
+
+## Select all (indeterminate)
+
+A parent checkbox shows the **indeterminate** (minus) state when only some children are selected; clicking it selects or clears all. Screen readers announce it as "mixed".
+
+<Canvas of={Stories.SelectAll} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Radio for one choice" example={<Stack><Radio name="dd1" label="Card" defaultChecked /><Radio name="dd1" label="Bank transfer" /></Stack>}>
+    Mutually exclusive options are radios in a labelled group.
+  </Rule>
+  <Rule kind="dont" title="Checkboxes for exclusive options" example={<Stack><Checkbox label="Card" defaultChecked /><Checkbox label="Bank transfer" defaultChecked /></Stack>}>
+    Checkboxes let users pick both, which isn't possible here.
+  </Rule>
+  <Rule kind="do" title="Positive, clickable labels" example={<Stack><Checkbox label="Email me when an invoice is paid" /></Stack>}>
+    The whole label is the click target and says what "checked" means.
+  </Rule>
+  <Rule kind="dont" title="Negative or vague labels" example={<Stack><Checkbox label="Don't not send notifications" /></Stack>}>
+    Double negatives make users think twice about what checking does.
+  </Rule>
+  <Rule kind="do" title="Switch for instant settings" example={<Stack><Switch label="Dark mode" /></Stack>}>
+    Settings that apply immediately read better as a switch.
+  </Rule>
+  <Rule kind="dont" title="Radio group with one option" example={<Stack><Radio name="dd2" label="Subscribe" /></Stack>}>
+    A single radio can't be unchecked. Use a checkbox.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Both render a native `<input type="checkbox|radio">` inside a `<label>`: the input is invisible but receives focus and clicks; the token-styled box is `aria-hidden`.
+
+### Keyboard
+
+| Key | Checkbox | Radio |
+|---|---|---|
+| `Tab` / `Shift + Tab` | Moves to / from each checkbox | Moves into the group (to the checked option) and out of it — one stop per group |
+| `Space` | Toggles | Selects the focused option |
+| `↑` `↓` `←` `→` | — | Moves to and selects the previous / next option in the group |
+
+- **Focus ring.** 2px neutral ring around the box (`--ot-color-border-focus`) on `:focus-visible`.
+- **Target.** The label is part of the click target, so even the 16px size gives a comfortable hit area.
+
+### Screen readers
+
+- **Name.** The label text is the accessible name: "Send me product updates, checkbox, not checked".
+- **Groups.** Wrap radios (and related checkboxes) in `<fieldset>` + `<legend>` — the legend is announced when entering the group: "Billing period, group".
+- **Indeterminate** is announced as "mixed"; **disabled** as "dimmed/unavailable".
+- **Errors.** `invalid` sets `aria-invalid="true"`; link the error text with `aria-describedby` (see the Error story).
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Unchecked border (`border/secondary`) on page | 4.4 : 1 | 4.1 : 1 |
+| Checked fill / radio ring (`brand/primary`) on page | 4.4 : 1 | 7.7 : 1 |
+| Check mark on brand fill | 4.4 : 1 | 7.7 : 1 |
+| Error border / fill on page | 4.8 : 1 | 5.7 : 1 |
+| Label (`text/primary`) | 16.1 : 1 | 15.3 : 1 |
+
+Boxes and marks are non-text graphics (minimum 3 : 1) — all pass; labels pass AA.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › SelectionControl](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=63-318)
+- Sizes: `--ot-selection-size-{sm|md|lg}-{box|icon-size}`, `--ot-selection-{gap|radius|border-width|focus-ring-width}`, `--ot-selection-radio-radius`; radio dot 8 / 10 / 12px
+- Colors (Semantic): `--ot-color-brand-{primary|primary-hover|on-primary}`, `--ot-color-bg-{primary|hover|disabled}`, `--ot-color-border-{secondary|secondary-hover|disabled|focus}`, `--ot-color-status-danger-*`, `--ot-color-text-{primary|disabled}`

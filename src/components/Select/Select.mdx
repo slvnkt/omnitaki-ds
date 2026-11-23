@@ -1,0 +1,101 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as SelectStories from './Select.stories'
+import { Select } from './Select'
+import { Radio } from '../SelectionControl'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={SelectStories} name="Guidelines" />
+
+# Select
+
+A form field for choosing **one value** from a list: currency, country, plan. It looks and behaves like [Input](?path=/docs/components-input--guidelines) (same label, sizes, states, helper) and opens a [Menu](?path=/docs/components-menu--guidelines)-style list of [ListItem](?path=/docs/components-listitem--guidelines) options.
+
+<Canvas of={SelectStories.Default} />
+<Controls of={SelectStories.Default} />
+
+```tsx
+import { Select } from './components/Select'
+
+<Select
+  label="Currency"
+  placeholder="Select a currency"
+  options={[{ value: 'eur', label: 'EUR — Euro' }, { value: 'usd', label: 'USD — US dollar' }]}
+  value={currency}
+  onValueChange={setCurrency}
+  name="currency"
+/>
+```
+
+## Open state
+
+The list opens 4px below the field on a Menu surface (`bg/elevated` + border + `Elevation/md`). Option text starts exactly under the value: menu padding + row padding = field padding of the same size. The current value is marked with a check.
+
+<Canvas of={SelectStories.Open} />
+
+## When to use
+
+| Choice | Use |
+|---|---|
+| 2–5 options, all should be visible | Radio group |
+| 6+ options, or space is tight | **Select** |
+| Very long list, users know what to type | Combobox with search (future) |
+| An action, not a value | Menu |
+
+## States and sizes
+
+Same as Input: Default, Hover, Focus (strong neutral border, no ring), Filled, Error, Success, Disabled, Read-only; heights 32 / 40 / 48.
+
+<Canvas of={SelectStories.Sizes} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Label + clear placeholder" example={<Stack><Select label="Country" placeholder="Select a country" options={[{ value: 'de', label: 'Germany' }, { value: 'fr', label: 'France' }]} /></Stack>}>
+    The label says what to choose, the placeholder invites the choice.
+  </Rule>
+  <Rule kind="dont" title="Placeholder as the only label" example={<Stack><Select aria-label="Country" placeholder="Country" options={[{ value: 'de', label: 'Germany' }]} /></Stack>}>
+    Once a value is picked the placeholder disappears and the field loses its meaning.
+  </Rule>
+  <Rule kind="do" title="Radios for few options" example={<Stack><Radio name="dd-plan" label="Monthly" defaultChecked /><Radio name="dd-plan" label="Yearly" /></Stack>}>
+    Two or three choices are faster to compare when all are visible.
+  </Rule>
+  <Rule kind="dont" title="Select with two options" example={<Stack><Select label="Billing" defaultValue="m" options={[{ value: 'm', label: 'Monthly' }, { value: 'y', label: 'Yearly' }]} /></Stack>}>
+    Hiding two options behind a click adds work without saving space.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Select implements the [WAI-ARIA select-only combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/): the field is `role="combobox"` with `aria-expanded`, `aria-controls`, `aria-haspopup="listbox"` and `aria-activedescendant`; the list is `role="listbox"` with `role="option"` rows (`aria-selected`). Focus stays on the field while the active option moves.
+
+### Keyboard
+
+| Key | Closed | Open |
+|---|---|---|
+| `Tab` | Focuses the field | Picks the active option, closes, moves on |
+| `Enter` / `Space` | Opens the list | Picks the active option and closes |
+| `↓` / `↑` | Opens the list | Next / previous enabled option |
+| `Home` / `End` | Opens on the first / last option | First / last option |
+| `Escape` | — | Closes without changing the value |
+| Letter keys | Selects the next option starting with that letter | Moves to it |
+
+- Disabled options are skipped. Clicking outside closes the list.
+- Focus is shown by the strong neutral field border, like Input; the active option shows the hover overlay.
+
+### Screen readers
+
+- Announced as "Currency, combo box, EUR — Euro, collapsed"; when open, each active option is read: "USD — US dollar, 2 of 5".
+- `helperText` is linked with `aria-describedby`; `invalid` sets `aria-invalid="true"`; `required` sets `aria-required`.
+- Icons and the check are decorative; selection is exposed with `aria-selected`.
+- With `name`, the value is submitted through a hidden input, so it works in plain forms.
+
+### Contrast
+
+Field and texts match Input: value 16.1 : 1 / 15.3 : 1, placeholder 6.1 : 1 / 5.8 : 1, helper 6.1 : 1 / 7.9 : 1, default border 4.4 : 1 / 4.1 : 1, focus border 8.5 : 1 / 7.9 : 1. Options on the list surface: 16.1 : 1 / 10.1 : 1, check 11.9 : 1 / 5.1 : 1 (Light / Dark).
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Select](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=81-3) (+ "Docs · Select open" composition)
+- Field: `--ot-field-*` (see Input); list: `--ot-menu-*`; rows: `--ot-list-item-*`
+- Colors: same Semantic tokens as Input, Menu and ListItem

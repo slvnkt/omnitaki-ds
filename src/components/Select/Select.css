@@ -1,0 +1,39 @@
+/* Select — Figma: Omnitaki DS › Select (81:3) = Label + Field (trailing CaretDown) + Helper,
+   opens a Menu-surface listbox of ListItems 4px below the field (menu/offset).
+   Label/helper reuse Input.css; box = Field.css; surface = Menu.css; rows = ListItem.css. */
+
+.ot-select__anchor {
+  position: relative;
+}
+.ot-select .ot-field:not(.ot-field--disabled):not(.ot-field--readonly) {
+  cursor: pointer;
+}
+.ot-select .ot-field--readonly {
+  cursor: default;
+}
+.ot-select .ot-field:focus {
+  outline: none;
+}
+
+.ot-select__value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+.ot-select__value--placeholder {
+  color: var(--ot-color-text-tertiary);
+}
+.ot-field--disabled .ot-select__value--placeholder {
+  color: var(--ot-color-text-disabled);
+}
+
+.ot-select__listbox {
+  position: absolute;
+  top: calc(100% + var(--ot-menu-offset));
+  left: 0;
+  right: 0;
+  z-index: 10;
+}

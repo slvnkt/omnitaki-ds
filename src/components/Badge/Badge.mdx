@@ -1,0 +1,97 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { CheckCircle, Clock, XCircle } from '@phosphor-icons/react'
+
+import * as BadgeStories from './Badge.stories'
+import { Badge } from './Badge'
+import { Row, Rule, Rules } from '../../docs/DocBlocks'
+
+<Meta of={BadgeStories} name="Guidelines" />
+
+# Badge
+
+A small, non-interactive label that shows the status or category of an item: "Paid", "Overdue", "New", "Beta". It is read, not clicked.
+
+<Canvas of={BadgeStories.Default} />
+<Controls of={BadgeStories.Default} />
+
+```tsx
+import { Badge } from './components/Badge'
+
+<Badge variant="success">Active</Badge>
+<Badge variant="danger" icon={<XCircle />}>Failed</Badge>
+```
+
+## Choosing a type
+
+| Type | Meaning | Examples |
+|---|---|---|
+| `neutral` | Default, inactive or archived | Draft, Archived, 12 |
+| `brand` | New or featured | New, Beta, Pro |
+| `success` | Completed, positive | Paid, Active, Verified |
+| `warning` | Needs attention soon | Pending, Expiring |
+| `danger` | Error or blocked | Failed, Overdue, Blocked |
+| `info` | Neutral information | Scheduled, In review |
+
+<Canvas of={BadgeStories.Variants} />
+
+## Size, dot and icon
+
+`sm` 16px for dense tables and counters, `md` 20px default, `lg` 24px next to 40–48px controls. Show either the dot **or** a 12px icon, never both; an icon is worth it only when it adds meaning (✓ paid, ⏱ pending).
+
+<Canvas of={BadgeStories.WithIcon} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Short, specific words" example={<Row><Badge variant="success">Paid</Badge><Badge variant="warning">Pending</Badge><Badge variant="danger">Overdue</Badge></Row>}>
+    One or two words in sentence case that describe a state.
+  </Rule>
+  <Rule kind="dont" title="Sentences in a badge" example={<Row><Badge variant="warning">Waiting for the customer to confirm the invoice</Badge></Row>}>
+    Long text wraps badly and is hard to scan. Put details next to the badge.
+  </Rule>
+  <Rule kind="do" title="Color matches meaning" example={<Row><Badge variant="danger" icon={<XCircle />}>Failed</Badge><Badge variant="success" icon={<CheckCircle />}>Done</Badge></Row>}>
+    Red for problems, green for success — and the word says the same.
+  </Rule>
+  <Rule kind="dont" title="Color for decoration" example={<Row><Badge variant="danger">Marketing</Badge><Badge variant="success">Design</Badge></Row>}>
+    Status colors on categories make users read errors where there are none. Use `neutral` or `brand`.
+  </Rule>
+  <Rule kind="do" title="Dot or icon" example={<Row><Badge variant="warning" icon={<Clock />}>Pending</Badge><Badge variant="info">Scheduled</Badge></Row>}>
+    The icon replaces the dot when it adds meaning.
+  </Rule>
+  <Rule kind="dont" title="Badges as buttons" example={<Row><Badge variant="brand">Upgrade →</Badge></Row>}>
+    Badges have no hover, focus or click. For an action use Button or a link.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Badge renders a plain `<span>`: it is static text, not focusable and not announced as a control.
+
+### Keyboard
+
+Not interactive — Badge never takes focus. Don't attach `onClick`; if something must be clickable, use a Button.
+
+### Screen readers
+
+- **Text is the meaning.** The label is read as normal text ("Paid"); the dot and icon are `aria-hidden`, so never rely on color or icon alone.
+- **Context.** If the badge alone is ambiguous ("3"), add context in the text or with visually hidden text: "3 unread".
+- **Live updates.** When a status changes while the user is on the page (e.g. "Processing" → "Paid"), announce it through a live region in the surrounding UI.
+
+### Contrast (WCAG 2.2)
+
+| Type | Light | Dark |
+|---|---|---|
+| Neutral | 4.6 : 1 | 5.2 : 1 |
+| Brand | 10.1 : 1 | 7.7 : 1 |
+| Success | 9.3 : 1 | 8.3 : 1 |
+| Warning | 11.7 : 1 | 10.0 : 1 |
+| Danger | 9.0 : 1 | 7.6 : 1 |
+| Info | 9.5 : 1 | 8.2 : 1 |
+
+Text on its own badge background; all types pass AA (4.5 : 1) for 12px Caption Strong.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Badge](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=27-197)
+- Sizes: `--ot-badge-size-{sm|md|lg}-{height|padding-x}`, `--ot-badge-gap`, `--ot-badge-radius`, `--ot-badge-border-width`, `--ot-badge-icon-size`
+- Colors (Semantic): `--ot-color-brand-secondary*`, `--ot-color-status-{success|warning|danger|info}-secondary*`, neutral `--ot-color-bg-tertiary` / `--ot-color-border-primary` / `--ot-color-text-secondary`

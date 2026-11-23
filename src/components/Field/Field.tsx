@@ -1,4 +1,4 @@
-import type { HTMLAttributes, MouseEvent, ReactNode } from 'react'
+import { forwardRef, type HTMLAttributes, type MouseEvent, type ReactNode } from 'react'
 
 import './Field.css'
 
@@ -28,19 +28,10 @@ export interface FieldProps extends HTMLAttributes<HTMLDivElement> {
  * Owns height, border/background per state and icon slots; the composite passes the control.
  * Not exported publicly — use `Input` (or future composites) in product code.
  */
-export function Field({
-  size = 'md',
-  leadingIcon,
-  trailingIcon,
-  invalid,
-  valid,
-  disabled,
-  readOnly,
-  className,
-  children,
-  onMouseDown,
-  ...rest
-}: FieldProps) {
+export const Field = forwardRef<HTMLDivElement, FieldProps>(function Field(
+  { size = 'md', leadingIcon, trailingIcon, invalid, valid, disabled, readOnly, className, children, onMouseDown, ...rest },
+  ref,
+) {
   const classes = [
     'ot-field',
     `ot-field--${size}`,
@@ -64,7 +55,7 @@ export function Field({
   }
 
   return (
-    <div className={classes} onMouseDown={focusControl} {...rest}>
+    <div ref={ref} className={classes} onMouseDown={focusControl} {...rest}>
       {leadingIcon && (
         <span className="ot-field__icon" aria-hidden="true">
           {leadingIcon}
@@ -78,4 +69,4 @@ export function Field({
       )}
     </div>
   )
-}
+})

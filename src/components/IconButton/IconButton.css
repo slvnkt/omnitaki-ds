@@ -1,0 +1,16 @@
+/* IconButton — Figma: Omnitaki DS › IconButton (57:440). Square, icon-only.
+   Reuses Button.css (types, states, focus ring); here only the square box. Tokens: button/size/* */
+
+.ot-icon-button {
+  padding: 0;
+  gap: 0;
+}
+.ot-icon-button.ot-button--sm {
+  width: var(--ot-button-size-sm-height);
+}
+.ot-icon-button.ot-button--md {
+  width: var(--ot-button-size-md-height);
+}
+.ot-icon-button.ot-button--lg {
+  width: var(--ot-button-size-lg-height);
+}

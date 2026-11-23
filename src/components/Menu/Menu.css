@@ -1,0 +1,17 @@
+/* Menu — Figma: Omnitaki DS › Menu (80:135). Floating surface for dropdown menus and the Select listbox:
+   bg/elevated + 1px border/primary + Elevation/md, padding 4, rows = ListItem.
+   Nested radius: menu radius 8 − padding 4 = list-item radius 4. Tokens: menu/*, list-item/*. */
+
+.ot-menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: var(--ot-menu-padding);
+  border: var(--ot-menu-border-width) solid var(--ot-color-border-primary);
+  border-radius: var(--ot-menu-radius);
+  background: var(--ot-color-bg-elevated);
+  box-shadow: var(--ot-shadow-md);
+  outline: none;
+}

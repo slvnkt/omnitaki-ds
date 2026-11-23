@@ -1,0 +1,98 @@
+/* ListItem — Figma: Omnitaki DS › ListItem (79:201). Row of Menu and Select options.
+   Height 32/40/48 = control height, Label S/M/L, neutral overlay on hover/focus, selected = check (no fill).
+   Tokens: list-item/* + Semantic colors. */
+
+.ot-list-item {
+  --_bg: var(--ot-color-bg-transparent);
+  --_fg: var(--ot-color-text-primary);
+  --_icon: var(--ot-color-text-secondary);
+  --_indicator: var(--ot-color-brand-secondary-text);
+  --_icon-size: var(--ot-list-item-size-md-icon-size);
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--ot-list-item-gap);
+  margin: 0;
+  border: 0;
+  border-radius: var(--ot-list-item-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.ot-list-item--sm {
+  height: var(--ot-list-item-size-sm-height);
+  padding: 0 var(--ot-list-item-size-sm-padding-x);
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+  --_icon-size: var(--ot-list-item-size-sm-icon-size);
+}
+.ot-list-item--md {
+  height: var(--ot-list-item-size-md-height);
+  padding: 0 var(--ot-list-item-size-md-padding-x);
+  font-size: var(--ot-typography-label-md-font-size);
+  line-height: var(--ot-typography-label-md-line-height);
+  font-weight: var(--ot-typography-label-md-font-weight);
+}
+.ot-list-item--lg {
+  height: var(--ot-list-item-size-lg-height);
+  padding: 0 var(--ot-list-item-size-lg-padding-x);
+  font-size: var(--ot-typography-label-lg-font-size);
+  line-height: var(--ot-typography-label-lg-line-height);
+  font-weight: var(--ot-typography-label-lg-font-weight);
+  --_icon-size: var(--ot-list-item-size-lg-icon-size);
+}
+
+.ot-list-item__label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ot-list-item__icon,
+.ot-list-item__indicator {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  color: var(--_icon);
+}
+.ot-list-item__indicator {
+  color: var(--_indicator);
+}
+.ot-list-item__icon > svg,
+.ot-list-item__indicator > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── States: overlay works on any surface. data-active = keyboard-active option (aria-activedescendant).
+   data-preview-state forces a state for docs/visual tests. */
+.ot-list-item:hover:not([aria-disabled='true']),
+.ot-list-item[data-active]:not([aria-disabled='true']),
+.ot-list-item:focus-visible,
+.ot-list-item[data-preview-state='hover'],
+.ot-list-item[data-preview-state='focus'] {
+  --_bg: var(--ot-color-bg-subtle-hover);
+}
+/* Keyboard focus: neutral ring INSIDE the row */
+.ot-list-item:focus-visible,
+.ot-list-item[data-preview-state='focus'] {
+  box-shadow: inset 0 0 0 var(--ot-list-item-focus-ring-width) var(--ot-color-border-focus);
+}
+
+.ot-list-item[aria-disabled='true'] {
+  --_fg: var(--ot-color-text-disabled);
+  --_icon: var(--ot-color-text-disabled);
+  --_indicator: var(--ot-color-text-disabled);
+  cursor: not-allowed;
+}

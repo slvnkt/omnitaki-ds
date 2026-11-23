@@ -1,0 +1,91 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { Copy, PencilSimple, Trash } from '@phosphor-icons/react'
+
+import * as MenuStories from './Menu.stories'
+import { Menu } from './Menu'
+import { Rule, Rules } from '../../docs/DocBlocks'
+
+<Meta of={MenuStories} name="Guidelines" />
+
+# Menu
+
+A floating list of **actions** that opens from a trigger (a Button or IconButton): "Edit", "Duplicate", "Delete". Rows are [ListItem](?path=/docs/components-listitem--guidelines)s. For choosing a **value** in a form use [Select](?path=/docs/components-select--guidelines) — it reuses the same surface as a listbox.
+
+<Canvas of={MenuStories.Default} />
+<Controls of={MenuStories.Default} />
+
+```tsx
+import { Menu } from './components/Menu'
+
+{open && (
+  <Menu
+    label="Invoice actions"
+    autoFocus
+    items={[{ value: 'edit', label: 'Edit' }, { value: 'delete', label: 'Delete' }]}
+    onSelect={run}
+    onClose={() => { setOpen(false); triggerRef.current?.focus() }}
+  />
+)}
+```
+
+## Surface
+
+`bg/elevated` + 1px `border/primary` + `Elevation/md`, 4px padding around rows, 4px offset from the trigger (`--ot-menu-offset`). Inner radius follows the nested-radius rule: menu 8 − padding 4 = row 4. Row size matches the trigger size.
+
+## Dropdown scenario
+
+Button + Menu is a scenario, not a separate component. The trigger owns open state and positioning; Menu owns focus and keyboard.
+
+<Canvas of={MenuStories.Dropdown} />
+
+## Content
+
+- Start with a verb: "Edit", "Download PDF". Keep 3–8 rows; group long menus or use a dialog.
+- Put destructive actions last.
+- Use leading icons on all rows or none. A trailing caret only for submenus.
+- For single-choice menus ("Sort by") mark the current option with `selected`.
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Actions on one object" example={<div style={{ width: 200 }}><Menu label="Actions" items={[{ value: 'e', label: 'Edit', leadingIcon: <PencilSimple /> }, { value: 'c', label: 'Duplicate', leadingIcon: <Copy /> }, { value: 'd', label: 'Delete', leadingIcon: <Trash /> }]} /></div>}>
+    Short verbs, consistent icons, destructive action last.
+  </Rule>
+  <Rule kind="dont" title="Menu as a form field" example={<div style={{ width: 200 }}><Menu label="Country" items={[{ value: 'de', label: 'Germany' }, { value: 'fr', label: 'France' }, { value: 'it', label: 'Italy' }]} /></div>}>
+    Picking a value for a form is a Select: it shows the chosen value and has a label.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Menu follows the [WAI-ARIA menu pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/): `role="menu"` with `menuitem` / `menuitemradio` rows; the trigger has `aria-haspopup="menu"` and `aria-expanded`.
+
+### Keyboard
+
+| Key | Behavior |
+|---|---|
+| `Enter` / `Space` / `↓` on the trigger | Opens the menu and focuses the first enabled row (`autoFocus`). |
+| `↓` / `↑` | Next / previous enabled row (wraps). |
+| `Home` / `End` | First / last enabled row. |
+| `Enter` / `Space` | Runs the focused action (`onSelect`). |
+| `Escape` | Closes (`onClose`); return focus to the trigger. |
+| `Tab` | Closes the menu and moves on. |
+
+- Disabled rows are skipped and announced as unavailable.
+- Keyboard focus shows the 2px ring inside the row; mouse hover shows only the overlay.
+
+### Screen readers
+
+- Name the menu with `label` (or `aria-labelledby` → trigger): "Invoice actions, menu".
+- Rows are read as "Duplicate, menu item, 2 of 5"; single-choice rows as "Newest first, radio, checked".
+- After an action, announce the result (e.g. a toast or live region) — the menu itself disappears.
+
+### Contrast
+
+Row labels on `bg/elevated`: 16.1 : 1 (Light) / 10.1 : 1 (Dark); icons 6.1 : 1 / 5.2 : 1. The 1px surface border (`border/primary`, 1.7 : 1 / 2.1 : 1) is decorative — the surface is separated by `Elevation/md` and the elevated background.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Menu](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=80-135) (+ "Docs · Dropdown" composition)
+- Surface: `--ot-menu-{padding|radius|border-width|offset}`, `--ot-color-bg-elevated`, `--ot-color-border-primary`, `--ot-shadow-md`
+- Rows: see ListItem (`--ot-list-item-*`)

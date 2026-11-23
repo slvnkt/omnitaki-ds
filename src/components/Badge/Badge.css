@@ -1,0 +1,84 @@
+/* Badge — Figma: Omnitaki DS › Badge (27:197). Tokens: badge/* + Semantic secondary colors.
+   Heights 16/20/24 = control/height 3xs/2xs/xs; text Caption Strong at every size. */
+
+.ot-badge {
+  --_bg: var(--ot-color-bg-tertiary);
+  --_border: var(--ot-color-border-primary);
+  --_fg: var(--ot-color-text-secondary);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--ot-badge-gap);
+  border: var(--ot-badge-border-width) solid var(--_border);
+  border-radius: var(--ot-badge-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--ot-typography-font-family-font), system-ui, sans-serif;
+  font-size: var(--ot-typography-label-sm-font-size);
+  line-height: var(--ot-typography-label-sm-line-height);
+  font-weight: var(--ot-typography-label-sm-font-weight);
+  letter-spacing: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.ot-badge--sm {
+  height: var(--ot-badge-size-sm-height);
+  padding: 0 var(--ot-badge-size-sm-padding-x);
+}
+.ot-badge--md {
+  height: var(--ot-badge-size-md-height);
+  padding: 0 var(--ot-badge-size-md-padding-x);
+}
+.ot-badge--lg {
+  height: var(--ot-badge-size-lg-height);
+  padding: 0 var(--ot-badge-size-lg-padding-x);
+}
+
+/* Decorative status dot (6px — allowed raw value per DS rules) */
+.ot-badge__dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: var(--ot-shape-radius-full);
+  background: currentColor;
+}
+.ot-badge__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--ot-badge-icon-size);
+  height: var(--ot-badge-icon-size);
+}
+.ot-badge__icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Type ── */
+.ot-badge--brand {
+  --_bg: var(--ot-color-brand-secondary);
+  --_border: var(--ot-color-brand-secondary-border);
+  --_fg: var(--ot-color-brand-secondary-text);
+}
+.ot-badge--success {
+  --_bg: var(--ot-color-status-success-secondary);
+  --_border: var(--ot-color-status-success-secondary-border);
+  --_fg: var(--ot-color-status-success-secondary-text);
+}
+.ot-badge--warning {
+  --_bg: var(--ot-color-status-warning-secondary);
+  --_border: var(--ot-color-status-warning-secondary-border);
+  --_fg: var(--ot-color-status-warning-secondary-text);
+}
+.ot-badge--danger {
+  --_bg: var(--ot-color-status-danger-secondary);
+  --_border: var(--ot-color-status-danger-secondary-border);
+  --_fg: var(--ot-color-status-danger-secondary-text);
+}
+.ot-badge--info {
+  --_bg: var(--ot-color-status-info-secondary);
+  --_border: var(--ot-color-status-info-secondary-border);
+  --_fg: var(--ot-color-status-info-secondary-text);
+}

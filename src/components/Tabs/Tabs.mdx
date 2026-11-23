@@ -1,0 +1,105 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as TabsStories from './Tabs.stories'
+import { Tabs } from './Tabs'
+import { Rule, Rules } from '../../docs/DocBlocks'
+
+<Meta of={TabsStories} name="Guidelines" />
+
+# Tabs
+
+Tabs switch between related views of the same context without leaving the page: sections of an account, periods of a chart. Only one panel is visible at a time.
+
+<Canvas of={TabsStories.Default} />
+<Controls of={TabsStories.Default} />
+
+```tsx
+import { Tabs } from './components/Tabs'
+
+<Tabs
+  label="Invoice sections"
+  items={[
+    { value: 'details', label: 'Details', content: <InvoiceDetails /> },
+    { value: 'history', label: 'History', content: <InvoiceHistory /> },
+  ]}
+  onValueChange={setSection}
+/>
+```
+
+## Underline or filled
+
+| Type | Use for | Looks like |
+|---|---|---|
+| `underline` | Navigation between sections of a page or card | Tabs on a divider; selected tab has a brand indicator |
+| `filled` | Switching views of the same data: Day / Week / Month, List / Grid | Segmented control; selected tab is raised on a soft grey track |
+
+Both lists are 40px high — the same as a `md` Button or Input, so they sit in one toolbar row.
+
+<Canvas of={TabsStories.Filled} />
+
+## Content
+
+- 2–6 tabs; for more, use a Select or side navigation.
+- Short nouns in sentence case: "Overview", "Invoices". Keep labels similar in length.
+- Icons are optional; use them on all tabs or on none.
+- Pass `content` to render panels, or omit it and react to `onValueChange` (e.g. to change the route).
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Related views of one thing" example={<Tabs label="Invoice" items={[{ value: 'a', label: 'Details' }, { value: 'b', label: 'Payments' }, { value: 'c', label: 'History' }]} />}>
+    All tabs describe the same invoice; switching keeps the user in context.
+  </Rule>
+  <Rule kind="dont" title="Steps of a process" example={<Tabs label="Checkout" items={[{ value: 'a', label: '1. Cart' }, { value: 'b', label: '2. Address' }, { value: 'c', label: '3. Pay' }]} />}>
+    Sequential steps need a stepper with Next/Back — tabs imply free order.
+  </Rule>
+  <Rule kind="do" title="Filled for view switches" example={<Tabs variant="filled" label="Period" items={[{ value: 'd', label: 'Day' }, { value: 'w', label: 'Week' }, { value: 'm', label: 'Month' }]} />}>
+    The segmented style signals "same data, different view".
+  </Rule>
+  <Rule kind="dont" title="Too many or long tabs" example={<div style={{ maxWidth: 260, overflow: 'hidden' }}><Tabs label="Too many" items={[{ value: 'a', label: 'Overview of the account' }, { value: 'b', label: 'All invoices' }, { value: 'c', label: 'Reports' }]} /></div>}>
+    Long labels and many tabs overflow and hide options. Shorten labels or use another pattern.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Tabs follow the [WAI-ARIA tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/): `role="tablist"` → `role="tab"` (with `aria-selected`, `aria-controls`) → `role="tabpanel"` (with `aria-labelledby`).
+
+### Keyboard
+
+| Key | Behavior |
+|---|---|
+| `Tab` | Moves focus into the tab list (to the selected tab), then to the panel. |
+| `←` / `→` | Moves to the previous / next tab and selects it (automatic activation, wraps around). |
+| `Home` / `End` | Moves to the first / last tab and selects it. |
+| — | Disabled tabs are skipped. |
+
+- **Roving tabindex.** Only the selected tab is in the Tab order, so the list is one stop, not N.
+- **Focus ring.** 2px neutral ring drawn inside the tab (`--ot-color-border-focus`); the panel shows a ring too when focused.
+
+### Screen readers
+
+- **Name the list.** Pass `label` (e.g. "Account sections") — announced as "Account sections, tab list".
+- **Each tab** is announced as "Invoices, tab, 2 of 4, selected".
+- **Panels** are labelled by their tab; hidden panels are removed from the accessibility tree (`hidden`).
+- **Icons** are decorative (`aria-hidden`); the text label carries the meaning.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| Unselected label (`text/secondary`) on page | 6.1 : 1 | 7.9 : 1 |
+| Selected label (`text/primary`) | 16.1 : 1 | 15.3 : 1 |
+| Brand indicator on page (non-text) | 4.4 : 1 | 7.7 : 1 |
+| Filled: unselected label on track (`bg/secondary`) | 5.2 : 1 | 7.1 : 1 |
+| Filled: selected label on `bg/elevated` | 16.1 : 1 | 10.1 : 1 |
+| Focus ring | 16.1 : 1 | 15.3 : 1 |
+
+All labels pass AA; the selected indicator passes the 3 : 1 non-text minimum. The underline divider and hover indicator (`border/primary`, 1.7 : 1) are decorative — selection is also shown by the brand indicator and the label color.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Tab](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=27-167) and [Tabs](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=59-97)
+- Underline: `--ot-tabs-{height|padding-x|padding-y|gap|item-gap|radius|indicator-width|divider-width|icon-size|focus-ring-width}`
+- Filled: `--ot-tabs-filled-{height|padding-x|radius|list-padding|list-gap|list-radius}`
+- Colors (Semantic): `--ot-color-brand-primary`, `--ot-color-bg-{subtle-hover|subtle-pressed|secondary|elevated}`, `--ot-color-text-{primary|secondary|disabled}`, `--ot-color-border-{primary|disabled|focus}`; selected filled tab uses `--ot-shadow-sm`

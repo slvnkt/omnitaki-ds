@@ -1,0 +1,100 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+
+import * as SwitchStories from './Switch.stories'
+import { Switch } from './Switch'
+import { Checkbox } from '../SelectionControl'
+import { Button } from '../Button'
+import { Rule, Rules, Stack } from '../../docs/DocBlocks'
+
+<Meta of={SwitchStories} name="Guidelines" />
+
+# Switch
+
+Turns a single setting on or off **with immediate effect** — like a light switch. If the change only applies after pressing "Save", use a Checkbox instead.
+
+<Canvas of={SwitchStories.Default} />
+<Controls of={SwitchStories.Default} />
+
+```tsx
+import { Switch } from './components/Switch'
+
+<Switch label="Email notifications" checked={enabled} onChange={e => updateSetting(e.target.checked)} />
+```
+
+## When to use
+
+| Use Switch | Use Checkbox |
+|---|---|
+| The setting applies instantly (notifications, dark mode) | The choice is submitted with a form |
+| A single on/off state | Several options, or "I agree" consent |
+| Settings lists, preferences | Filters, lists with "select all" |
+
+<Canvas of={SwitchStories.SettingsList} />
+
+## Content
+
+- **Label names the setting**, not the action or state: "Email notifications", not "Turn on emails" or "On".
+- Put the label next to the track; in settings lists keep switches aligned in one column.
+- If turning something on has consequences, explain them in helper text under the label.
+- Show feedback (toast, inline message) when the change takes time or fails, and revert the switch on error.
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Instant settings" example={<Stack><Switch label="Dark mode" defaultChecked /></Stack>}>
+    The change happens as soon as the switch moves.
+  </Rule>
+  <Rule kind="dont" title="Switch inside a form with Save" example={<Stack><Switch label="Subscribe to newsletter" /><Button size="sm">Save</Button></Stack>}>
+    Users expect a switch to act immediately; with a Save button use a Checkbox.
+  </Rule>
+  <Rule kind="do" title="Name the setting" example={<Stack><Switch label="Weekly summary email" /></Stack>}>
+    The label stays true whether the switch is on or off.
+  </Rule>
+  <Rule kind="dont" title="State words as labels" example={<Stack><Switch label="On" defaultChecked /></Stack>}>
+    "On"/"Off" duplicates the visual state and says nothing about what is switched.
+  </Rule>
+  <Rule kind="do" title="Checkbox for consent" example={<Stack><Checkbox label="I accept the terms of service" /></Stack>}>
+    Agreements are submitted with the form — that's a checkbox.
+  </Rule>
+  <Rule kind="dont" title="Switch for consent" example={<Stack><Switch label="I accept the terms of service" /></Stack>}>
+    A switch implies an instant, reversible setting, not an agreement.
+  </Rule>
+</Rules>
+
+## Accessibility
+
+Switch renders a native `<input type="checkbox" role="switch">` inside a `<label>`; the visual track and thumb are `aria-hidden`.
+
+### Keyboard
+
+| Key | Behavior |
+|---|---|
+| `Tab` / `Shift + Tab` | Moves focus to / away from the switch; disabled switches are skipped. |
+| `Space` | Toggles on / off. |
+
+- **Focus ring.** 2px neutral ring around the track (`--ot-color-border-focus`) on `:focus-visible`.
+- **Motion.** The thumb slides in 120ms; with `prefers-reduced-motion: reduce` it jumps without animation.
+
+### Screen readers
+
+- Announced as "Email notifications, switch, off" / "on" — `role="switch"` reads on/off instead of checked/not checked.
+- The label is the accessible name; without a visible label pass `aria-label`.
+- If the change is asynchronous, announce the result ("Notifications enabled") in a live region.
+
+### Contrast (WCAG 2.2)
+
+| Pair | Light | Dark |
+|---|---|---|
+| On track (`brand/primary`) on page | 4.4 : 1 | 7.7 : 1 |
+| Thumb on the on track | 4.4 : 1 | 7.7 : 1 |
+| Thumb (`bg/thumb`) on the off track | 1.7 : 1 | 5.0 : 1 |
+| Off track (`border/primary`) on page | 1.7 : 1 | 2.1 : 1 |
+| Label | 16.1 : 1 | 15.3 : 1 |
+
+**Known debt:** the off track (`border/primary`) is below the 3 : 1 non-text minimum against the page, and in Light the white thumb on it is 1.7 : 1. The off state is still recognisable by thumb position and its shadow, but for full WCAG 1.4.11 compliance the off track should move to a stronger token (e.g. `border/secondary`, 4.4 : 1) in Figma first. The on state passes.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › Switch](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=63-530)
+- Sizes: `--ot-switch-size-{sm|md|lg}-{height|thumb}`, `--ot-switch-{padding|gap|radius|focus-ring-width}`; track width = 2 × (thumb + padding)
+- Colors (Semantic): `--ot-color-brand-{primary|primary-hover}`, `--ot-color-border-primary`, `--ot-color-bg-{thumb|primary|subtle-hover|disabled}`, `--ot-color-border-focus`, `--ot-color-text-{primary|disabled}`; thumb shadow `--ot-shadow-sm`

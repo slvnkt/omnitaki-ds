@@ -1,0 +1,91 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import { DotsThree, Gear, PencilSimple, Plus, Trash } from '@phosphor-icons/react'
+
+import * as IconButtonStories from './IconButton.stories'
+import { IconButton } from './IconButton'
+import { Button } from '../Button'
+import { Row, Rule, Rules } from '../../docs/DocBlocks'
+
+<Meta of={IconButtonStories} name="Guidelines" />
+
+# IconButton
+
+A square button with only an icon. Use it where space is tight and the icon is universally understood: toolbars, table rows, card headers, closing a dialog. It shares every token, type and state with [Button](?path=/docs/components-button--guidelines).
+
+<Canvas of={IconButtonStories.Default} />
+<Controls of={IconButtonStories.Default} />
+
+```tsx
+import { IconButton } from './components/IconButton'
+import { PencilSimple } from '@phosphor-icons/react'
+
+<IconButton variant="ghost" icon={<PencilSimple />} label="Edit invoice" onClick={edit} />
+```
+
+## When to use
+
+| Use IconButton | Use Button |
+|---|---|
+| Repeated, well-known actions: edit, delete, close, more | The main action of a screen or form |
+| Dense UI: toolbars, table rows, chips | Anything that needs words to be understood |
+| The icon is clear without a label (✕, ⋯, pencil) | New or uncommon actions |
+
+## Types and sizes
+
+`ghost` is the default choice in toolbars and rows; `secondary` when the button must stand out on a busy surface; `primary` only for the single main action of an area (e.g. a floating "+"); `danger` for destructive actions. Sizes 32 / 40 / 48 match Button and Input heights.
+
+<Canvas of={IconButtonStories.Variants} />
+<Canvas of={IconButtonStories.Toolbar} />
+
+## Do's and don'ts
+
+<Rules>
+  <Rule kind="do" title="Universally known icons" example={<Row><IconButton variant="ghost" icon={<PencilSimple />} label="Edit" /><IconButton variant="ghost" icon={<Trash />} label="Delete" /><IconButton variant="ghost" icon={<DotsThree />} label="More actions" /></Row>}>
+    Edit, delete, more, close and search are recognised without text.
+  </Rule>
+  <Rule kind="dont" title="Ambiguous icons for key actions" example={<Row><IconButton icon={<Gear />} label="Publish report" /></Row>}>
+    A gear for "Publish report" forces users to guess. Use a Button with a label.
+  </Rule>
+  <Rule kind="do" title="Ghost in groups" example={<Row><IconButton variant="ghost" icon={<PencilSimple />} label="Edit" /><IconButton variant="ghost" icon={<Trash />} label="Delete" /></Row>}>
+    Repeated actions stay quiet so content keeps focus.
+  </Rule>
+  <Rule kind="dont" title="A row of primaries" example={<Row><IconButton icon={<PencilSimple />} label="Edit" /><IconButton icon={<Trash />} label="Delete" /><IconButton icon={<Plus />} label="Add" /></Row>}>
+    Filled buttons in every row create noise and compete with the real primary action.
+  </Rule>
+  <Rule kind="do" title="Same size as neighbours" example={<Row><Button size="md" variant="secondary">Export</Button><IconButton size="md" variant="secondary" icon={<DotsThree />} label="More export options" /></Row>}>
+    An IconButton of the same size is exactly as tall as the Button next to it.
+  </Rule>
+  <Rule kind="dont" title="Describe the icon in the label" example={<Row><IconButton variant="ghost" icon={<Trash />} label="Trash can icon" /></Row>}>
+    `label="Trash can icon"` is announced literally. Say the action: "Delete invoice #42".
+  </Rule>
+</Rules>
+
+## Accessibility
+
+IconButton renders a native `<button>` with `aria-label={label}`; the icon is `aria-hidden`.
+
+### Keyboard
+
+| Key | Behavior |
+|---|---|
+| `Tab` / `Shift + Tab` | Moves focus to / away from the button; disabled buttons are skipped. |
+| `Enter` / `Space` | Activates the button. |
+
+- **Focus ring.** 2px neutral ring (`--ot-color-border-focus`) on `:focus-visible`, the same for all types.
+- **Target size.** Smallest size is 32×32px — above the WCAG 2.2 AA minimum of 24×24px. Keep at least `--ot-spacing-gap-xs` between adjacent buttons.
+
+### Screen readers
+
+- **Name.** `label` is required and becomes the accessible name: "Edit invoice, button". Make it unique within repeated rows ("Delete invoice #42").
+- **Visible hint.** Sighted mouse users don't see `label`; for less obvious icons add a tooltip (when the Tooltip component exists) or switch to a Button with text.
+- **Toggles and menus.** For a toggle pass `aria-pressed`; for a button that opens a menu pass `aria-haspopup="menu"` and `aria-expanded`.
+
+### Contrast
+
+Identical to Button: icons on Primary 4.4 : 1 (Light, accepted brand decision) and 7.7 : 1 (Dark); Secondary/Ghost icons 16.1 : 1 / 15.3 : 1; Danger 4.8 : 1 / 5.7 : 1. Icons are non-text graphics, so the required minimum is 3 : 1 — all types pass.
+
+## Design and tokens
+
+- Figma: [Omnitaki DS › IconButton](https://www.figma.com/design/1AGw3pl5kRF2TU29bS6Egb/Omnitaki-DS?node-id=57-440)
+- Sizes: `--ot-button-size-{sm|md|lg}-height` (width = height), `--ot-button-size-{sm|md|lg}-icon-size`, `--ot-button-radius`, `--ot-button-border-width`, `--ot-button-focus-ring-width`
+- Colors: same Semantic tokens as Button (`--ot-color-brand-*`, `--ot-color-status-danger-*`, `--ot-color-bg-subtle-*`, `--ot-color-border-*`, `--ot-color-text-*`)
