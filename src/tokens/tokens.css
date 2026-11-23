@@ -173,6 +173,7 @@
   --ot-palette-violet-800: #352e6d;
   --ot-palette-violet-900: #1f1b40;
   --ot-palette-violet-950: #16132d;
+  --ot-palette-violet-25: #f2f2f9;
 }
 
 /* ── 2. Semantic · Light (default) ── */
@@ -329,11 +330,16 @@
   --ot-elevation-lg-key-blur: var(--ot-space-4);
   --ot-elevation-lg-ambient-y: var(--ot-space-6);
   --ot-elevation-lg-ambient-blur: var(--ot-space-12);
+  --ot-color-bg-brand: var(--ot-palette-violet-25);
+  --ot-color-bg-brand-pattern: var(--ot-palette-violet-100);
+  --ot-pattern-dot-size: var(--ot-space-0-25);
+  --ot-pattern-dot-gap: var(--ot-space-2);
 
-  /* Elevation (re-declared per theme so shadow colors follow the theme) */
+  /* Elevation and brand pattern (re-declared per theme so their colors follow the theme) */
   --ot-shadow-sm: 0px var(--ot-elevation-sm-key-y) var(--ot-elevation-sm-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-sm-ambient-y) var(--ot-elevation-sm-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-md: 0px var(--ot-elevation-md-key-y) var(--ot-elevation-md-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-md-ambient-y) var(--ot-elevation-md-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-lg: 0px var(--ot-elevation-lg-key-y) var(--ot-elevation-lg-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-lg-ambient-y) var(--ot-elevation-lg-ambient-blur) 0px var(--ot-color-shadow-ambient);
+  --ot-bg-brand-pattern: radial-gradient(circle, var(--ot-color-bg-brand-pattern) var(--ot-pattern-dot-size), transparent calc(var(--ot-pattern-dot-size) + 0.5px));
 }
 
 /* ── 2. Semantic · Dark (only values that differ from Light) ── */
@@ -398,10 +404,20 @@
   --ot-color-bg-thumb: var(--ot-palette-neutral-200);
   --ot-color-shadow-key: var(--ot-palette-overlay-black-40);
   --ot-color-shadow-ambient: var(--ot-palette-overlay-black-24);
+  --ot-color-bg-brand: var(--ot-palette-violet-950);
+  --ot-color-bg-brand-pattern: var(--ot-palette-violet-900);
 
   --ot-shadow-sm: 0px var(--ot-elevation-sm-key-y) var(--ot-elevation-sm-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-sm-ambient-y) var(--ot-elevation-sm-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-md: 0px var(--ot-elevation-md-key-y) var(--ot-elevation-md-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-md-ambient-y) var(--ot-elevation-md-ambient-blur) 0px var(--ot-color-shadow-ambient);
   --ot-shadow-lg: 0px var(--ot-elevation-lg-key-y) var(--ot-elevation-lg-key-blur) 0px var(--ot-color-shadow-key), 0px var(--ot-elevation-lg-ambient-y) var(--ot-elevation-lg-ambient-blur) 0px var(--ot-color-shadow-ambient);
+  --ot-bg-brand-pattern: radial-gradient(circle, var(--ot-color-bg-brand-pattern) var(--ot-pattern-dot-size), transparent calc(var(--ot-pattern-dot-size) + 0.5px));
+}
+
+/* ── Brand background: canvas + dot grid ── */
+.ot-bg-brand {
+  background-color: var(--ot-color-bg-brand);
+  background-image: var(--ot-bg-brand-pattern);
+  background-size: var(--ot-pattern-dot-gap) var(--ot-pattern-dot-gap);
 }
 
 /* ── 3. Component (sizes only) ── */

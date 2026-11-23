@@ -146,6 +146,30 @@
             }
           }
         }
+      },
+      "brand": {
+        "$value": "{palette.violet.950}",
+        "$description": "Brand background canvas: marketing, onboarding, empty states, hero areas. Use with the dot pattern (color/bg/brand-pattern).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-brand)"
+            }
+          }
+        }
+      },
+      "brand-pattern": {
+        "$value": "{palette.violet.900}",
+        "$description": "Dots of the brand background pattern; subtle on color/bg/brand.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-color-bg-brand-pattern)"
+            }
+          }
+        }
       }
     },
     "text": {
@@ -1930,6 +1954,35 @@
             "collection": "Semantic",
             "codeSyntax": {
               "WEB": "var(--ot-elevation-lg-ambient-blur)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pattern": {
+    "$type": "dimension",
+    "dot": {
+      "size": {
+        "$value": "{space.0-25}",
+        "$description": "Brand background dot size (1px).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-pattern-dot-size)"
+            }
+          }
+        }
+      },
+      "gap": {
+        "$value": "{space.2}",
+        "$description": "Brand background dot pitch (8px grid).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Semantic",
+            "codeSyntax": {
+              "WEB": "var(--ot-pattern-dot-gap)"
             }
           }
         }

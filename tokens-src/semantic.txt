@@ -148,3 +148,7 @@ elevation/lg/key-y|F|{space/2},{space/2}|Elevation LG · key y — modal layer: 
 elevation/lg/key-blur|F|{space/4},{space/4}|Elevation LG · key blur — modal layer: dialog, drawer, sheet.
 elevation/lg/ambient-y|F|{space/6},{space/6}|Elevation LG · ambient y — modal layer: dialog, drawer, sheet.
 elevation/lg/ambient-blur|F|{space/12},{space/12}|Elevation LG · ambient blur — modal layer: dialog, drawer, sheet.
+color/bg/brand|C|{palette/violet/25},{palette/violet/950}|Brand background canvas: marketing, onboarding, empty states, hero areas. Use with the dot pattern (color/bg/brand-pattern).
+color/bg/brand-pattern|C|{palette/violet/100},{palette/violet/900}|Dots of the brand background pattern; subtle on color/bg/brand.
+pattern/dot/size|F|{space/0-25},{space/0-25}|Brand background dot size (1px).
+pattern/dot/gap|F|{space/2},{space/2}|Brand background dot pitch (8px grid).

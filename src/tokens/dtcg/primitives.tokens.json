@@ -1822,6 +1822,27 @@
       }
     },
     "violet": {
+      "25": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.949,
+            0.949,
+            0.9765
+          ],
+          "alpha": 1,
+          "hex": "#f2f2f9"
+        },
+        "$description": "Brand canvas #F2F2F9: desaturated violet tint (Veridian-style background).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Primitives",
+            "codeSyntax": {
+              "WEB": "var(--ot-palette-violet-25)"
+            }
+          }
+        }
+      },
       "50": {
         "$value": {
           "colorSpace": "srgb",

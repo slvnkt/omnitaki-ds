@@ -169,3 +169,4 @@ palette/violet/700|C|#4b4199|
 palette/violet/800|C|#352e6d|
 palette/violet/900|C|#1f1b40|
 palette/violet/950|C|#16132d|
+palette/violet/25|C|#f2f2f9|Brand canvas #F2F2F9: desaturated violet tint (Veridian-style background).

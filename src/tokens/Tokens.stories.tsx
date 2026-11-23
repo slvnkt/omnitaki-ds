@@ -100,6 +100,46 @@ function Elevation() {
   )
 }
 
+function BrandBackgroundDemo() {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--ot-spacing-gap-lg)' }}>
+      {(['light', 'dark'] as const).map(theme => (
+        <div
+          key={theme}
+          data-theme={theme}
+          className="ot-bg-brand"
+          style={{
+            display: 'grid',
+            placeItems: 'center',
+            minHeight: 280,
+            padding: 'var(--ot-spacing-padding-2xl)',
+            borderRadius: 'var(--ot-shape-radius-lg)',
+          }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gap: 'var(--ot-spacing-gap-sm)',
+              maxWidth: 260,
+              padding: 'var(--ot-spacing-padding-xl)',
+              borderRadius: 'var(--ot-shape-radius-lg)',
+              background: 'var(--ot-color-bg-elevated)',
+              boxShadow: 'var(--ot-shadow-sm)',
+              color: 'var(--ot-color-text-primary)',
+            }}
+          >
+            <span className="ot-text-heading-subtitle-2">.ot-bg-brand</span>
+            <span className="ot-text-body-body-1" style={{ color: 'var(--ot-color-text-secondary)' }}>
+              {theme === 'light' ? 'Light' : 'Dark'} · canvas --ot-color-bg-brand, dots --ot-color-bg-brand-pattern every
+              --ot-pattern-dot-gap.
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 const meta = {
   title: 'Foundations/Tokens',
   parameters: { layout: 'padded' },
@@ -111,3 +151,13 @@ type Story = StoryObj<typeof meta>
 export const Colors: Story = { render: () => <SemanticColors /> }
 export const Typography: Story = { render: () => <TextStyles /> }
 export const Shadows: Story = { render: () => <Elevation /> }
+export const BrandBackground: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Brand background for marketing, onboarding, empty states and hero areas: add `className="ot-bg-brand"`. Figma: Brand Background component.',
+      },
+    },
+  },
+  render: () => <BrandBackgroundDemo />,
+}
